@@ -25,7 +25,7 @@ so that I can practice chord changes at a speed that matches my current level.
 Acceptance criteria:
 
 * The user can set the BPM value.
-* The BPM value cannot be lower than 40.
+* The BPM value cannot be lower than 30.
 * The BPM value cannot be higher than 160.
 * The default BPM value is 60.
 
