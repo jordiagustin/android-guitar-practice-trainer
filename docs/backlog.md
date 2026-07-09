@@ -16,12 +16,17 @@ Create a new Android project using Kotlin and Jetpack Compose.
 
 Related documents:
 
-* MVP Definition
-* Screen Specification
+- MVP Definition
+- Screen Specification
 
 Status:
 
-* To do
+- Done
+
+Notes:
+
+- Initial Android project created with Kotlin and Jetpack Compose.
+- Project pushed to GitHub.
 
 ---
 
