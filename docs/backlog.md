@@ -43,7 +43,13 @@ Initial areas:
 
 Status:
 
-* To do
+- In progress
+
+Notes:
+
+- Initial package structure started.
+- model package created.
+- data and practice packages will be completed when their first files are added.
 
 ---
 
@@ -57,7 +63,11 @@ Related user stories:
 
 Status:
 
-* To do
+- Done
+
+Notes:
+
+- Chord model and ChordType enum created.
 
 ---
 
@@ -71,7 +81,11 @@ Related user stories:
 
 Status:
 
-* To do
+- Done
+
+Notes:
+
+- ChordGroup model created with a name and a list of chords.
 
 ---
 
