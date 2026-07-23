@@ -101,7 +101,7 @@ Related user stories:
 
 Status:
 
-* To do
+- Done
 
 ---
 
@@ -119,7 +119,7 @@ Related user stories:
 
 Status:
 
-* To do
+* Done
 
 ---
 
@@ -141,8 +141,13 @@ Related user stories:
 
 Status:
 
-* To do
+* In progress
 
+
+Notes:
+
+- Initial Practice Setup Screen created with title, description, chord group text, BPM text, slider and Start button.
+- Screen connected to MainActivity and running on emulator.
 ---
 
 ### B-008 — Implement BPM selector
