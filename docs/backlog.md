@@ -166,7 +166,7 @@ Related user stories:
 
 Status:
 
-* To do
+* Done
 
 ---
 

@@ -14,6 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -23,6 +27,9 @@ import androidx.compose.ui.tooling.preview.Preview
  */
 @Composable
 fun PracticeSetupScreen() {
+
+    var bmp by remember { mutableFloatStateOf(60f) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,11 +49,13 @@ fun PracticeSetupScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "BPM: 60")
+        Text(text = "BPM: ${bmp.toInt()}")
 
         Slider(
-            value = 60f,
-            onValueChange = {},
+            value = bmp,
+            onValueChange = { newValue ->
+                bmp = newValue
+            },
             valueRange = 30f..160f
         )
 
