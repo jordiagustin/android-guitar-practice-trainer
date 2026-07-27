@@ -184,7 +184,7 @@ Related user stories:
 
 Status:
 
-* To do
+* Done
 
 ---
 
@@ -207,7 +207,7 @@ Related user stories:
 
 Status:
 
-* To do
+* Done
 
 ---
 
@@ -221,7 +221,7 @@ Related user stories:
 
 Status:
 
-* To do
+* In progress
 
 ---
 
