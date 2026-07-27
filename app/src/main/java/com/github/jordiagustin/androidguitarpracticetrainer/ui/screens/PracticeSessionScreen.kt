@@ -22,7 +22,9 @@ import androidx.compose.ui.unit.dp
  * a simple pulse indicator and basic session controls.
  */
 @Composable
-fun PracticeSessionScreen() {
+fun PracticeSessionScreen(
+    onStopPractice: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -58,10 +60,8 @@ fun PracticeSessionScreen() {
             Spacer(modifier = Modifier.padding(8.dp))
 
             Button(
-                onClick = {
-                    // Stop navigation will be implemented later.
-                }
-            ) {
+                onClick = onStopPractice
+            ){
                 Text(text = "Stop")
             }
         }
@@ -71,6 +71,8 @@ fun PracticeSessionScreen() {
 @Preview(showBackground = true)
 @Composable
 fun PracticeSessionScreenPreview() {
-    PracticeSessionScreen()
+    PracticeSessionScreen(
+        onStopPractice = {}
+    )
 }
 

@@ -30,8 +30,9 @@ import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
  * configure the BPM value and start the practice session.
  */
 @Composable
-fun PracticeSetupScreen() {
-
+fun PracticeSetupScreen(
+    onStartPractice: () -> Unit
+) {
     var bmp by remember { mutableFloatStateOf(60f) }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
@@ -85,10 +86,8 @@ fun PracticeSetupScreen() {
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = {
-                // Navigation will be implemented later.
-            }
-        ) {
+            onClick = onStartPractice
+        ){
             Text(text = "Start Practice")
         }
     }
@@ -97,5 +96,7 @@ fun PracticeSetupScreen() {
 @Preview(showBackground = true)
 @Composable
 fun PracticeSetupScreenPreview() {
-    PracticeSetupScreen()
+    PracticeSetupScreen(
+        onStartPractice = {}
+    )
 }
