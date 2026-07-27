@@ -34,7 +34,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
 ) {
-    var bmp by remember { mutableFloatStateOf(60f) }
+    var bpm by remember { mutableFloatStateOf(60f) }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
 
@@ -74,12 +74,12 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "BPM: ${bmp.toInt()}")
+        Text(text = "BPM: ${bpm.toInt()}")
 
         Slider(
-            value = bmp,
+            value = bpm,
             onValueChange = { newValue ->
-                bmp = newValue
+                bpm = newValue
             },
             valueRange = 30f..160f
         )
@@ -88,7 +88,7 @@ fun PracticeSetupScreen(
 
         Button(
             onClick = {
-                onStartPractice(selectedChordGroup, bmp.toInt())
+                onStartPractice(selectedChordGroup, bpm.toInt())
             }
         ){
             Text(text = "Start Practice")

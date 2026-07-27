@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                 if (isPracticeSessionActive) {
                     PracticeSessionScreen(
                         chordGroup = activeChordGroup,
-                        bmp = activeBpm,
+                        bpm = activeBpm,
                         onStopPractice = {
                             isPracticeSessionActive = false
                         }

@@ -17,6 +17,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
 
 /**
  * Screen used during an active chord practice session.
@@ -27,11 +33,20 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
-    bmp: Int,
+    bpm: Int,
     onStopPractice: () -> Unit
 ) {
-    val currentChord = remember {
-        chordGroup.chords.random()
+    var currentChord by remember {
+        mutableStateOf(chordGroup.chords.random())
+    }
+
+    LaunchedEffect(chordGroup, bpm) {
+        val intervalMillis = 60000L / bpm
+
+        while (true) {
+            delay(intervalMillis)
+            currentChord = chordGroup.chords.random()
+        }
     }
 
     Column(
@@ -50,7 +65,7 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(text = chordGroup.name)
-        Text(text = "BPM: $bmp")
+        Text(text = "BPM: $bpm")
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -83,7 +98,7 @@ fun PracticeSessionScreen(
 fun PracticeSessionScreenPreview() {
     PracticeSessionScreen(
         chordGroup = ChordRepository.chordGroups.first(),
-        bmp = 60,
+        bpm = 60,
         onStopPractice = {}
     )
 }
