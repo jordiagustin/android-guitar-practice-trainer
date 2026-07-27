@@ -40,12 +40,19 @@ fun PracticeSessionScreen(
         mutableStateOf(chordGroup.chords.random())
     }
 
+    var isPaused by remember {
+        mutableStateOf(false)
+    }
+
     LaunchedEffect(chordGroup, bpm) {
         val intervalMillis = 60000L / bpm
 
         while (true) {
             delay(intervalMillis)
-            currentChord = chordGroup.chords.random()
+
+            if (!isPaused) {
+                currentChord = chordGroup.chords.random()
+            }
         }
     }
 
@@ -76,10 +83,12 @@ fun PracticeSessionScreen(
         Row {
             Button(
                 onClick = {
-                    // Pause and resume logic will be implemented later.
+                    isPaused = !isPaused
                 }
             ) {
-                Text(text = "Pause")
+                Text(
+                    text = if (isPaused) "Resume" else "Pause"
+                )
             }
 
             Spacer(modifier = Modifier.padding(8.dp))
