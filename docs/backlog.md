@@ -221,7 +221,7 @@ Related user stories:
 
 Status:
 
-* In progress
+* Done
 
 ---
 
@@ -241,7 +241,7 @@ Related user stories:
 
 Status:
 
-* In progress
+* Done
 
 ---
 
@@ -275,8 +275,19 @@ Status:
 
 ### B-015 — Update README with project status
 
-Update the README once the MVP implementation starts.
+Update the README to reflect the current MVP implementation status.
+
+The README should mention that the app already includes a basic functional practice flow:
+
+- Practice Setup Screen.
+- Chord group selector.
+- BPM selector.
+- Practice Session Screen.
+- Random chord display.
+- Automatic chord changes based on BPM.
+- Pause and resume.
+- Stop session and return to setup.
 
 Status:
 
-* To do
+* Done

@@ -6,47 +6,95 @@ The goal of the app is to provide a simple practice tool where users can select 
 
 ## Project status
 
-This project is currently in the product definition phase.
+This project currently includes a basic functional MVP practice flow.
 
-No production-ready Android code has been implemented yet.
+The app can:
+
+- Display a Practice Setup Screen.
+- Let the user select a chord group.
+- Let the user configure the BPM value.
+- Start a practice session.
+- Display a random chord from the selected chord group.
+- Change chords automatically according to the selected BPM.
+- Pause and resume the practice session.
+- Stop the session and return to the setup screen.
 
 ## Main goal
 
-The first version of the app will focus on one core feature:
+The first version of the app focuses on one core feature:
 
-* Practicing chord changes using random chord prompts and a configurable tempo.
+- Practicing chord changes using random chord prompts and a configurable tempo.
 
-## Planned MVP features
+## Current MVP features
 
-* Select a chord group.
-* Configure BPM.
-* Start a practice session.
-* Display random chords on screen.
-* Provide a simple metronome pulse.
-* Pause and stop the session.
+- Chord group selector:
+  - Major chords
+  - Minor chords
+  - All chords
+- BPM selector:
+  - Minimum: 30 BPM
+  - Maximum: 160 BPM
+  - Default: 60 BPM
+- Practice session screen.
+- Random chord display.
+- Automatic chord changes based on BPM.
+- Pause / Resume control.
+- Stop session control.
 
-## Future ideas
+## Tech stack
 
-* Manual chord selection.
-* Independent metronome.
-* Guitar tuner.
-* Basic music theory section.
-* Tablature exercises.
-* Practice history and statistics.
+Current technologies:
+
+- Kotlin
+- Jetpack Compose
+- Android Studio
+- Material 3
+- Git / GitHub
+
+## Project structure
+
+```text
+app/src/main/java/com/github/jordiagustin/androidguitarpracticetrainer/
+├── data
+│   └── ChordRepository.kt
+├── model
+│   ├── Chord.kt
+│   ├── ChordGroup.kt
+│   └── PracticeSession.kt
+├── practice
+├── ui
+│   ├── screens
+│   │   ├── PracticeSetupScreen.kt
+│   │   └── PracticeSessionScreen.kt
+│   └── theme
+└── MainActivity.kt
+```
 
 ## Documentation
 
 Project documentation is available in the `/docs` folder.
 
-Initial product definition:
+Current documents:
 
-* `/docs/product-definition.md`
+- `product-definition.md`
+- `mvp-definition.md`
+- `user-stories.md`
+- `navigation-flow.md`
+- `screen-specification.md`
+- `data-model.md`
+- `backlog.md`
 
-## Tech stack
+## Future improvements
 
-Planned technologies:
+Possible future improvements include:
 
-* Kotlin
-* Jetpack Compose
-* Android Studio
-* MVVM architecture
+- Avoid repeating the same chord twice in a row.
+- Improve the visual design of the practice screens.
+- Add a metronome sound.
+- Add a visual pulse indicator.
+- Add manual chord selection.
+- Add chord diagrams.
+- Add practice history.
+- Add basic music theory content.
+- Add an independent metronome tool.
+- Add a guitar tuner.
