@@ -20,9 +20,9 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.delay
+import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 
 /**
  * Screen used during an active chord practice session.
@@ -30,6 +30,21 @@ import kotlinx.coroutines.delay
  * For the MVP, this screen displays the current chord, the selected BPM,
  * a simple pulse indicator and basic session controls.
  */
+
+private fun getRandomChordExcludingCurrent(
+    chords: List<Chord>,
+    currentChord: Chord?
+): Chord {
+    val availableChords = chords.filter { chord ->
+        chord != currentChord
+    }
+
+    return if (availableChords.isNotEmpty()){
+        availableChords.random()
+    } else {
+        chords.random()
+    }
+}
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -37,7 +52,12 @@ fun PracticeSessionScreen(
     onStopPractice: () -> Unit
 ) {
     var currentChord by remember {
-        mutableStateOf(chordGroup.chords.random())
+        mutableStateOf(
+            getRandomChordExcludingCurrent(
+                chords = chordGroup.chords,
+                currentChord = null
+            )
+        )
     }
 
     var isPaused by remember {
@@ -51,7 +71,10 @@ fun PracticeSessionScreen(
             delay(intervalMillis)
 
             if (!isPaused) {
-                currentChord = chordGroup.chords.random()
+                currentChord = getRandomChordExcludingCurrent(
+                    chords = chordGroup.chords,
+                    currentChord = currentChord
+                )
             }
         }
     }

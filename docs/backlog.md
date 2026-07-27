@@ -291,3 +291,17 @@ The README should mention that the app already includes a basic functional pract
 Status:
 
 * Done
+
+---
+
+### B-016 — Avoid repeating the same chord twice
+
+Improve the random chord selection logic so that the same chord is not displayed twice in a row when there is more than one chord available.
+
+Related user stories:
+
+- US-004 — Display random chord
+
+Status:
+
+- Done
