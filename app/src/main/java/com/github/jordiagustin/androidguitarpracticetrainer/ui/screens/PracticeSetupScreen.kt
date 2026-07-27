@@ -18,6 +18,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.RadioButton
+import androidx.compose.runtime.mutableStateOf
+import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -29,6 +33,8 @@ import androidx.compose.runtime.setValue
 fun PracticeSetupScreen() {
 
     var bmp by remember { mutableFloatStateOf(60f) }
+    val chordGroups = ChordRepository.chordGroups
+    var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
 
     Column(
         modifier = Modifier
@@ -45,7 +51,24 @@ fun PracticeSetupScreen() {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        Text(text = "Chord group: Major chords")
+        Text(text = "Chord group")
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        chordGroups.forEach { chordGroup ->
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RadioButton(
+                    selected = chordGroup == selectedChordGroup,
+                    onClick = {
+                        selectedChordGroup = chordGroup
+                    }
+                )
+
+                Text(text = chordGroup.name)
+            }
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
