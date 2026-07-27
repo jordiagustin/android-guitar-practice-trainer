@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.RadioButton
 import androidx.compose.runtime.mutableStateOf
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
+import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -31,7 +32,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
  */
 @Composable
 fun PracticeSetupScreen(
-    onStartPractice: () -> Unit
+    onStartPractice: (ChordGroup, Int) -> Unit
 ) {
     var bmp by remember { mutableFloatStateOf(60f) }
     val chordGroups = ChordRepository.chordGroups
@@ -86,7 +87,9 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = onStartPractice
+            onClick = {
+                onStartPractice(selectedChordGroup, bmp.toInt())
+            }
         ){
             Text(text = "Start Practice")
         }
@@ -97,6 +100,6 @@ fun PracticeSetupScreen(
 @Composable
 fun PracticeSetupScreenPreview() {
     PracticeSetupScreen(
-        onStartPractice = {}
+        onStartPractice = {_, _ ->}
     )
 }

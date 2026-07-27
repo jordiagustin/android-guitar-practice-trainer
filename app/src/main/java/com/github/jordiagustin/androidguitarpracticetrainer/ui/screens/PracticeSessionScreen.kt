@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
+import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 
 /**
  * Screen used during an active chord practice session.
@@ -23,6 +25,8 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun PracticeSessionScreen(
+    chordGroup: ChordGroup,
+    bmp: Int,
     onStopPractice: () -> Unit
 ) {
     Column(
@@ -40,7 +44,8 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        Text(text = "BPM: 60")
+        Text(text = chordGroup.name)
+        Text(text = "BPM: $bmp")
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -72,7 +77,8 @@ fun PracticeSessionScreen(
 @Composable
 fun PracticeSessionScreenPreview() {
     PracticeSessionScreen(
+        chordGroup = ChordRepository.chordGroups.first(),
+        bmp = 60,
         onStopPractice = {}
     )
 }
-
