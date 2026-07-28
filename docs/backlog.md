@@ -305,3 +305,17 @@ Related user stories:
 Status:
 
 - Done
+
+### B-017 — Add visual pulse indicator
+
+Add a simple visual pulse indicator to the Practice Session Screen.
+
+The indicator should change on each BPM interval to give the user visual feedback that the metronome pulse is active.
+
+Related user stories:
+
+- US-005 — Metronome pulse
+
+Status:
+
+- To do

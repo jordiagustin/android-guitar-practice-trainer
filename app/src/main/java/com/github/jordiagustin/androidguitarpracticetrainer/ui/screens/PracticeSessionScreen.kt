@@ -64,6 +64,10 @@ fun PracticeSessionScreen(
         mutableStateOf(false)
     }
 
+    var pulseActive by remember {
+        mutableStateOf(false)
+    }
+
     LaunchedEffect(chordGroup, bpm) {
         val intervalMillis = 60000L / bpm
 
@@ -71,6 +75,7 @@ fun PracticeSessionScreen(
             delay(intervalMillis)
 
             if (!isPaused) {
+                pulseActive = !pulseActive
                 currentChord = getRandomChordExcludingCurrent(
                     chords = chordGroup.chords,
                     currentChord = currentChord
@@ -99,7 +104,9 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "Pulse")
+        Text(
+            text = if (pulseActive) "Pulse ●" else "Pulse ○"
+        )
 
         Spacer(modifier = Modifier.height(32.dp))
 
