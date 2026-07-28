@@ -23,6 +23,9 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.runtime.mutableStateOf
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -45,15 +48,28 @@ fun PracticeSetupScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Guitar Practice Trainer")
+        Text(
+            text = "Guitar Practice Trainer",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "Practice chord changes with random prompts and a configurable tempo.")
+        Text(
+            text = "Practice chord changes with random prompts and a configurable tempo.",
+            fontSize = 16.sp,
+            textAlign = TextAlign.Center
+        )
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        Text(text = "Chord group")
+        Text(
+            text = "Chord group",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold
+        )
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -74,7 +90,11 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "BPM: ${bpm.toInt()}")
+        Text(
+            text = "BPM: ${bpm.toInt()}",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold
+        )
 
         Slider(
             value = bpm,
@@ -90,8 +110,11 @@ fun PracticeSetupScreen(
             onClick = {
                 onStartPractice(selectedChordGroup, bpm.toInt())
             }
-        ){
-            Text(text = "Start Practice")
+        ) {
+            Text(
+                text = "Start Practice",
+                fontSize = 18.sp
+            )
         }
     }
 }
