@@ -306,6 +306,8 @@ Status:
 
 - Done
 
+---
+
 ### B-017 — Add visual pulse indicator
 
 Add a simple visual pulse indicator to the Practice Session Screen.
@@ -314,6 +316,23 @@ The indicator should change on each BPM interval to give the user visual feedbac
 
 Related user stories:
 
+- US-005 — Metronome pulse
+
+Status:
+
+- Done
+
+---
+
+### B-018 — Improve practice session display
+
+Improve the Practice Session Screen layout to make the current chord easier to read during practice.
+
+The current chord should be visually prominent and readable from a comfortable playing position.
+
+Related user stories:
+
+- US-004 — Display random chord
 - US-005 — Metronome pulse
 
 Status:

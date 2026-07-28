@@ -23,6 +23,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.delay
 import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 /**
  * Screen used during an active chord practice session.
@@ -91,21 +93,37 @@ fun PracticeSessionScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Current chord")
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(text = currentChord.name)
-
-        Spacer(modifier = Modifier.height(32.dp))
-
-        Text(text = chordGroup.name)
-        Text(text = "BPM: $bpm")
+        Text(
+            text = "Current chord",
+            fontSize = 20.sp
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = if (pulseActive) "Pulse ●" else "Pulse ○"
+            text = currentChord.name,
+            fontSize = 72.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = if (pulseActive) "Pulse ●" else "Pulse ○",
+            fontSize = 24.sp
+        )
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Text(
+            text = chordGroup.name,
+            fontSize = 18.sp
+        )
+
+        Text(
+            text = "BPM: $bpm",
+            fontSize = 18.sp
         )
 
         Spacer(modifier = Modifier.height(32.dp))
@@ -125,7 +143,7 @@ fun PracticeSessionScreen(
 
             Button(
                 onClick = onStopPractice
-            ){
+            ) {
                 Text(text = "Stop")
             }
         }
