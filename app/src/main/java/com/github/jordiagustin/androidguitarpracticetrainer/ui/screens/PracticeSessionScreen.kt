@@ -22,10 +22,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.delay
-import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelector
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeTimer
 
 /**
  * Screen used during an active chord practice session.
@@ -66,7 +66,7 @@ fun PracticeSessionScreen(
     }
 
     LaunchedEffect(chordGroup, bpm) {
-        val intervalMillis = 60000L / bpm
+        val intervalMillis = PracticeTimer.calculateIntervalMillis(bpm)
 
         while (true) {
             delay(intervalMillis)

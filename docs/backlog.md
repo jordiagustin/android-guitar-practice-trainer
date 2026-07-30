@@ -575,4 +575,21 @@ Related user stories:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-032 — Extract practice timer interval calculation
+
+Move the BPM interval calculation to a dedicated practice logic file.
+
+The goal is to keep timer-related practice logic outside the UI layer and make the code easier to maintain.
+
+Related user stories:
+
+- US-002 — Configure BPM
+- US-005 — Metronome pulse
+
+Status:
+
+- Done
