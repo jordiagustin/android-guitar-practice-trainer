@@ -180,7 +180,7 @@ fun PracticeSessionScreen(
             Button(
                 onClick = onStopPractice
             ) {
-                Text(text = "Stop")
+                Text(text = "End Session")
             }
         }
     }

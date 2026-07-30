@@ -103,7 +103,7 @@ fun PracticeSetupScreen(
             },
             valueRange = 30f..160f
         )
-        
+
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(

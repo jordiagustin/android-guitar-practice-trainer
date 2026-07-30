@@ -473,3 +473,37 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-026 — Add start session summary
+
+Show a short summary of the selected practice configuration on the Practice Setup Screen.
+
+The summary should display the selected chord group and BPM before starting the practice session.
+
+Related user stories:
+
+- US-001 — Select chord group
+- US-002 — Configure BPM
+- US-003 — Start practice session
+
+Status:
+
+- Done
+
+---
+
+### B-027 — Improve stop button label
+
+Rename the Stop button to make its action clearer to the user.
+
+The button should clearly indicate that it ends the current practice session and returns to the setup screen.
+
+Related user stories:
+
+- US-007 — Stop practice session
+
+Status:
+
+- Done
