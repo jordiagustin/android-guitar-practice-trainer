@@ -609,3 +609,24 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-034 — Update README with current MVP features
+
+Update the README file to reflect the current MVP status and implemented features.
+
+The goal is to keep the project documentation aligned with the actual app functionality.
+
+Related tasks:
+
+- B-020 — Refactor chord selection logic
+- B-021 — Add paused session feedback
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-025 — Add selected session summary
+- B-026 — Add start session summary
+
+Status:
+
+- To do

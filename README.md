@@ -4,20 +4,25 @@ Android Guitar Practice Trainer is a personal Android project focused on helping
 
 The goal of the app is to provide a simple practice tool where users can select groups of chords, set a BPM value, and practice chord changes while the app displays random chords on screen.
 
-## Project status
+## Current MVP status
 
-This project currently includes a basic functional MVP practice flow.
+The app currently includes a functional MVP practice flow.
 
-The app can:
+Implemented features:
 
-- Display a Practice Setup Screen.
-- Let the user select a chord group.
-- Let the user configure the BPM value.
-- Start a practice session.
-- Display a random chord from the selected chord group.
-- Change chords automatically according to the selected BPM.
+- Select a predefined chord group.
+- Configure the practice tempo using a BPM slider.
+- Start an active practice session.
+- Display random chords during the session.
+- Avoid showing the same chord twice in a row.
+- Show a visual pulse indicator based on the selected BPM.
 - Pause and resume the practice session.
-- Stop the session and return to the setup screen.
+- Show paused session feedback.
+- Show elapsed practice time.
+- Show the number of chord changes during the session.
+- End the session and return to the setup screen.
+- Display a selected session summary before starting.
+- Display an active session summary during practice.
 
 ## Main goal
 
@@ -51,7 +56,15 @@ Current technologies:
 - Material 3
 - Git / GitHub
 
-## Project structure
+## Current project structure
+
+The project separates basic responsibilities into packages:
+
+- `model`: core data models such as chords, chord groups and practice sessions.
+- `data`: predefined chord data used by the MVP.
+- `practice`: practice-related logic such as chord selection and timer calculations.
+- `ui.screens`: Jetpack Compose screens.
+- `ui.theme`: Compose theme configuration.
 
 ```text
 app/src/main/java/com/github/jordiagustin/androidguitarpracticetrainer/

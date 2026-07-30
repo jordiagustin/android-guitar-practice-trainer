@@ -92,7 +92,7 @@ fun PracticeSessionScreen(
             }
         }
     }
-    
+
     val formattedTime = PracticeTimer.formatElapsedTime(elapsedSeconds)
 
     Column(
