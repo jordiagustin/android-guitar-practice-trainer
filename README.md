@@ -199,3 +199,19 @@ The project is organized into small packages with clear responsibilities.
 - `app/src/test`: contains unit tests for practice logic.
 
 This separation keeps UI code focused on presentation while practice logic remains easier to test and maintain.
+
+---
+
+## Roadmap
+
+Possible future improvements:
+
+- Add metronome sound.
+- Add chord diagrams.
+- Allow custom chord groups.
+- Allow changing chords every 2 or 4 beats.
+- Add practice history.
+- Add basic session statistics.
+- Improve visual design.
+- Add dark mode support.
+- Add instrument-specific practice modes.

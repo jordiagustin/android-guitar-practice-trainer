@@ -1171,3 +1171,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-064 — Add roadmap section to README
+
+Add a short roadmap section to the README describing possible future improvements.
+
+The goal is to show the intended direction of the project beyond the current MVP.
+
+Related tasks:
+
+- B-034 — Update README with current MVP features
+- B-041 — Update product definition
+- B-063 — Add architecture section to README
+
+Status:
+
+- To do
