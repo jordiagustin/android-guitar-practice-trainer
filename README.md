@@ -135,3 +135,54 @@ To run the tests:
 
 ```bash
 ./gradlew test
+```
+
+## How to run the project
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/jordiagustin/android-guitar-practice-trainer.git
+```
+
+2. Open the project with Android Studio.
+
+3. Wait for Gradle Sync to finish.
+
+4. Select an Android emulator or a connected Android device.
+
+5. Run the app using the Android Studio **Run** button.
+
+The project should open directly on the **Practice Setup Screen**.
+
+---
+
+## Tests
+
+The project includes basic unit tests for practice logic components.
+
+Current tested components:
+
+- `PracticeTimer`
+- `ChordSelector`
+
+The tests verify:
+
+- BPM interval calculation.
+- Elapsed time formatting.
+- Invalid BPM validation.
+- Random chord selection from a chord list.
+- Prevention of repeated chords when alternatives exist.
+- Empty chord list validation.
+
+To run the unit tests on macOS or Linux:
+
+```bash
+./gradlew test
+```
+
+To run the unit tests on Windows:
+
+```bash
+.\gradlew test
+```

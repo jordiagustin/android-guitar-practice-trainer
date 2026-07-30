@@ -1132,3 +1132,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-062 — Add run instructions to README
+
+Add basic instructions to the README explaining how to open, run and test the project.
+
+The goal is to make the project easier to understand and execute from a fresh clone.
+
+Related tasks:
+
+- B-034 — Update README with current MVP features
+- B-058 — Add unit tests for PracticeTimer
+- B-059 — Add unit tests for ChordSelector
+- B-060 — Document unit tests
+
+Status:
+
+- Done
