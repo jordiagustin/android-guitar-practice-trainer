@@ -36,6 +36,11 @@ import androidx.compose.foundation.verticalScroll
  * a simple pulse indicator and basic session controls.
  */
 
+private const val PAUSE_LABEL = "Pause"
+private const val RESUME_LABEL = "Resume"
+private const val END_SESSION_LABEL = "End Session"
+private val ScreenPadding = 24.dp
+
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -101,7 +106,7 @@ fun PracticeSessionScreen(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(24.dp),
+            .padding(ScreenPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -171,7 +176,7 @@ fun PracticeSessionScreen(
                 }
             ) {
                 Text(
-                    text = if (isPaused) "Resume" else "Pause"
+                    text = if (isPaused) RESUME_LABEL else PAUSE_LABEL
                 )
             }
 
@@ -180,7 +185,7 @@ fun PracticeSessionScreen(
             Button(
                 onClick = onStopPractice
             ) {
-                Text(text = "End Session")
+                Text(text = END_SESSION_LABEL)
             }
         }
     }

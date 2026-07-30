@@ -38,6 +38,8 @@ import androidx.compose.foundation.verticalScroll
  * configure the BPM value and start the practice session.
  */
 
+private val ScreenPadding = 24.dp
+private const val START_PRACTICE_LABEL = "Start Practice"
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
@@ -50,7 +52,7 @@ fun PracticeSetupScreen(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(24.dp),
+            .padding(ScreenPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -148,7 +150,7 @@ fun PracticeSetupScreen(
             }
         ) {
             Text(
-                text = "Start Practice",
+                text = START_PRACTICE_LABEL,
                 fontSize = 18.sp
             )
         }

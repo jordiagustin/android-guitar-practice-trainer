@@ -862,3 +862,38 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-047 — Extract screen padding values
+
+Extract repeated screen padding values into named constants.
+
+The goal is to avoid duplicated layout values and make spacing easier to adjust in the future.
+
+Related tasks:
+
+- B-029 — Improve setup screen spacing
+- B-030 — Improve session screen spacing
+- B-045 — Make setup screen scrollable
+- B-046 — Make session screen scrollable
+
+Status:
+
+- Done
+
+---
+
+### B-048 — Extract button labels
+
+Extract repeated button label text into named constants.
+
+The goal is to make UI text easier to maintain and reduce hardcoded strings inside composable layout code.
+
+Related tasks:
+
+- B-027 — Improve stop button label
+
+Status:
+
+- Done
