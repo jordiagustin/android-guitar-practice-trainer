@@ -337,4 +337,71 @@ Related user stories:
 
 Status:
 
+- Done
+
+---
+
+### B-019 — Improve Practice Setup Screen display
+
+Improve the Practice Setup Screen layout to make the initial configuration screen clearer and easier to use.
+
+The screen should present the app title, chord group selector, BPM selector and Start button in a more readable way.
+
+Related user stories:
+
+- US-001 — Select chord group
+- US-002 — Configure BPM
+- US-003 — Start practice session
+
+Status:
+
+- Done
+
+---
+
+### B-020 — Refactor chord selection logic
+
+Move the random chord selection logic from the Practice Session Screen to a dedicated practice logic file.
+
+The goal is to keep UI code focused on displaying the screen and move practice-related logic to the `practice` package.
+
+Related user stories:
+
+- US-004 — Display random chord
+
+Status:
+
+- Done
+
+---
+
+### B-021 — Add paused session feedback
+
+Show a clear visual message when the practice session is paused.
+
+The goal is to make the session state easier to understand while practicing.
+
+Related user stories:
+
+- US-006 — Pause and resume practice session
+
+Status:
+
+- Done
+
+---
+
+### B-022 — Add elapsed practice time
+
+Show the elapsed practice time during an active practice session.
+
+The timer should increase while the session is running and stop increasing while the session is paused.
+
+Related user stories:
+
+- US-004 — Display random chord
+- US-006 — Pause and resume practice session
+
+Status:
+
 - To do

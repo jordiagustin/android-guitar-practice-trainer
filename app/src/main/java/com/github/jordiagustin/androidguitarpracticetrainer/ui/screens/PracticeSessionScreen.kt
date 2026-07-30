@@ -71,6 +71,10 @@ fun PracticeSessionScreen(
         mutableStateOf(false)
     }
 
+    var elapsedSeconds by remember {
+        mutableStateOf(0)
+    }
+
     LaunchedEffect(chordGroup, bpm) {
         val intervalMillis = 60000L / bpm
 
@@ -86,6 +90,30 @@ fun PracticeSessionScreen(
             }
         }
     }
+
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(1000L)
+
+            if (!isPaused) {
+                elapsedSeconds++
+            }
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(1000L)
+
+            if (!isPaused) {
+                elapsedSeconds++
+            }
+        }
+    }
+
+    val minutes = elapsedSeconds / 60
+    val seconds = elapsedSeconds % 60
+    val formattedTime = "%02d:%02d".format(minutes, seconds)
 
     Column(
         modifier = Modifier
@@ -134,6 +162,11 @@ fun PracticeSessionScreen(
 
         Text(
             text = "BPM: $bpm",
+            fontSize = 18.sp
+        )
+
+        Text(
+            text = "Time: $formattedTime",
             fontSize = 18.sp
         )
 
