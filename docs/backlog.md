@@ -1188,4 +1188,20 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-065 — Mark MVP core as completed
+
+Mark the core MVP as completed in the README and backlog.
+
+The goal is to clearly indicate that the app already has a functional MVP practice flow before starting product improvements such as metronome sound and chord diagrams.
+
+Related tasks:
+
+- B-001 to B-064
+
+Status:
+
 - To do

@@ -4,25 +4,25 @@ Android Guitar Practice Trainer is a personal Android project focused on helping
 
 The goal of the app is to provide a simple practice tool where users can select groups of chords, set a BPM value, and practice chord changes while the app displays random chords on screen.
 
-## Current MVP status
+## Project status
 
-The app currently includes a functional MVP practice flow.
+Current status: **Core MVP completed**
 
-Implemented features:
+The app includes a functional two-screen practice flow with:
 
-- Select a predefined chord group.
-- Configure the practice tempo using a BPM slider.
-- Start an active practice session.
-- Display random chords during the session.
-- Avoid showing the same chord twice in a row.
-- Show a visual pulse indicator based on the selected BPM.
-- Pause and resume the practice session.
-- Show paused session feedback.
-- Show elapsed practice time.
-- Show the number of chord changes during the session.
-- End the session and return to the setup screen.
-- Display a selected session summary before starting.
-- Display an active session summary during practice.
+- Chord group selection.
+- BPM configuration.
+- Random chord changes.
+- Prevention of repeated chords twice in a row.
+- Visual pulse indicator.
+- Pause / Resume support.
+- Elapsed practice time.
+- Chord change counter.
+- Start and active session summaries.
+- Unit tests for practice logic.
+- Project documentation.
+
+Next development phase: product improvements such as metronome sound, chord diagrams and visual design improvements.
 
 ## Main goal
 
@@ -215,3 +215,6 @@ Possible future improvements:
 - Improve visual design.
 - Add dark mode support.
 - Add instrument-specific practice modes.
+
+---
+
