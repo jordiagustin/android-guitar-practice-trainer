@@ -710,4 +710,26 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-039 — Update data model document
+
+Update the data model document to reflect the current MVP state and practice-related runtime values.
+
+The goal is to document the main data models and session state values used by the app.
+
+Related tasks:
+
+- B-003 — Define Chord model
+- B-004 — Define ChordGroup model
+- B-005 — Define PracticeSession model
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-032 — Extract practice timer interval calculation
+- B-033 — Extract elapsed time formatting
+
+Status:
+
 - To do
