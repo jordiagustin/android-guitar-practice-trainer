@@ -54,6 +54,11 @@ private val CurrentChordFontSize = 72.sp
 private val SectionTitleFontSize = 20.sp
 private val PulseFontSize = 24.sp
 private val BodyFontSize = 18.sp
+
+private val SmallSpacing = 8.dp
+private val MediumSpacing = 16.dp
+private val ExtraLargeSpacing = 32.dp
+
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -129,7 +134,7 @@ fun PracticeSessionScreen(
             fontSize = 20.sp
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(MediumSpacing))
 
         Text(
             text = currentChord.name,
@@ -137,7 +142,7 @@ fun PracticeSessionScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(SmallSpacing))
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
@@ -145,7 +150,7 @@ fun PracticeSessionScreen(
         )
 
         if (isPaused) {
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(SmallSpacing))
 
             Text(
                 text = PAUSED_LABEL,
@@ -154,7 +159,7 @@ fun PracticeSessionScreen(
             )
         }
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
         Text(
             text = SESSION_LABEL,
@@ -162,7 +167,7 @@ fun PracticeSessionScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(SmallSpacing))
 
         Text(
             text = "${chordGroup.name} · $bpm BPM",
@@ -180,7 +185,7 @@ fun PracticeSessionScreen(
             fontSize = BodyFontSize
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
         Row {
             Button(
@@ -193,7 +198,7 @@ fun PracticeSessionScreen(
                 )
             }
 
-            Spacer(modifier = Modifier.padding(8.dp))
+            Spacer(modifier = Modifier.height(SmallSpacing))
 
             Button(
                 onClick = onStopPractice

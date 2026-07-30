@@ -53,6 +53,12 @@ private val DescriptionFontSize = 16.sp
 private val BodyFontSize = 18.sp
 private val SmallFontSize = 14.sp
 private val BpmFontSize = 22.sp
+
+private val SmallSpacing = 8.dp
+private val MediumSpacing = 12.dp
+private val LargeSpacing = 24.dp
+private val ExtraLargeSpacing = 32.dp
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
@@ -76,7 +82,7 @@ fun PracticeSetupScreen(
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(MediumSpacing))
 
         Text(
             text = APP_DESCRIPTION,
@@ -84,7 +90,7 @@ fun PracticeSetupScreen(
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
         Text(
             text = CHORD_GROUP_LABEL,
@@ -92,7 +98,7 @@ fun PracticeSetupScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(SmallSpacing))
 
         chordGroups.forEach { chordGroup ->
             Row(
@@ -109,7 +115,7 @@ fun PracticeSetupScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(LargeSpacing))
 
         Text(
             text = "$BPM_LABEL: ${bpm.toInt()}",
@@ -140,7 +146,7 @@ fun PracticeSetupScreen(
             )
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(LargeSpacing))
 
         Text(
             text = SELECTED_SESSION_LABEL,
@@ -148,14 +154,14 @@ fun PracticeSetupScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(SmallSpacing))
 
         Text(
             text = "${selectedChordGroup.name} · ${bpm.toInt()} BPM",
             fontSize = BodyFontSize
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(LargeSpacing))
 
         Button(
             onClick = {

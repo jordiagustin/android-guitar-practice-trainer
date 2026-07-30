@@ -952,3 +952,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-052 — Extract common spacing values
+
+Extract repeated vertical spacing values into named constants.
+
+The goal is to make layout spacing easier to read and adjust in the future.
+
+Related tasks:
+
+- B-029 — Improve setup screen spacing
+- B-030 — Improve session screen spacing
+- B-047 — Extract screen padding values
+- B-051 — Extract common font sizes
+
+Status:
+
+- Done
