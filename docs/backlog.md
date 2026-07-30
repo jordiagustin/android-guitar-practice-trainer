@@ -689,3 +689,25 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-038 — Update user stories
+
+Update the user stories document to match the current MVP functionality.
+
+The goal is to keep user-facing requirements aligned with the implemented practice flow.
+
+Related tasks:
+
+- B-016 — Avoid repeating the same chord twice
+- B-021 — Add paused session feedback
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-025 — Add selected session summary
+- B-026 — Add start session summary
+- B-027 — Improve stop button label
+
+Status:
+
+- To do
