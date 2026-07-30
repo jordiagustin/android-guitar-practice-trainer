@@ -112,3 +112,26 @@ Possible future improvements include:
 - Add basic music theory content.
 - Add an independent metronome tool.
 - Add a guitar tuner.
+
+## Tests
+
+The project includes basic unit tests for practice logic components.
+
+Current tested components:
+
+- `PracticeTimer`
+- `ChordSelector`
+
+The tests verify:
+
+- BPM interval calculation.
+- Elapsed time formatting.
+- Invalid BPM validation.
+- Random chord selection from a chord list.
+- Prevention of repeated chords when alternatives exist.
+- Empty chord list validation.
+
+To run the tests:
+
+```bash
+./gradlew test

@@ -1099,3 +1099,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-060 — Document unit tests
+
+Document the current unit tests added to the project.
+
+The goal is to explain which practice logic components are covered by tests and how to run them.
+
+Related tasks:
+
+- B-058 — Add unit tests for PracticeTimer
+- B-059 — Add unit tests for ChordSelector
+
+Status:
+
+- Done

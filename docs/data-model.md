@@ -270,7 +270,7 @@ DEFAULT_BPM: 60
 
 ```
 
-These values are used by the setup screen and the state initialization
+These values are used by the setup screen and the app state initialization.
 
 ### ChordSelector
 
@@ -321,6 +321,17 @@ Examples of future unit tests:
 * Verify that PracticeTimer calculates the correct interval for a given BPM.
 * Verify that PracticeTimer rejects invalid BPM values.
 * Verify that PracticeTimer formats elapsed time correctly.
+
+The project currently includes unit tests for:
+
+* PracticeTimer
+* ChordSelector
+
+These tests are located under:
+
+```text
+app/src/test/java/com/github/jordiagustin/androidguitarpracticetrainer/practice/
+```
 
 ---
 
