@@ -1116,3 +1116,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-061 — Review backlog status
+
+Review the backlog and make sure completed tasks are marked as Done.
+
+The goal is to keep the backlog consistent with the current project progress.
+
+Related tasks:
+
+- B-001 to B-060
+
+Status:
+
+- Done
