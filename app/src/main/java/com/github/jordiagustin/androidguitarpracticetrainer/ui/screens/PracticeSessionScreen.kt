@@ -26,6 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelector
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeTimer
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 
 /**
  * Screen used during an active chord practice session.
@@ -98,6 +100,7 @@ fun PracticeSessionScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(24.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally

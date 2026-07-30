@@ -843,3 +843,22 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-046 — Make session screen scrollable
+
+Make the Practice Session Screen vertically scrollable.
+
+The goal is to ensure that the current chord, session summary and controls remain accessible on smaller screens or different device sizes.
+
+Related user stories:
+
+- US-004 — Display random chord
+- US-005 — Metronome pulse
+- US-006 — Pause and resume practice session
+- US-007 — End session
+
+Status:
+
+- Done
