@@ -115,6 +115,16 @@ fun PracticeSessionScreen(
             fontSize = 24.sp
         )
 
+        if (isPaused) {
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = "Paused",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
