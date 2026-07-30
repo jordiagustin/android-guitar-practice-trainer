@@ -17,6 +17,10 @@ object ChordSelector {
         chords: List<Chord>,
         currentChord: Chord?
     ): Chord {
+        require(chords.isNotEmpty()) {
+            "Chord list must not be empty"
+        }
+
         val availableChords = chords.filter { chord ->
             chord != currentChord
         }
@@ -27,4 +31,3 @@ object ChordSelector {
             chords.random()
         }
     }
-}

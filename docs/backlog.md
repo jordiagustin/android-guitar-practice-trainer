@@ -1023,3 +1023,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-056 — Validate chord list before selection
+
+Add basic validation to the chord selection logic.
+
+The goal is to prevent empty chord lists from causing random selection errors.
+
+Related tasks:
+
+- B-016 — Avoid repeating the same chord twice
+- B-020 — Refactor chord selection logic
+
+Status:
+
+- Done
