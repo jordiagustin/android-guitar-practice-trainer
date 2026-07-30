@@ -25,6 +25,7 @@ import kotlinx.coroutines.delay
 import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelector
 
 /**
  * Screen used during an active chord practice session.
@@ -33,7 +34,7 @@ import androidx.compose.ui.unit.sp
  * a simple pulse indicator and basic session controls.
  */
 
-private fun getRandomChordExcludingCurrent(
+/*private fun getRandomChordExcludingCurrent(
     chords: List<Chord>,
     currentChord: Chord?
 ): Chord {
@@ -46,16 +47,16 @@ private fun getRandomChordExcludingCurrent(
     } else {
         chords.random()
     }
-}
+}*/
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
     bpm: Int,
     onStopPractice: () -> Unit
 ) {
-    var currentChord by remember {
+    var currentChord by remember(chordGroup) {
         mutableStateOf(
-            getRandomChordExcludingCurrent(
+            ChordSelector.getRandomChordExcludingCurrent(
                 chords = chordGroup.chords,
                 currentChord = null
             )
@@ -78,7 +79,7 @@ fun PracticeSessionScreen(
 
             if (!isPaused) {
                 pulseActive = !pulseActive
-                currentChord = getRandomChordExcludingCurrent(
+                currentChord = ChordSelector.getRandomChordExcludingCurrent(
                     chords = chordGroup.chords,
                     currentChord = currentChord
                 )
