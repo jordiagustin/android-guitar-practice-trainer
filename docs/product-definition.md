@@ -8,13 +8,21 @@
 
 The objective of this project is to develop an Android application that helps beginner and intermediate guitar learners practice chord changes in a structured way.
 
-The first version of the app will focus on displaying random chords at a configurable tempo, allowing users to improve their speed, memory and fluency when switching between chords.
+The current MVP focuses on displaying random chords at a configurable tempo, allowing users to improve their speed, memory and fluency when switching between chords.
+
+The app is designed as a simple and focused first portfolio version.
+
+---
 
 ## 3. Target users
 
 The app is mainly intended for guitar learners who already know some basic chords but need to practice switching between them more consistently.
 
 It may also be useful for self-taught guitar players who want a simple tool to structure short practice sessions.
+
+The target user does not need advanced music theory knowledge. The app should be easy to understand and quick to start.
+
+---
 
 ## 4. Problem statement
 
@@ -24,30 +32,106 @@ This practice is often done without structure, without a defined tempo and by re
 
 The app aims to turn this into a guided and configurable practice exercise.
 
+---
+
 ## 5. Value proposition
 
-The app provides a simple way to practice chord changes using random chord prompts and a steady tempo.
+The app provides a simple way to practice chord changes using random chord prompts and a steady visual pulse.
 
-Users can select a group of chords, configure the BPM and start a session where the app displays chords on screen while providing a metronome pulse.
+Users can select a group of chords, configure the BPM and start a session where the app displays chords on screen at the selected tempo.
 
-## 6. Initial scope
+The app also helps the user track the current session by showing elapsed time and the number of chord changes completed.
 
-The initial version will focus on one main feature:
+---
+
+## 6. Current MVP scope
+
+The MVP focuses on one main feature:
 
 **Chord change practice**
 
-The user will be able to:
+The user can:
 
-* Select a chord group.
+* Select a predefined chord group.
 * Configure BPM.
+* Review the selected session summary.
 * Start a practice session.
 * See random chords displayed on screen.
-* Hear or see a metronome pulse.
-* Pause or stop the session.
+* Follow a visual pulse based on the selected BPM.
+* Avoid seeing the same chord twice in a row.
+* Pause and resume the session.
+* See paused session feedback.
+* See elapsed practice time.
+* See the number of chord changes completed.
+* End the session and return to the setup screen.
 
-## 7. Out of scope for the first version
+---
 
-The first version will not include:
+## 7. Current MVP screens
+
+The MVP includes two screens:
+
+1. Practice Setup Screen
+2. Practice Session Screen
+
+### Practice Setup Screen
+
+The Practice Setup Screen lets the user configure the session before starting.
+
+It includes:
+
+* App title.
+* Short app description.
+* Chord group selector.
+* BPM selector.
+* Minimum and maximum BPM labels.
+* Selected session summary.
+* Start Practice button.
+
+### Practice Session Screen
+
+The Practice Session Screen is used during an active practice session.
+
+It includes:
+
+* Current chord displayed in large text.
+* Visual pulse indicator.
+* Paused session feedback.
+* Active session summary.
+* Elapsed practice time.
+* Chord change counter.
+* Pause / Resume button.
+* End Session button.
+
+---
+
+## 8. Chord groups
+
+The MVP includes predefined chord groups:
+
+* Major chords
+* Minor chords
+* All chords
+
+The first version does not include custom chord group creation.
+
+---
+
+## 9. BPM range
+
+The current MVP supports the following BPM range:
+
+* Minimum: 30 BPM
+* Maximum: 160 BPM
+* Default: 60 BPM
+
+The BPM controls the visual pulse and the chord change timing.
+
+---
+
+## 10. Out of scope for the first version
+
+The first version does not include:
 
 * Guitar tuner.
 * Full music theory lessons.
@@ -57,19 +141,30 @@ The first version will not include:
 * Advanced statistics.
 * Audio recording.
 * Chord recognition using the microphone.
+* Chord diagrams.
+* Metronome sound.
+* Custom chord groups.
+* Practice history.
+* Changing chords every 2 or 4 beats.
 
 These features may be considered for future versions.
 
-## 8. Future features
+---
+
+## 11. Future features
 
 Possible future improvements include:
 
 * Manual chord selection.
+* Custom chord groups.
 * Independent metronome tool.
+* Metronome sound.
 * Guitar tuner.
 * Basic theory section.
+* Chord diagrams.
 * Tablature exercises.
 * Practice routines.
 * Practice history.
 * Statistics and progress tracking.
-
+* Configurable chord change interval.
+* Improved visual design.

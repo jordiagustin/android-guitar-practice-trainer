@@ -755,3 +755,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-041 — Update product definition
+
+Update the product definition document to reflect the current MVP direction and implemented functionality.
+
+The goal is to keep the product description aligned with the current app scope.
+
+Related tasks:
+
+- B-034 — Update README with current MVP features
+- B-035 — Create screen specification document
+- B-038 — Update user stories
+- B-040 — Update MVP definition
+
+Status:
+
+- Done
