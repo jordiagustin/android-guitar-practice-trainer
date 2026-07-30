@@ -668,4 +668,24 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-037 — Update navigation flow document
+
+Update the navigation flow document to match the current MVP app flow.
+
+The goal is to clearly document how the user moves between the Practice Setup Screen and the Practice Session Screen.
+
+Related tasks:
+
+- B-003 — Define Chord model
+- B-004 — Define ChordGroup model
+- B-010 — Build Practice Session Screen UI
+- B-014 — Implement stop session
+- B-027 — Improve stop button label
+
+Status:
+
+- Done
