@@ -404,4 +404,21 @@ Related user stories:
 
 Status:
 
+- Done
+
+---
+
+### B-023 — Reset elapsed time when session starts
+
+Ensure that elapsed practice time starts from 00:00 every time a new practice session begins.
+
+The timer should not keep the previous session time after stopping and starting again.
+
+Related user stories:
+
+- US-003 — Start practice session
+- US-007 — Stop practice session
+
+Status:
+
 - To do
