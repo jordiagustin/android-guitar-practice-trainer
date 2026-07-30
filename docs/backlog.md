@@ -421,4 +421,21 @@ Related user stories:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-024 — Add chord change counter
+
+Show the number of chord changes completed during an active practice session.
+
+The counter should increase when a new chord is displayed and should stop increasing while the session is paused.
+
+Related user stories:
+
+- US-004 — Display random chord
+- US-006 — Pause and resume practice session
+
+Status:
+
+- Done

@@ -34,20 +34,6 @@ import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelect
  * a simple pulse indicator and basic session controls.
  */
 
-/*private fun getRandomChordExcludingCurrent(
-    chords: List<Chord>,
-    currentChord: Chord?
-): Chord {
-    val availableChords = chords.filter { chord ->
-        chord != currentChord
-    }
-
-    return if (availableChords.isNotEmpty()){
-        availableChords.random()
-    } else {
-        chords.random()
-    }
-}*/
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -75,6 +61,10 @@ fun PracticeSessionScreen(
         mutableStateOf(0)
     }
 
+    var chordChangeCount by remember {
+        mutableStateOf(0)
+    }
+
     LaunchedEffect(chordGroup, bpm) {
         val intervalMillis = 60000L / bpm
 
@@ -87,6 +77,8 @@ fun PracticeSessionScreen(
                     chords = chordGroup.chords,
                     currentChord = currentChord
                 )
+
+                chordChangeCount++
             }
         }
     }
@@ -101,15 +93,6 @@ fun PracticeSessionScreen(
         }
     }
 
-    LaunchedEffect(Unit) {
-        while (true) {
-            delay(1000L)
-
-            if (!isPaused) {
-                elapsedSeconds++
-            }
-        }
-    }
 
     val minutes = elapsedSeconds / 60
     val seconds = elapsedSeconds % 60
@@ -162,6 +145,11 @@ fun PracticeSessionScreen(
 
         Text(
             text = "BPM: $bpm",
+            fontSize = 18.sp
+        )
+
+        Text(
+            text = "Changes: $chordChangeCount",
             fontSize = 18.sp
         )
 
