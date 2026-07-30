@@ -49,6 +49,11 @@ private const val PAUSED_LABEL = "Paused"
 private const val SESSION_LABEL = "Session"
 private const val TIME_LABEL = "Time"
 private const val CHANGES_LABEL = "Changes"
+
+private val CurrentChordFontSize = 72.sp
+private val SectionTitleFontSize = 20.sp
+private val PulseFontSize = 24.sp
+private val BodyFontSize = 18.sp
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -128,7 +133,7 @@ fun PracticeSessionScreen(
 
         Text(
             text = currentChord.name,
-            fontSize = 72.sp,
+            fontSize = CurrentChordFontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -136,7 +141,7 @@ fun PracticeSessionScreen(
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
-            fontSize = 24.sp
+            fontSize = PulseFontSize
         )
 
         if (isPaused) {
@@ -144,7 +149,7 @@ fun PracticeSessionScreen(
 
             Text(
                 text = PAUSED_LABEL,
-                fontSize = 20.sp,
+                fontSize = SectionTitleFontSize,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -153,7 +158,7 @@ fun PracticeSessionScreen(
 
         Text(
             text = SESSION_LABEL,
-            fontSize = 18.sp,
+            fontSize = BodyFontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -161,18 +166,18 @@ fun PracticeSessionScreen(
 
         Text(
             text = "${chordGroup.name} · $bpm BPM",
-            fontSize = 18.sp
+            fontSize = BodyFontSize
         )
 
 
         Text(
             text = "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount",
-            fontSize = 18.sp
+            fontSize = BodyFontSize
         )
 
         Text(
             text = "Time: $formattedTime",
-            fontSize = 18.sp
+            fontSize = BodyFontSize
         )
 
         Spacer(modifier = Modifier.height(32.dp))

@@ -47,6 +47,12 @@ private const val CHORD_GROUP_LABEL = "Chord group"
 private const val BPM_LABEL = "BPM"
 private const val SELECTED_SESSION_LABEL = "Selected session"
 
+private val TitleFontSize = 28.sp
+private val SectionTitleFontSize = 20.sp
+private val DescriptionFontSize = 16.sp
+private val BodyFontSize = 18.sp
+private val SmallFontSize = 14.sp
+private val BpmFontSize = 22.sp
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
@@ -65,7 +71,7 @@ fun PracticeSetupScreen(
     ) {
         Text(
             text = APP_TITLE,
-            fontSize = 28.sp,
+            fontSize = TitleFontSize,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
         )
@@ -74,7 +80,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = APP_DESCRIPTION,
-            fontSize = 16.sp,
+            fontSize = DescriptionFontSize,
             textAlign = TextAlign.Center
         )
 
@@ -82,7 +88,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = CHORD_GROUP_LABEL,
-            fontSize = 20.sp,
+            fontSize = SectionTitleFontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -107,7 +113,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = "$BPM_LABEL: ${bpm.toInt()}",
-            fontSize = 22.sp,
+            fontSize = BpmFontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -125,12 +131,12 @@ fun PracticeSetupScreen(
         ) {
             Text(
                 text = "${PracticeConfig.MIN_BPM} BPM",
-                fontSize = 14.sp
+                fontSize = SmallFontSize
             )
 
             Text(
                 text = "${PracticeConfig.MAX_BPM} BPM",
-                fontSize = 14.sp
+                fontSize = SmallFontSize
             )
         }
 
@@ -138,7 +144,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = SELECTED_SESSION_LABEL,
-            fontSize = 18.sp,
+            fontSize = BodyFontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -146,7 +152,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = "${selectedChordGroup.name} · ${bpm.toInt()} BPM",
-            fontSize = 18.sp
+            fontSize = BodyFontSize
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -158,7 +164,7 @@ fun PracticeSetupScreen(
         ) {
             Text(
                 text = START_PRACTICE_LABEL,
-                fontSize = 18.sp
+                fontSize = BodyFontSize
             )
         }
     }

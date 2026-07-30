@@ -933,3 +933,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-051 — Extract common font sizes
+
+Extract repeated font size values into named constants.
+
+The goal is to make the UI code easier to read and make future visual adjustments simpler.
+
+Related tasks:
+
+- B-018 — Improve practice session display
+- B-019 — Improve Practice Setup Screen display
+- B-049 — Extract session text labels
+- B-050 — Extract setup text labels
+
+Status:
+
+- Done
