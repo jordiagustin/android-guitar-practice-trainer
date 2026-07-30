@@ -1005,4 +1005,21 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-055 — Validate BPM before timer calculation
+
+Add basic validation to the BPM interval calculation.
+
+The goal is to prevent invalid BPM values from causing timer calculation errors.
+
+Related tasks:
+
+- B-032 — Extract practice timer interval calculation
+- B-043 — Extract BPM constants to shared config
+
+Status:
+
+- Done
