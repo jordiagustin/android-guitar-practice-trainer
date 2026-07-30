@@ -732,4 +732,26 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-040 — Update MVP definition
+
+Update the MVP definition document to match the current implemented feature set.
+
+The goal is to keep the MVP scope aligned with the current functional version of the app.
+
+Related tasks:
+
+- B-016 — Avoid repeating the same chord twice
+- B-021 — Add paused session feedback
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-025 — Add selected session summary
+- B-026 — Add start session summary
+- B-027 — Improve stop button label
+
+Status:
+
+- Done
