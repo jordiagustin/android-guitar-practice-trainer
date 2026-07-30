@@ -56,7 +56,7 @@ fun PracticeSetupScreen(
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
         Text(
             text = "Practice chord changes with random prompts and a configurable tempo.",
@@ -89,7 +89,7 @@ fun PracticeSetupScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         Text(
             text = "BPM: ${bpm.toInt()}",

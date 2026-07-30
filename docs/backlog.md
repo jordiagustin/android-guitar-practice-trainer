@@ -507,3 +507,37 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-028 — Add BPM range labels
+
+Show the minimum and maximum BPM values below the BPM slider.
+
+The goal is to make the available tempo range clearer on the Practice Setup Screen.
+
+Related user stories:
+
+- US-002 — Configure BPM
+
+Status:
+
+- Done
+
+---
+
+### B-029 — Improve setup screen spacing
+
+Improve vertical spacing on the Practice Setup Screen to make the layout easier to read.
+
+The goal is to separate the title, chord group selector, BPM selector, selected session summary and start button more clearly.
+
+Related user stories:
+
+- US-001 — Select chord group
+- US-002 — Configure BPM
+- US-003 — Start practice session
+
+Status:
+
+- Done
