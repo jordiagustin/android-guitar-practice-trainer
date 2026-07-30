@@ -15,4 +15,11 @@ object PracticeTimer {
     fun calculateIntervalMillis(bpm: Int): Long {
         return 60000L / bpm
     }
+
+    fun formatElapsedTime(elapsedSeconds: Int): String {
+        val minutes = elapsedSeconds / 60
+        val seconds = elapsedSeconds % 60
+
+        return "%02d:%02d".format(minutes, seconds)
+    }
 }

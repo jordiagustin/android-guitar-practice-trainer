@@ -92,11 +92,8 @@ fun PracticeSessionScreen(
             }
         }
     }
-
-
-    val minutes = elapsedSeconds / 60
-    val seconds = elapsedSeconds % 60
-    val formattedTime = "%02d:%02d".format(minutes, seconds)
+    
+    val formattedTime = PracticeTimer.formatElapsedTime(elapsedSeconds)
 
     Column(
         modifier = Modifier

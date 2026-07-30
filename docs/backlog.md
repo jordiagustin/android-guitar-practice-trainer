@@ -593,3 +593,19 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-033 — Extract elapsed time formatting
+
+Move elapsed time formatting logic to a dedicated practice logic component.
+
+The goal is to keep the Practice Session Screen focused on UI and move time formatting logic outside the screen.
+
+Related user stories:
+
+- US-006 — Pause and resume practice session
+
+Status:
+
+- Done
