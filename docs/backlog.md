@@ -1061,3 +1061,41 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-058 — Add unit tests for PracticeTimer
+
+Add basic unit tests for the PracticeTimer logic.
+
+The goal is to verify BPM interval calculation, elapsed time formatting and invalid BPM validation.
+
+Related tasks:
+
+- B-032 — Extract practice timer interval calculation
+- B-033 — Extract elapsed time formatting
+- B-055 — Validate BPM timer calculation
+- B-057 — Document testable practice logic
+
+Status:
+
+- To do
+
+---
+
+### B-059 — Add unit tests for ChordSelector
+
+Add basic unit tests for the ChordSelector logic.
+
+The goal is to verify random chord selection, repeated chord prevention and empty chord list validation.
+
+Related tasks:
+
+- B-016 — Avoid repeating the same chord twice
+- B-020 — Refactor chord selection logic
+- B-056 — Validate chord list selection
+- B-057 — Document testable practice logic
+
+Status:
+
+- Done

@@ -31,3 +31,4 @@ object ChordSelector {
             chords.random()
         }
     }
+}
