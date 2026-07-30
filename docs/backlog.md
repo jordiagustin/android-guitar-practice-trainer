@@ -652,4 +652,20 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-036 — Add screen specification to README
+
+Add the screen specification document to the README documentation section.
+
+The goal is to make the new screen specification easy to find from the project README.
+
+Related tasks:
+
+- B-035 — Create screen specification document
+
+Status:
+
 - To do

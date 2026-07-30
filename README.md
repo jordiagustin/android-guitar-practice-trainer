@@ -96,6 +96,7 @@ Current documents:
 - `screen-specification.md`
 - `data-model.md`
 - `backlog.md`
+- `docs/screen-specification.md`
 
 ## Future improvements
 
