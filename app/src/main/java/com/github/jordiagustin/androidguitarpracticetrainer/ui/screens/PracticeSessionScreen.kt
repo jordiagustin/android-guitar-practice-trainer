@@ -170,13 +170,19 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(SmallSpacing))
 
         Text(
-            text = "${chordGroup.name} · $bpm BPM",
+            text = formatSessionConfigurationSummary(
+                chordGroupName = chordGroup.name,
+                bpm = bpm
+            ),
             fontSize = BodyFontSize
         )
 
 
         Text(
-            text = "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount",
+            text = formatSessionProgressSummary(
+                formattedTime = formattedTime,
+                chordChangeCount = chordChangeCount
+            ),
             fontSize = BodyFontSize
         )
 
@@ -207,6 +213,20 @@ fun PracticeSessionScreen(
             }
         }
     }
+}
+
+private fun formatSessionConfigurationSummary(
+    chordGroupName: String,
+    bpm: Int
+): String {
+    return "$chordGroupName · $bpm BPM"
+}
+
+private fun formatSessionProgressSummary(
+    formattedTime: String,
+    chordChangeCount: Int
+): String {
+    return "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount"
 }
 
 @Preview(showBackground = true)

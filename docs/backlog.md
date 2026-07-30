@@ -988,3 +988,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-054 — Extract active session summary text formatting
+
+Extract the active session summary text formatting into private functions.
+
+The goal is to keep the Practice Session Screen layout cleaner and make session summary formatting easier to maintain.
+
+Related tasks:
+
+- B-025 — Add selected session summary
+- B-049 — Extract session text labels
+- B-053 — Extract setup summary text formatting
+
+Status:
+
+- To do
