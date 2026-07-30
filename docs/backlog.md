@@ -824,4 +824,22 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-045 — Make setup screen scrollable
+
+Make the Practice Setup Screen vertically scrollable.
+
+The goal is to ensure that all setup controls remain accessible on smaller screens or different device sizes.
+
+Related user stories:
+
+- US-001 — Select chord group
+- US-002 — Configure BPM
+- US-003 — Start practice session
+
+Status:
+
+- Done
