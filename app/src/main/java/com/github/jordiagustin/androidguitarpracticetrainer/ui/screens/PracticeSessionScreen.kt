@@ -139,17 +139,21 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
-            text = chordGroup.name,
+            text = "Session",
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "${chordGroup.name} · $bpm BPM",
             fontSize = 18.sp
         )
 
-        Text(
-            text = "BPM: $bpm",
-            fontSize = 18.sp
-        )
 
         Text(
-            text = "Changes: $chordChangeCount",
+            text = "Time: $formattedTime · Changes: $chordChangeCount",
             fontSize = 18.sp
         )
 

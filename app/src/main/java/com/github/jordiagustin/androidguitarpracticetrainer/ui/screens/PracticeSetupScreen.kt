@@ -103,8 +103,23 @@ fun PracticeSetupScreen(
             },
             valueRange = 30f..160f
         )
+        
+        Spacer(modifier = Modifier.height(24.dp))
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = "Selected session",
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "${selectedChordGroup.name} · ${bpm.toInt()} BPM",
+            fontSize = 18.sp
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
 
         Button(
             onClick = {

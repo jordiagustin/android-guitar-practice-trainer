@@ -439,3 +439,37 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-025 — Use BPM steps of 5
+
+Make the BPM selector increase and decrease in steps of 5 BPM.
+
+This makes tempo selection clearer and more practical for guitar practice.
+
+Related user stories:
+
+- US-002 — Configure BPM
+
+Status:
+
+- Rejected
+
+---
+
+### B-025 — Add selected session summary
+
+Improve the Practice Session Screen by grouping session information into a clearer summary.
+
+The screen should show the selected chord group, BPM, elapsed time and chord change count in a more readable way.
+
+Related user stories:
+
+- US-001 — Select chord group
+- US-002 — Configure BPM
+- US-004 — Display random chord
+
+Status:
+
+- Done
