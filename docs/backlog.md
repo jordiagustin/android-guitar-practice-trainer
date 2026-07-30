@@ -541,3 +541,24 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-030 — Improve session screen spacing
+
+Improve vertical spacing on the Practice Session Screen to make the current chord, pulse indicator, session summary and controls easier to read.
+
+The goal is to make the active practice screen clearer while the user is playing guitar.
+
+Related user stories:
+
+- US-004 — Display random chord
+- US-005 — Metronome pulse
+- US-006 — Pause and resume practice session
+- US-007 — Stop practice session
+
+Status:
+
+- Done
+
+---
