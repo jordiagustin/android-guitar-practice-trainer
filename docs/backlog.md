@@ -971,3 +971,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-053 — Extract setup summary text formatting
+
+Extract the selected session summary text formatting into a private function.
+
+The goal is to keep the Practice Setup Screen layout cleaner and make summary formatting easier to maintain.
+
+Related tasks:
+
+- B-026 — Add start session summary
+- B-050 — Extract setup text labels
+
+Status:
+
+- Done

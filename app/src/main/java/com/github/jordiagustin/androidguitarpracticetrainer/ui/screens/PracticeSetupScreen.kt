@@ -157,7 +157,10 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(SmallSpacing))
 
         Text(
-            text = "${selectedChordGroup.name} · ${bpm.toInt()} BPM",
+            text = formatSelectedSessionSummary(
+                chordGroupName = selectedChordGroup.name,
+                bpm = bpm.toInt()
+            ),
             fontSize = BodyFontSize
         )
 
@@ -174,6 +177,13 @@ fun PracticeSetupScreen(
             )
         }
     }
+}
+
+private fun formatSelectedSessionSummary(
+    chordGroupName: String,
+    bpm: Int
+): String {
+    return "$chordGroupName · $bpm BPM"
 }
 
 @Preview(showBackground = true)
