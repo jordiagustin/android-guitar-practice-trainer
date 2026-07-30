@@ -34,6 +34,10 @@ import androidx.compose.ui.unit.sp
  * For the MVP, this screen allows the user to choose a chord group,
  * configure the BPM value and start the practice session.
  */
+
+private const val MIN_BPM = 30
+private const val MAX_BPM = 160
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
@@ -102,7 +106,7 @@ fun PracticeSetupScreen(
             onValueChange = { newValue ->
                 bpm = newValue
             },
-            valueRange = 30f..160f
+            valueRange = MIN_BPM.toFloat()..MAX_BPM.toFloat()
         )
 
         Row(
@@ -110,12 +114,12 @@ fun PracticeSetupScreen(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "30 BPM",
+                text = "$MIN_BPM BPM",
                 fontSize = 14.sp
             )
 
             Text(
-                text = "160 BPM",
+                text = "$MAX_BPM BPM",
                 fontSize = 14.sp
             )
         }

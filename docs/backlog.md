@@ -562,3 +562,17 @@ Status:
 - Done
 
 ---
+
+### B-031 — Extract BPM range constants
+
+Extract the minimum and maximum BPM values into constants.
+
+The goal is to avoid duplicated hardcoded BPM values and make future changes easier.
+
+Related user stories:
+
+- US-002 — Configure BPM
+
+Status:
+
+- To do
