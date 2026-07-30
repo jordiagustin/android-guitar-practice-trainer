@@ -1040,3 +1040,24 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-057 — Document testable practice logic
+
+Document that the practice logic has been separated from the UI and can be unit tested in future iterations.
+
+The goal is to make the project architecture clearer and prepare for future testing work.
+
+Related tasks:
+
+- B-020 — Refactor chord selection logic
+- B-032 — Extract practice timer interval calculation
+- B-033 — Extract elapsed time formatting
+- B-043 — Extract BPM constants to shared config
+- B-055 — Validate BPM timer calculation
+- B-056 — Validate chord list selection
+
+Status:
+
+- Done

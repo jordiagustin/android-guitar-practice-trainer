@@ -304,6 +304,24 @@ Elapsed time formatting examples:
 65 seconds = 01:05
 ```
 
+### Testability note
+
+The current practice logic is separated from the UI layer.
+
+The following components contain logic that can be unit tested in future iterations:
+
+* PracticeConfig
+* ChordSelector
+* PracticeTimer
+
+Examples of future unit tests:
+
+* Verify that ChordSelector does not return the same chord twice in a row when alternatives exist.
+* Verify that ChordSelector rejects empty chord lists.
+* Verify that PracticeTimer calculates the correct interval for a given BPM.
+* Verify that PracticeTimer rejects invalid BPM values.
+* Verify that PracticeTimer formats elapsed time correctly.
+
 ---
 
 ## 9. Out of scope
