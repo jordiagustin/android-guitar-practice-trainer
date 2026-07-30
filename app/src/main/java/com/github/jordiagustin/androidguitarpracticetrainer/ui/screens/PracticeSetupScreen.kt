@@ -40,6 +40,13 @@ import androidx.compose.foundation.verticalScroll
 
 private val ScreenPadding = 24.dp
 private const val START_PRACTICE_LABEL = "Start Practice"
+
+private const val APP_TITLE = "Guitar Practice Trainer"
+private const val APP_DESCRIPTION = "Practice chord changes with random prompts and a configurable tempo."
+private const val CHORD_GROUP_LABEL = "Chord group"
+private const val BPM_LABEL = "BPM"
+private const val SELECTED_SESSION_LABEL = "Selected session"
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
@@ -57,7 +64,7 @@ fun PracticeSetupScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Guitar Practice Trainer",
+            text = APP_TITLE,
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
@@ -66,7 +73,7 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(12.dp))
 
         Text(
-            text = "Practice chord changes with random prompts and a configurable tempo.",
+            text = APP_DESCRIPTION,
             fontSize = 16.sp,
             textAlign = TextAlign.Center
         )
@@ -74,7 +81,7 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
-            text = "Chord group",
+            text = CHORD_GROUP_LABEL,
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold
         )
@@ -99,7 +106,7 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(
-            text = "BPM: ${bpm.toInt()}",
+            text = "$BPM_LABEL: ${bpm.toInt()}",
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold
         )
@@ -130,7 +137,7 @@ fun PracticeSetupScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(
-            text = "Selected session",
+            text = SELECTED_SESSION_LABEL,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )

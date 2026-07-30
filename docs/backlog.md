@@ -915,3 +915,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-050 — Extract setup text labels
+
+Extract static text labels from the Practice Setup Screen into named constants.
+
+The goal is to make the setup screen code easier to maintain and reduce hardcoded UI strings inside the composable layout.
+
+Related tasks:
+
+- B-026 — Add start session summary
+- B-028 — Add BPM range labels
+- B-048 — Extract button labels
+
+Status:
+
+- Done
