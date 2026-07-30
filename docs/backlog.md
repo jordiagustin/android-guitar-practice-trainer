@@ -807,3 +807,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-044 — Document practice configuration constants
+
+Update the data model document to mention the shared practice configuration constants.
+
+The goal is to document where BPM range and default BPM values are defined in the code.
+
+Related tasks:
+
+- B-031 — Extract BPM range constants
+- B-042 — Extract default BPM constant
+- B-043 — Extract BPM constants to shared config
+
+Status:
+
+- To do

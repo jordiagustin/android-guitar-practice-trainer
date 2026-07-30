@@ -247,8 +247,30 @@ These components are not data models, but they support the practice session beha
 
 Current practice logic components:
 
+* PracticeConfig
 * ChordSelector
 * PracticeTimer
+
+### PracticeConfig
+
+PracticeConfig stores shared practice configuration constants.
+
+Current responsibilities:
+
+* Define the minimum allowed BPM.
+* Define the maximum allowed BPM.
+* Define the default BPM.
+
+Current values:
+
+```text
+MIN_BPM: 30
+MAX_BPM: 160
+DEFAULT_BPM: 60
+
+```
+
+These values are used by the setup screen and the state initialization
 
 ### ChordSelector
 
