@@ -12,8 +12,8 @@ import androidx.compose.runtime.setValue
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSessionScreen
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
 
-private const val DEFAULT_BPM = 60
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 var activeBpm by remember {
-                    mutableStateOf(DEFAULT_BPM)
+                    mutableStateOf(PracticeConfig.DEFAULT_BPM)
                 }
 
                 if (isPracticeSessionActive) {

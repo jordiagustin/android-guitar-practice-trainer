@@ -790,3 +790,20 @@ Related user stories:
 Status:
 
 - Done
+
+---
+
+### B-043 — Extract BPM constants to shared file
+
+Move BPM-related constants to a shared practice configuration file.
+
+The goal is to avoid duplicating BPM values across screens and activity code.
+
+Related tasks:
+
+- B-031 — Extract BPM range constants
+- B-042 — Extract default BPM constant
+
+Status:
+
+- Done

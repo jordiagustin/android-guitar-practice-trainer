@@ -27,6 +27,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -35,16 +36,11 @@ import androidx.compose.ui.unit.sp
  * configure the BPM value and start the practice session.
  */
 
-private const val MIN_BPM = 30
-private const val MAX_BPM = 160
-private const val DEFAULT_BPM = 60
-
-
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
 ) {
-    var bpm by remember { mutableFloatStateOf(DEFAULT_BPM.toFloat()) }
+    var bpm by remember { mutableFloatStateOf(PracticeConfig.DEFAULT_BPM.toFloat()) }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
 
@@ -108,7 +104,7 @@ fun PracticeSetupScreen(
             onValueChange = { newValue ->
                 bpm = newValue
             },
-            valueRange = MIN_BPM.toFloat()..MAX_BPM.toFloat()
+            valueRange = PracticeConfig.MIN_BPM.toFloat()..PracticeConfig.MAX_BPM.toFloat()
         )
 
         Row(
@@ -116,12 +112,12 @@ fun PracticeSetupScreen(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "$MIN_BPM BPM",
+                text = "${PracticeConfig.MIN_BPM} BPM",
                 fontSize = 14.sp
             )
 
             Text(
-                text = "$MAX_BPM BPM",
+                text = "${PracticeConfig.MAX_BPM} BPM",
                 fontSize = 14.sp
             )
         }
