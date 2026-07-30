@@ -897,3 +897,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-049 — Extract session text labels
+
+Extract static text labels from the Practice Session Screen into named constants.
+
+The goal is to make the session screen code easier to maintain and reduce hardcoded UI strings inside the composable layout.
+
+Related tasks:
+
+- B-021 — Add paused session feedback
+- B-025 — Add selected session summary
+- B-048 — Extract button labels
+
+Status:
+
+- Done

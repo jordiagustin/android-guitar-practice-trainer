@@ -36,11 +36,19 @@ import androidx.compose.foundation.verticalScroll
  * a simple pulse indicator and basic session controls.
  */
 
+private val ScreenPadding = 24.dp
+
 private const val PAUSE_LABEL = "Pause"
 private const val RESUME_LABEL = "Resume"
 private const val END_SESSION_LABEL = "End Session"
-private val ScreenPadding = 24.dp
 
+private const val CURRENT_CHORD_LABEL = "Current chord"
+private const val PULSE_ACTIVE_LABEL = "Pulse ●"
+private const val PULSE_INACTIVE_LABEL = "Pulse ○"
+private const val PAUSED_LABEL = "Paused"
+private const val SESSION_LABEL = "Session"
+private const val TIME_LABEL = "Time"
+private const val CHANGES_LABEL = "Changes"
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -112,7 +120,7 @@ fun PracticeSessionScreen(
     ) {
 
         Text(
-            text = "Current chord",
+            text = CURRENT_CHORD_LABEL,
             fontSize = 20.sp
         )
 
@@ -127,7 +135,7 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            text = if (pulseActive) "Pulse ●" else "Pulse ○",
+            text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
             fontSize = 24.sp
         )
 
@@ -135,7 +143,7 @@ fun PracticeSessionScreen(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Paused",
+                text = PAUSED_LABEL,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -144,7 +152,7 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
-            text = "Session",
+            text = SESSION_LABEL,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
@@ -158,7 +166,7 @@ fun PracticeSessionScreen(
 
 
         Text(
-            text = "Time: $formattedTime · Changes: $chordChangeCount",
+            text = "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount",
             fontSize = 18.sp
         )
 
