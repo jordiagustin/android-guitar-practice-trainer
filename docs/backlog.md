@@ -774,3 +774,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-042 — Extract default BPM constant
+
+Extract the default BPM value into a constant.
+
+The goal is to avoid duplicated hardcoded default BPM values and make future changes easier.
+
+Related user stories:
+
+- US-002 — Configure BPM
+
+Status:
+
+- Done

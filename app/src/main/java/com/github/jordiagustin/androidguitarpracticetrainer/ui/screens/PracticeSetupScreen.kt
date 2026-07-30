@@ -37,12 +37,14 @@ import androidx.compose.ui.unit.sp
 
 private const val MIN_BPM = 30
 private const val MAX_BPM = 160
+private const val DEFAULT_BPM = 60
+
 
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int) -> Unit
 ) {
-    var bpm by remember { mutableFloatStateOf(60f) }
+    var bpm by remember { mutableFloatStateOf(DEFAULT_BPM.toFloat()) }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
 
