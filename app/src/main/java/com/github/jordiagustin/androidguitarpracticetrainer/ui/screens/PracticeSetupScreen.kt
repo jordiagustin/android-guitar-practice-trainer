@@ -19,6 +19,7 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.RadioButton
 import androidx.compose.runtime.mutableStateOf
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
@@ -103,6 +104,21 @@ fun PracticeSetupScreen(
             },
             valueRange = 30f..160f
         )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "30 BPM",
+                fontSize = 14.sp
+            )
+
+            Text(
+                text = "160 BPM",
+                fontSize = 14.sp
+            )
+        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
