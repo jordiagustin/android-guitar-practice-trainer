@@ -1151,3 +1151,23 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-063 — Add architecture section to README
+
+Add a short architecture section to the README explaining the main project packages.
+
+The goal is to make the project structure easier to understand for reviewers and future contributors.
+
+Related tasks:
+
+- B-020 — Refactor chord selection logic
+- B-032 — Extract practice timer interval calculation
+- B-043 — Extract BPM constants to shared config
+- B-058 — Add unit tests for PracticeTimer
+- B-059 — Add unit tests for ChordSelector
+
+Status:
+
+- Done

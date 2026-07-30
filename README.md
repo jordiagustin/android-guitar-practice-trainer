@@ -186,3 +186,16 @@ To run the unit tests on Windows:
 ```bash
 .\gradlew test
 ```
+
+## Architecture overview
+
+The project is organized into small packages with clear responsibilities.
+
+- `model`: contains the core data models, such as `Chord`, `ChordGroup`, `ChordType` and `PracticeSession`.
+- `data`: contains predefined chord data used by the MVP.
+- `practice`: contains practice-related logic, such as chord selection, BPM configuration and timer calculations.
+- `ui.screens`: contains the Jetpack Compose screens.
+- `ui.theme`: contains the Compose theme configuration.
+- `app/src/test`: contains unit tests for practice logic.
+
+This separation keeps UI code focused on presentation while practice logic remains easier to test and maintain.
