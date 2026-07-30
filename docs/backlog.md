@@ -629,4 +629,27 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-035 — Create screen specification document
+
+Create a screen specification document describing the current MVP screens.
+
+The goal is to document the implemented Practice Setup Screen and Practice Session Screen.
+
+Related tasks:
+
+- B-018 — Improve practice session display
+- B-019 — Improve Practice Setup Screen display
+- B-021 — Add paused session feedback
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-025 — Add selected session summary
+- B-026 — Add start session summary
+- B-028 — Add BPM range labels
+
+Status:
+
 - To do
