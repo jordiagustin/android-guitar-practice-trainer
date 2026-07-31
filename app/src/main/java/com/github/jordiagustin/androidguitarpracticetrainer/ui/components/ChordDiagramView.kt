@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
+import androidx.compose.ui.graphics.StrokeCap
 
 private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
 private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"
@@ -41,6 +42,7 @@ private const val CHORD_DIAGRAM_LINE_STROKE_WIDTH = 2f
 private const val CHORD_DIAGRAM_FINGER_RADIUS = 10f
 private const val CHORD_DIAGRAM_INDICATOR_TEXT_SIZE = 28f
 private const val CHORD_DIAGRAM_INDICATOR_TOP_OFFSET = 6f
+private const val CHORD_DIAGRAM_BARRE_STROKE_WIDTH = 20f
 
 @Composable
 fun ChordDiagramView(
@@ -102,6 +104,28 @@ fun ChordDiagramView(
 
             chordDiagram?.stringPositions
                 ?.filter { stringPosition ->
+                    chordDiagram?.barrePositions
+                        ?.forEach { barrePosition ->
+                            val startStringIndex = 6 - barrePosition.startString
+                            val endStringIndex = 6 - barrePosition.endString
+
+                            val startX = diagramLeft +
+                                    (diagramRight - diagramLeft) * startStringIndex / (stringCount - 1)
+
+                            val endX = diagramLeft +
+                                    (diagramRight - diagramLeft) * endStringIndex / (stringCount - 1)
+
+                            val y = diagramTop +
+                                    (diagramBottom - diagramTop) * (barrePosition.fret - 0.5f) / fretCount
+
+                            drawLine(
+                                color = Color.Black,
+                                start = Offset(startX, y),
+                                end = Offset(endX, y),
+                                strokeWidth = CHORD_DIAGRAM_BARRE_STROKE_WIDTH,
+                                cap = StrokeCap.Round
+                            )
+                        }
                     stringPosition.status == StringStatus.FRETTED &&
                             stringPosition.fret != null
                 }
