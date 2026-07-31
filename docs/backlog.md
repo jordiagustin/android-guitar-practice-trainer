@@ -1358,3 +1358,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-075 — Create chord diagram data model
+
+Create data classes to represent guitar chord diagram information.
+
+The goal is to store fret positions, open strings and muted strings as structured data that can later be drawn in the chord diagram UI.
+
+Related tasks:
+
+- B-074 — Draw basic chord diagram grid
+
+Status:
+
+- Done
