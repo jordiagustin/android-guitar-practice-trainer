@@ -1204,4 +1204,55 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-066 — Add metronome sound
+
+Add a simple metronome sound during the practice session.
+
+The sound should play on each BPM pulse while the session is running and should stop while the session is paused.
+
+Related user stories:
+
+- US-005 — Metronome pulse
+- US-006 — Pause and resume session
+
+Status:
+
+- Done
+
+---
+
+### B-067 — Add metronome sound toggle
+
+Add an option to enable or disable the metronome sound during practice setup.
+
+The goal is to let the user decide whether the practice session should use sound or only the visual pulse.
+
+Related tasks:
+
+- B-066 — Add metronome sound
+
+Status:
+
+- Done
+
+---
+
+### B-069 — Improve session control button spacing
+
+Increase the horizontal spacing between the Pause / Resume button and the End Session button.
+
+The goal is to make the session controls easier to read and tap.
+
+Related tasks:
+
+- B-027 — Improve stop button label
+- B-047 — Extract screen padding values
+- B-052 — Extract common spacing values
+
+Status:
+
+- Done
