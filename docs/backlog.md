@@ -1554,3 +1554,19 @@ Status:
 
 ---
 
+### B-086 — Add tests for chord diagram repository
+
+Add unit tests for the chord diagram repository.
+
+The goal is to verify that existing chord diagrams can be found by name and that missing diagrams return null.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagram repository
+- B-080 — Add basic minor chord diagrams
+
+Status:
+
+- Done
+
