@@ -1500,3 +1500,37 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-083 — Rename chord diagram placeholder constants
+
+Rename chord diagram constants to better reflect the current responsibility of the chord diagram UI.
+
+The goal is to make the code easier to understand after replacing the placeholder with a real diagram view.
+
+Related tasks:
+
+- B-082 — Rename chord diagram composable
+
+Status:
+
+- Done
+
+---
+
+### B-084 — Extract chord diagram drawing constants
+
+Extract chord diagram drawing values into named constants.
+
+The goal is to make the chord diagram drawing code easier to understand and adjust.
+
+Related tasks:
+
+- B-074 — Draw basic chord diagram grid
+- B-078 — Draw fretted finger positions
+- B-079 — Draw open and muted string indicators
+
+Status:
+
+- Done

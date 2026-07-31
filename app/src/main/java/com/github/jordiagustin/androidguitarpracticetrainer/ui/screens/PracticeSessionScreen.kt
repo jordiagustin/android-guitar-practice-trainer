@@ -76,13 +76,24 @@ private val MediumSpacing = 16.dp
 private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
 
-private const val CHORD_DIAGRAM_PLACEHOLDER_LABEL = "Chord diagram"
-private const val CHORD_DIAGRAM_PLACEHOLDER_TEXT = "diagram coming soon"
+private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
+private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"
 
 private val ChordDiagramHeight = 160.dp
 
 private const val OPEN_STRING_LABEL = "O"
 private const val MUTED_STRING_LABEL = "X"
+
+private const val CHORD_DIAGRAM_STRING_COUNT = 6
+private const val CHORD_DIAGRAM_FRET_COUNT = 5
+
+private const val CHORD_DIAGRAM_HORIZONTAL_PADDING = 32f
+private const val CHORD_DIAGRAM_VERTICAL_PADDING = 32f
+private const val CHORD_DIAGRAM_LINE_STROKE_WIDTH = 2f
+private const val CHORD_DIAGRAM_FINGER_RADIUS = 10f
+private const val CHORD_DIAGRAM_INDICATOR_TEXT_SIZE = 28f
+private const val CHORD_DIAGRAM_INDICATOR_TOP_OFFSET = 6f
+
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -291,11 +302,7 @@ private fun ChordDiagramView(
     chordDiagram: ChordDiagram?
 ) {
     Text(
-        text = if (chordDiagram != null) {
-            chordName
-        } else {
-            "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT"
-        },
+        text = CHORD_DIAGRAM_LABEL,
         fontSize = BodyFontSize,
         fontWeight = FontWeight.Bold
     )
@@ -312,16 +319,16 @@ private fun ChordDiagramView(
         Canvas(
             modifier = Modifier.fillMaxSize()
         ) {
-            val horizontalPadding = 32f
-            val verticalPadding = 16f
+            val horizontalPadding = CHORD_DIAGRAM_HORIZONTAL_PADDING
+            val verticalPadding = CHORD_DIAGRAM_VERTICAL_PADDING
 
             val diagramLeft = horizontalPadding
             val diagramRight = size.width - horizontalPadding
             val diagramTop = verticalPadding
             val diagramBottom = size.height - verticalPadding
 
-            val stringCount = 6
-            val fretCount = 5
+            val stringCount = CHORD_DIAGRAM_STRING_COUNT
+            val fretCount = CHORD_DIAGRAM_FRET_COUNT
 
             for (stringIndex in 0 until stringCount) {
                 val x = diagramLeft +
@@ -331,7 +338,7 @@ private fun ChordDiagramView(
                     color = Color.Gray,
                     start = Offset(x, diagramTop),
                     end = Offset(x, diagramBottom),
-                    strokeWidth = 2f
+                    strokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH
                 )
             }
 
@@ -343,7 +350,7 @@ private fun ChordDiagramView(
                     color = Color.Gray,
                     start = Offset(diagramLeft, y),
                     end = Offset(diagramRight, y),
-                    strokeWidth = 2f
+                    strokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH
                 )
             }
             chordDiagram?.stringPositions
@@ -364,7 +371,7 @@ private fun ChordDiagramView(
 
                     drawCircle(
                         color = Color.Black,
-                        radius = 10f,
+                        radius = CHORD_DIAGRAM_FINGER_RADIUS,
                         center = Offset(x, y)
                     )
                 }
@@ -379,7 +386,7 @@ private fun ChordDiagramView(
                     val x = diagramLeft +
                             (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
 
-                    val y = diagramTop - 6f
+                    val y = diagramTop - CHORD_DIAGRAM_INDICATOR_TOP_OFFSET
 
                     val label = when (stringPosition.status) {
                         StringStatus.OPEN -> OPEN_STRING_LABEL
@@ -394,7 +401,7 @@ private fun ChordDiagramView(
                         Paint().apply {
                             color = android.graphics.Color.BLACK
                             textAlign = Paint.Align.CENTER
-                            textSize = 28f
+                            textSize = CHORD_DIAGRAM_INDICATOR_TEXT_SIZE
                             typeface = Typeface.DEFAULT_BOLD
                         }
                     )
@@ -403,7 +410,7 @@ private fun ChordDiagramView(
 
         if (chordDiagram == null) {
             Text(
-                text = "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT",
+                text = "$chordName $CHORD_DIAGRAM_MISSING_TEXT",
                 fontSize = BodyFontSize,
                 textAlign = TextAlign.Center
             )
