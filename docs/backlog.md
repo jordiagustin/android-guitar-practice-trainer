@@ -1639,4 +1639,22 @@ Status:
 
 - Done
 
+---
+
+### B-091 — Add tests for barre chord diagram data
+
+Add unit tests to verify that barre chord diagrams are stored correctly.
+
+The goal is to ensure that F major includes barre position data and can be loaded from the chord diagram repository.
+
+Related tasks:
+
+- B-087 — Add barre chord support to data model
+- B-088 — Draw barre chord positions
+- B-089 — Add F major chord diagram
+
+Status:
+
+- Done
+
 

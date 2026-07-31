@@ -29,4 +29,16 @@ class ChordDiagramRepositoryTest {
 
         assertNull(result)
     }
+
+    @Test
+    fun findByChordName_returnsBarrePosition_whenFChordExists() {
+        val result = ChordDiagramRepository.findByChordName("F")
+
+        assertNotNull(result)
+        assertEquals("F", result?.chordName)
+        assertEquals(1, result?.barrePositions?.size)
+        assertEquals(1, result?.barrePositions?.first()?.fret)
+        assertEquals(6, result?.barrePositions?.first()?.startString)
+        assertEquals(1, result?.barrePositions?.first()?.endString)
+    }
 }
