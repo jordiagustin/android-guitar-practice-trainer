@@ -32,7 +32,10 @@ import android.media.AudioManager
 import android.media.ToneGenerator
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.text.style.TextAlign
 
 /**
  * Screen used during an active chord practice session.
@@ -64,6 +67,11 @@ private val SmallSpacing = 8.dp
 private val MediumSpacing = 16.dp
 private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
+
+private const val CHORD_DIAGRAM_PLACEHOLDER_LABEL = "Chord diagram"
+private const val CHORD_DIAGRAM_PLACEHOLDER_TEXT = "Diagram coming soon"
+
+private val ChordDiagramHeight = 160.dp
 
 @Composable
 fun PracticeSessionScreen(
@@ -167,7 +175,31 @@ fun PracticeSessionScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.width(ButtonSpacing))
+        Spacer(modifier = Modifier.height(MediumSpacing))
+
+        Text(
+            text = CHORD_DIAGRAM_PLACEHOLDER_LABEL,
+            fontSize = BodyFontSize,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(SmallSpacing))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(ChordDiagramHeight)
+                .border(1.dp, androidx.compose.ui.graphics.Color.Gray),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = CHORD_DIAGRAM_PLACEHOLDER_TEXT,
+                fontSize = BodyFontSize,
+                textAlign = TextAlign.Center
+            )
+        }
+
+        Spacer(modifier = Modifier.height(MediumSpacing))
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,

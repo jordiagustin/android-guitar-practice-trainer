@@ -1273,3 +1273,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-070 — Add chord diagram placeholder
+
+Add a visual placeholder area in the Practice Session Screen where chord diagrams will be displayed in a future version.
+
+The goal is to prepare the UI for chord diagrams without adding real chord images yet.
+
+Related tasks:
+
+- B-010 — Create Practice Session Screen
+- B-018 — Improve session display
+- B-069 — Improve session control button spacing
+
+Status:
+
+- Done
