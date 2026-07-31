@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.foundation.layout.width
 
 private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
 private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"
@@ -32,7 +33,8 @@ private const val MUTED_STRING_LABEL = "X"
 
 private val BodyFontSize = 18.sp
 private val SmallSpacing = 8.dp
-private val ChordDiagramHeight = 160.dp
+private val ChordDiagramHeight = 220.dp
+private val ChordDiagramWidth = 180.dp
 
 private const val CHORD_DIAGRAM_STRING_COUNT = 6
 private const val CHORD_DIAGRAM_FRET_COUNT = 5
@@ -59,7 +61,7 @@ fun ChordDiagramView(
 
     Box(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(ChordDiagramWidth)
             .height(ChordDiagramHeight)
             .border(1.dp, Color.Gray),
         contentAlignment = Alignment.Center

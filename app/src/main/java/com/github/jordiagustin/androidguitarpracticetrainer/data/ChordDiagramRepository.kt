@@ -3,6 +3,7 @@ package com.github.jordiagustin.androidguitarpracticetrainer.data
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringPosition
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
+import com.github.jordiagustin.androidguitarpracticetrainer.model.BarrePosition
 
 /**
  * Provides predefined chord diagram data used by the app.
@@ -66,6 +67,24 @@ object ChordDiagramRepository {
                 StringPosition(3, null, StringStatus.OPEN),
                 StringPosition(2, null, StringStatus.OPEN),
                 StringPosition(1, 3, StringStatus.FRETTED)
+            ),
+        ),
+        ChordDiagram(
+            chordName = "F",
+            stringPositions = listOf(
+                StringPosition(6, 1, StringStatus.FRETTED),
+                StringPosition(5, 3, StringStatus.FRETTED),
+                StringPosition(4, 3, StringStatus.FRETTED),
+                StringPosition(3, 2, StringStatus.FRETTED),
+                StringPosition(2, 1, StringStatus.FRETTED),
+                StringPosition(1, 1, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 1,
+                    startString = 6,
+                    endString = 1
+                )
             )
         ),
         ChordDiagram(

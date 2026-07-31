@@ -1588,3 +1588,55 @@ Status:
 
 - Done
 
+---
+
+### B-088 — Draw barre chord positions
+
+Draw barre chord positions on the chord diagram grid.
+
+The goal is to visually represent chords where one finger covers multiple strings on the same fret.
+
+Related tasks:
+
+- B-087 — Add barre chord support to data model
+
+Status:
+
+- Done
+
+---
+
+### B-089 — Add F major chord diagram
+
+Add chord diagram data for F major using barre chord support.
+
+The goal is to provide a real diagram for F major instead of showing the missing diagram placeholder.
+
+Related tasks:
+
+- B-087 — Add barre chord support to data model
+- B-088 — Draw barre chord positions
+
+Status:
+
+- Done
+
+---
+
+### B-090 — Improve chord diagram aspect ratio
+
+Adjust the chord diagram size to make it visually closer to a real guitar chord diagram.
+
+The goal is to avoid a flattened diagram by using a narrower and taller drawing area.
+
+Related tasks:
+
+- B-074 — Draw basic chord diagram grid
+- B-085 — Extract chord diagram view into its own file
+- B-089 — Add F major chord diagram
+
+Status:
+
+- Done
+
+
