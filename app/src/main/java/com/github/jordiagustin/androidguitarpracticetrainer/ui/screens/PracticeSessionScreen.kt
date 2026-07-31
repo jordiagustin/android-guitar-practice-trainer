@@ -231,7 +231,10 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
         Row(
-            horizontalArrangement = Arrangement.spacedBy(ButtonSpacing),
+            horizontalArrangement = Arrangement.spacedBy(
+                space = ButtonSpacing,
+                alignment = Alignment.CenterHorizontally
+            ),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Button(

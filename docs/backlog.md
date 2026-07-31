@@ -1324,3 +1324,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-073 — Center session action buttons
+
+Center the Pause / Resume and End Session buttons horizontally in the Practice Session Screen.
+
+The goal is to improve the visual alignment of the session controls.
+
+Related tasks:
+
+- B-069 — Improve session control button spacing
+
+Status:
+
+- Done
