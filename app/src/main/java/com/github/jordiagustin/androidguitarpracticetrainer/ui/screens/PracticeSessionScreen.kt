@@ -31,11 +31,14 @@ import androidx.compose.foundation.verticalScroll
 import android.media.AudioManager
 import android.media.ToneGenerator
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 
 /**
  * Screen used during an active chord practice session.
@@ -286,9 +289,48 @@ private fun ChordDiagramPlaceholder(
         modifier = Modifier
             .fillMaxWidth()
             .height(ChordDiagramHeight)
-            .border(1.dp, androidx.compose.ui.graphics.Color.Gray),
+            .border(1.dp, Color.Gray),
         contentAlignment = Alignment.Center
     ) {
+        Canvas(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            val horizontalPadding = 32f
+            val verticalPadding = 16f
+
+            val diagramLeft = horizontalPadding
+            val diagramRight = size.width - horizontalPadding
+            val diagramTop = verticalPadding
+            val diagramBottom = size.height - verticalPadding
+
+            val stringCount = 6
+            val fretCount = 5
+
+            for (stringIndex in 0 until stringCount) {
+                val x = diagramLeft +
+                        (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
+
+                drawLine(
+                    color = Color.Gray,
+                    start = Offset(x, diagramTop),
+                    end = Offset(x, diagramBottom),
+                    strokeWidth = 2f
+                )
+            }
+
+            for (fretIndex in 0..fretCount) {
+                val y = diagramTop +
+                        (diagramBottom - diagramTop) * fretIndex / fretCount
+
+                drawLine(
+                    color = Color.Gray,
+                    start = Offset(diagramLeft, y),
+                    end = Offset(diagramRight, y),
+                    strokeWidth = 2f
+                )
+            }
+        }
+
         Text(
             text = "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT",
             fontSize = BodyFontSize,

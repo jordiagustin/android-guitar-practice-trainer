@@ -1340,3 +1340,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-074 — Draw basic chord diagram grid
+
+Draw a basic guitar chord diagram grid inside the chord diagram placeholder.
+
+The goal is to make the placeholder visually closer to a real chord diagram while keeping the implementation simple.
+
+Related tasks:
+
+- B-070 — Add chord diagram placeholder
+- B-071 — Extract chord diagram placeholder into its own composable
+- B-072 — Show current chord name inside diagram placeholder
+
+Status:
+
+- Done
