@@ -1727,3 +1727,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-096 — Add tests for all supported chord diagrams
+
+Add unit tests to verify that every chord currently used by the app has a chord diagram.
+
+The goal is to prevent missing diagrams when using the predefined chord groups.
+
+Related tasks:
+
+- B-076 — Add basic chord diagram repository
+- B-080 — Add basic minor chord diagrams
+- B-093 — Add remaining minor chord diagrams
+- B-095 — Update README feature list for chord diagrams
+
+Status:
+
+- Done

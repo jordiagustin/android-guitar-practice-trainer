@@ -53,7 +53,7 @@ class ChordDiagramRepositoryTest {
         assertEquals(5, result?.barrePositions?.first()?.startString)
         assertEquals(1, result?.barrePositions?.first()?.endString)
     }
-    
+
     @Test
     fun findByChordName_returnsBarrePosition_whenBmChordExists() {
         val result = ChordDiagramRepository.findByChordName("Bm")
@@ -64,5 +64,20 @@ class ChordDiagramRepositoryTest {
         assertEquals(2, result?.barrePositions?.first()?.fret)
         assertEquals(5, result?.barrePositions?.first()?.startString)
         assertEquals(1, result?.barrePositions?.first()?.endString)
+    }
+
+    @Test
+    fun findByChordName_returnsDiagram_forAllSupportedChords() {
+        val supportedChordNames = listOf(
+            "A", "B", "C", "D", "E", "F", "G",
+            "Am", "Bm", "Cm", "Dm", "Em", "Fm", "Gm"
+        )
+
+        supportedChordNames.forEach { chordName ->
+            val result = ChordDiagramRepository.findByChordName(chordName)
+
+            assertNotNull("Expected diagram for chord $chordName", result)
+            assertEquals(chordName, result?.chordName)
+        }
     }
 }
