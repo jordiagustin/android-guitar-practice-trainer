@@ -264,3 +264,5 @@ The core MVP is completed.
 The app now includes additional post-MVP functionality, including generated chord diagrams for supported major and minor chords.
 
 Chord diagrams are generated from structured data instead of image files.
+
+The app has also been tested on a physical Android device to verify the practice flow, metronome sound and chord diagram display outside the emulator.

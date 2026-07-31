@@ -196,6 +196,20 @@ To run the unit tests on Windows:
 .\gradlew test
 ```
 
+## Physical device testing
+
+The app has been installed and tested on a physical Android device.
+
+Validated behavior:
+
+- App installation from Android Studio.
+- Practice setup flow.
+- Practice session flow.
+- Pause / Resume controls.
+- End Session control.
+- Optional metronome sound.
+- Chord diagram display on a real screen.
+
 ## Architecture overview
 
 The project is organized into small packages with clear responsibilities.

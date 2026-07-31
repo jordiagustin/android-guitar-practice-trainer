@@ -1794,3 +1794,19 @@ The goal is to verify that the practice flow, metronome sound and chord diagrams
 Status:
 
 - Done
+
+---
+
+### B-100 — Document physical device testing
+
+Document that the app has been installed and tested on a physical Android device.
+
+The goal is to record that the main practice flow, metronome sound and chord diagrams have been validated outside the emulator.
+
+Related tasks:
+
+- B-099 — Test app on physical Android device
+
+Status:
+
+- Done
