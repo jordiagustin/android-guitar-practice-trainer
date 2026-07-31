@@ -137,7 +137,79 @@ object ChordDiagramRepository {
                 StringPosition(2, null, StringStatus.OPEN),
                 StringPosition(1, null, StringStatus.OPEN)
             )
-        )
+        ),
+        ChordDiagram(
+            chordName = "Bm",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.MUTED),
+                StringPosition(5, 2, StringStatus.FRETTED),
+                StringPosition(4, 4, StringStatus.FRETTED),
+                StringPosition(3, 4, StringStatus.FRETTED),
+                StringPosition(2, 3, StringStatus.FRETTED),
+                StringPosition(1, 2, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 2,
+                    startString = 5,
+                    endString = 1
+                )
+            )
+        ),
+        ChordDiagram(
+            chordName = "Cm",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.MUTED),
+                StringPosition(5, 3, StringStatus.FRETTED),
+                StringPosition(4, 5, StringStatus.FRETTED),
+                StringPosition(3, 5, StringStatus.FRETTED),
+                StringPosition(2, 4, StringStatus.FRETTED),
+                StringPosition(1, 3, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 3,
+                    startString = 5,
+                    endString = 1
+                )
+            )
+        ),
+        ChordDiagram(
+            chordName = "Fm",
+            stringPositions = listOf(
+                StringPosition(6, 1, StringStatus.FRETTED),
+                StringPosition(5, 3, StringStatus.FRETTED),
+                StringPosition(4, 3, StringStatus.FRETTED),
+                StringPosition(3, 1, StringStatus.FRETTED),
+                StringPosition(2, 1, StringStatus.FRETTED),
+                StringPosition(1, 1, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 1,
+                    startString = 6,
+                    endString = 1
+                )
+            )
+        ),
+        ChordDiagram(
+            chordName = "Gm",
+            stringPositions = listOf(
+                StringPosition(6, 3, StringStatus.FRETTED),
+                StringPosition(5, 5, StringStatus.FRETTED),
+                StringPosition(4, 5, StringStatus.FRETTED),
+                StringPosition(3, 3, StringStatus.FRETTED),
+                StringPosition(2, 3, StringStatus.FRETTED),
+                StringPosition(1, 3, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 3,
+                    startString = 6,
+                    endString = 1
+                )
+            )
+        ),
     )
 
     fun findByChordName(chordName: String): ChordDiagram? {

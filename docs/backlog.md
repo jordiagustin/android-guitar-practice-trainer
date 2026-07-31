@@ -1675,3 +1675,20 @@ Status:
 
 - Done
 
+---
+
+### B-093 — Add remaining minor chord diagrams
+
+Add chord diagram data for the remaining minor chords currently used by the app.
+
+The goal is to reduce missing diagram placeholders during minor chord practice.
+
+Related tasks:
+
+- B-080 — Add basic minor chord diagrams
+- B-087 — Add barre chord support to data model
+- B-092 — Add B major chord diagram
+
+Status:
+
+- Done
