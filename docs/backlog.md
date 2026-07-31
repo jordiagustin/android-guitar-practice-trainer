@@ -1374,3 +1374,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-076 — Add basic chord diagrams repository
+
+Create a repository with basic chord diagram data for common major chords.
+
+The goal is to provide structured chord diagram information that can later be rendered by the UI.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+
+Status:
+
+- Done
