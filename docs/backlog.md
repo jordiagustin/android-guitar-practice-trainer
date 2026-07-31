@@ -1307,3 +1307,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-072 — Show current chord name inside diagram placeholder
+
+Display the current chord name inside the chord diagram placeholder.
+
+The goal is to make the placeholder more informative while preparing the UI for future real chord diagrams.
+
+Related tasks:
+
+- B-070 — Add chord diagram placeholder
+- B-071 — Extract chord diagram placeholder into its own composable
+
+Status:
+
+- Done

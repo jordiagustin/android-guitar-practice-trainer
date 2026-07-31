@@ -69,7 +69,7 @@ private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
 
 private const val CHORD_DIAGRAM_PLACEHOLDER_LABEL = "Chord diagram"
-private const val CHORD_DIAGRAM_PLACEHOLDER_TEXT = "Diagram coming soon"
+private const val CHORD_DIAGRAM_PLACEHOLDER_TEXT = "diagram coming soon"
 
 private val ChordDiagramHeight = 160.dp
 
@@ -177,7 +177,9 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(MediumSpacing))
 
-        ChordDiagramPlaceholder()
+        ChordDiagramPlaceholder(
+            chordName = currentChord.name
+        )
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
@@ -266,7 +268,9 @@ private fun formatSessionProgressSummary(
 }
 
 @Composable
-private fun ChordDiagramPlaceholder() {
+private fun ChordDiagramPlaceholder(
+    chordName: String
+) {
     Text(
         text = CHORD_DIAGRAM_PLACEHOLDER_LABEL,
         fontSize = BodyFontSize,
@@ -283,7 +287,7 @@ private fun ChordDiagramPlaceholder() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = CHORD_DIAGRAM_PLACEHOLDER_TEXT,
+            text = "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT",
             fontSize = BodyFontSize,
             textAlign = TextAlign.Center
         )
