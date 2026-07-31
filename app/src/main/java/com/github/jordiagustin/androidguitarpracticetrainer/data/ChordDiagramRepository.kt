@@ -67,6 +67,39 @@ object ChordDiagramRepository {
                 StringPosition(2, null, StringStatus.OPEN),
                 StringPosition(1, 3, StringStatus.FRETTED)
             )
+        ),
+        ChordDiagram(
+            chordName = "Am",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.MUTED),
+                StringPosition(5, null, StringStatus.OPEN),
+                StringPosition(4, 2, StringStatus.FRETTED),
+                StringPosition(3, 2, StringStatus.FRETTED),
+                StringPosition(2, 1, StringStatus.FRETTED),
+                StringPosition(1, null, StringStatus.OPEN)
+            )
+        ),
+        ChordDiagram(
+            chordName = "Dm",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.MUTED),
+                StringPosition(5, null, StringStatus.MUTED),
+                StringPosition(4, null, StringStatus.OPEN),
+                StringPosition(3, 2, StringStatus.FRETTED),
+                StringPosition(2, 3, StringStatus.FRETTED),
+                StringPosition(1, 1, StringStatus.FRETTED)
+            )
+        ),
+        ChordDiagram(
+            chordName = "Em",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.OPEN),
+                StringPosition(5, 2, StringStatus.FRETTED),
+                StringPosition(4, 2, StringStatus.FRETTED),
+                StringPosition(3, null, StringStatus.OPEN),
+                StringPosition(2, null, StringStatus.OPEN),
+                StringPosition(1, null, StringStatus.OPEN)
+            )
         )
     )
 
