@@ -1711,3 +1711,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-095 — Update README feature list for chord diagrams
+
+Review and update the README feature list to clearly mention generated chord diagrams, open/muted strings and barre chord support.
+
+The goal is to make the GitHub project description reflect the current app capabilities.
+
+Related tasks:
+
+- B-094 — Document chord diagram feature
+
+Status:
+
+- Done
