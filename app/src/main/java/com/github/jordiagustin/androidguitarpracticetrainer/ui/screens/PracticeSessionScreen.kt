@@ -191,7 +191,7 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(MediumSpacing))
 
-        ChordDiagramPlaceholder(
+        ChordDiagramView(
             chordName = currentChord.name,
             chordDiagram = currentChordDiagram
         )
@@ -286,7 +286,7 @@ private fun formatSessionProgressSummary(
 }
 
 @Composable
-private fun ChordDiagramPlaceholder(
+private fun ChordDiagramView(
     chordName: String,
     chordDiagram: ChordDiagram?
 ) {

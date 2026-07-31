@@ -1481,3 +1481,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-082 — Rename chord diagram composable
+
+Rename the chord diagram placeholder composable to better reflect its current responsibility.
+
+The goal is to make the UI code easier to understand now that the composable renders real chord diagram information.
+
+Related tasks:
+
+- B-071 — Extract chord diagram placeholder into its own composable
+- B-078 — Draw fretted finger positions
+- B-079 — Draw open and muted string indicators
+- B-081 — Hide placeholder text when diagram exists
+
+Status:
+
+- Done
