@@ -1534,3 +1534,23 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-085 — Extract chord diagram view into its own file
+
+Move the chord diagram composable from PracticeSessionScreen.kt into its own UI file.
+
+The goal is to keep PracticeSessionScreen focused on session layout and state, while keeping chord diagram rendering isolated and easier to maintain.
+
+Related tasks:
+
+- B-082 — Rename chord diagram composable
+- B-084 — Extract chord diagram drawing constants
+
+Status:
+
+- Done
+
+---
+

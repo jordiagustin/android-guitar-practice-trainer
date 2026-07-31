@@ -31,19 +31,8 @@ import androidx.compose.foundation.verticalScroll
 import android.media.AudioManager
 import android.media.ToneGenerator
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.foundation.Canvas
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordDiagramRepository
-import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
-import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
-import android.graphics.Paint
-import android.graphics.Typeface
-import androidx.compose.ui.graphics.nativeCanvas
+import com.github.jordiagustin.androidguitarpracticetrainer.ui.components.ChordDiagramView
 
 /**
  * Screen used during an active chord practice session.
@@ -296,127 +285,7 @@ private fun formatSessionProgressSummary(
     return "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount"
 }
 
-@Composable
-private fun ChordDiagramView(
-    chordName: String,
-    chordDiagram: ChordDiagram?
-) {
-    Text(
-        text = CHORD_DIAGRAM_LABEL,
-        fontSize = BodyFontSize,
-        fontWeight = FontWeight.Bold
-    )
 
-    Spacer(modifier = Modifier.height(SmallSpacing))
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(ChordDiagramHeight)
-            .border(1.dp, Color.Gray),
-        contentAlignment = Alignment.Center
-    ) {
-        Canvas(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            val horizontalPadding = CHORD_DIAGRAM_HORIZONTAL_PADDING
-            val verticalPadding = CHORD_DIAGRAM_VERTICAL_PADDING
-
-            val diagramLeft = horizontalPadding
-            val diagramRight = size.width - horizontalPadding
-            val diagramTop = verticalPadding
-            val diagramBottom = size.height - verticalPadding
-
-            val stringCount = CHORD_DIAGRAM_STRING_COUNT
-            val fretCount = CHORD_DIAGRAM_FRET_COUNT
-
-            for (stringIndex in 0 until stringCount) {
-                val x = diagramLeft +
-                        (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
-
-                drawLine(
-                    color = Color.Gray,
-                    start = Offset(x, diagramTop),
-                    end = Offset(x, diagramBottom),
-                    strokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH
-                )
-            }
-
-            for (fretIndex in 0..fretCount) {
-                val y = diagramTop +
-                        (diagramBottom - diagramTop) * fretIndex / fretCount
-
-                drawLine(
-                    color = Color.Gray,
-                    start = Offset(diagramLeft, y),
-                    end = Offset(diagramRight, y),
-                    strokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH
-                )
-            }
-            chordDiagram?.stringPositions
-                ?.filter { stringPosition ->
-                    stringPosition.status == StringStatus.FRETTED &&
-                            stringPosition.fret != null
-                }
-                ?.forEach { stringPosition ->
-                    val stringIndex = 6 - stringPosition.stringNumber
-
-                    val x = diagramLeft +
-                            (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
-
-                    val fret = stringPosition.fret ?: return@forEach
-
-                    val y = diagramTop +
-                            (diagramBottom - diagramTop) * (fret - 0.5f) / fretCount
-
-                    drawCircle(
-                        color = Color.Black,
-                        radius = CHORD_DIAGRAM_FINGER_RADIUS,
-                        center = Offset(x, y)
-                    )
-                }
-            chordDiagram?.stringPositions
-                ?.filter { stringPosition ->
-                    stringPosition.status == StringStatus.OPEN ||
-                            stringPosition.status == StringStatus.MUTED
-                }
-                ?.forEach { stringPosition ->
-                    val stringIndex = 6 - stringPosition.stringNumber
-
-                    val x = diagramLeft +
-                            (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
-
-                    val y = diagramTop - CHORD_DIAGRAM_INDICATOR_TOP_OFFSET
-
-                    val label = when (stringPosition.status) {
-                        StringStatus.OPEN -> OPEN_STRING_LABEL
-                        StringStatus.MUTED -> MUTED_STRING_LABEL
-                        StringStatus.FRETTED -> ""
-                    }
-
-                    drawContext.canvas.nativeCanvas.drawText(
-                        label,
-                        x,
-                        y,
-                        Paint().apply {
-                            color = android.graphics.Color.BLACK
-                            textAlign = Paint.Align.CENTER
-                            textSize = CHORD_DIAGRAM_INDICATOR_TEXT_SIZE
-                            typeface = Typeface.DEFAULT_BOLD
-                        }
-                    )
-                }
-        }
-
-        if (chordDiagram == null) {
-            Text(
-                text = "$chordName $CHORD_DIAGRAM_MISSING_TEXT",
-                fontSize = BodyFontSize,
-                textAlign = TextAlign.Center
-            )
-        }
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
