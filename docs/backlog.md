@@ -1570,3 +1570,21 @@ Status:
 
 - Done
 
+---
+
+### B-087 — Add barre chord support to data model
+
+Add data model support for barre chord positions.
+
+The goal is to represent chords where one finger covers multiple strings on the same fret, preparing the app to support chords such as F and B.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagram repository
+- B-086 — Add chord diagram repository tests
+
+Status:
+
+- Done
+

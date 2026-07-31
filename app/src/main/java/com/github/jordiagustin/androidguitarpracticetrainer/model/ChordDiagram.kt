@@ -8,7 +8,8 @@ package com.github.jordiagustin.androidguitarpracticetrainer.model
  */
 data class ChordDiagram(
     val chordName: String,
-    val stringPositions: List<StringPosition>
+    val stringPositions: List<StringPosition>,
+    val barrePositions: List<BarrePosition> = emptyList()
 )
 
 /**
@@ -18,6 +19,17 @@ data class StringPosition(
     val stringNumber: Int,
     val fret: Int?,
     val status: StringStatus
+)
+
+/**
+ * Represents a barre position in a chord diagram.
+ *
+ * A barre covers multiple strings on the same fret.
+ */
+data class BarrePosition(
+    val fret: Int,
+    val startString: Int,
+    val endString: Int
 )
 
 /**
