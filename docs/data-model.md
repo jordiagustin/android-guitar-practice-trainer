@@ -333,6 +333,13 @@ These tests are located under:
 app/src/test/java/com/github/jordiagustin/androidguitarpracticetrainer/practice/
 ```
 
+Chord diagram repository tests verify that:
+
+- Existing chord diagrams can be found by chord name.
+- Missing chord diagrams return null.
+- Barre chord data is stored correctly.
+- Every chord currently used by the app has a corresponding chord diagram.
+
 ## Chord diagrams
 
 Chord diagrams are represented using structured data instead of image files.

@@ -1746,3 +1746,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-097 — Document chord diagram repository tests
+
+Update documentation to mention that chord diagram repository behavior is covered by unit tests.
+
+The goal is to keep the testing documentation aligned with the current test coverage.
+
+Related tasks:
+
+- B-086 — Add tests for chord diagram repository
+- B-091 — Add tests for barre chord diagram data
+- B-096 — Add tests for all supported chord diagrams
+
+Status:
+
+- Done
