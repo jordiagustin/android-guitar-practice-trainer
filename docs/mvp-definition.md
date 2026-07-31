@@ -256,3 +256,11 @@ The MVP will be considered complete when:
 * The app shows elapsed practice time.
 * The app shows a chord change counter.
 * The project is documented in GitHub.
+
+## Current status
+
+The core MVP is completed.
+
+The app now includes additional post-MVP functionality, including generated chord diagrams for supported major and minor chords.
+
+Chord diagrams are generated from structured data instead of image files.

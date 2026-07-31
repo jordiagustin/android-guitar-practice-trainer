@@ -15,14 +15,19 @@ The app includes a functional two-screen practice flow with:
 - Random chord changes.
 - Prevention of repeated chords twice in a row.
 - Visual pulse indicator.
+- Optional metronome sound.
 - Pause / Resume support.
 - Elapsed practice time.
 - Chord change counter.
 - Start and active session summaries.
-- Unit tests for practice logic.
+- Generated chord diagrams for supported major and minor chords.
+- Support for fretted positions, open strings, muted strings and barre chord diagrams.
+- Unit tests for practice logic and chord diagram data.
 - Project documentation.
 
-Next development phase: product improvements such as metronome sound, chord diagrams and visual design improvements.
+The project has moved beyond the initial MVP and now includes post-MVP product improvements such as generated chord diagrams, optional metronome sound and improved session controls.
+
+Next development phase: visual design improvements, session configuration refinements and additional practice features.
 
 ## Main goal
 

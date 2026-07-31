@@ -1764,3 +1764,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-098 — Review current MVP status
+
+Review the current MVP documentation and update the project status after adding generated chord diagrams.
+
+The goal is to clearly reflect that the app now goes beyond the initial core MVP with chord diagram support.
+
+Related tasks:
+
+- B-065 — Mark core MVP completed
+- B-094 — Document chord diagram feature
+- B-095 — Update README feature list for chord diagrams
+
+Status:
+
+- To do
