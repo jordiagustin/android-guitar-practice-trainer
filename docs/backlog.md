@@ -1444,3 +1444,40 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-080 — Add basic minor chord diagrams
+
+Add basic chord diagram data for common open minor chords.
+
+The goal is to support visual diagrams for Am, Dm and Em during practice sessions.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagram repository
+- B-079 — Draw open and muted string indicators
+
+Status:
+
+- Done
+
+---
+
+### B-081 — Hide placeholder text when diagram exists
+
+Hide the placeholder text when a chord diagram is available.
+
+The goal is to make real chord diagrams clearer and avoid text overlapping the grid or finger positions.
+
+Related tasks:
+
+- B-077 — Load chord diagram for current chord
+- B-078 — Draw fretted finger positions
+- B-079 — Draw open and muted string indicators
+- B-080 — Add basic minor chord diagrams
+
+Status:
+
+- Done

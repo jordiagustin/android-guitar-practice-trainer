@@ -401,15 +401,13 @@ private fun ChordDiagramPlaceholder(
                 }
         }
 
-        Text(
-            text = if (chordDiagram != null) {
-                chordName
-            } else {
-                "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT"
-            },
-            fontSize = BodyFontSize,
-            textAlign = TextAlign.Center
-        )
+        if (chordDiagram == null) {
+            Text(
+                text = "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT",
+                fontSize = BodyFontSize,
+                textAlign = TextAlign.Center
+            )
+        }
     }
 }
 
