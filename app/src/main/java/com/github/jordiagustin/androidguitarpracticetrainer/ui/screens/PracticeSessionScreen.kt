@@ -116,10 +116,12 @@ fun PracticeSessionScreen(
             if (!isPaused) {
                 pulseActive = !pulseActive
 
-                toneGenerator.startTone(
-                    ToneGenerator.TONE_PROP_BEEP,
-                    80
-                )
+                if (isSoundEnabled) {
+                    toneGenerator.startTone(
+                        ToneGenerator.TONE_PROP_BEEP,
+                        80
+                    )
+                }
 
                 currentChord = ChordSelector.getRandomChordExcludingCurrent(
                     chords = chordGroup.chords,
