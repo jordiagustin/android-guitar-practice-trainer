@@ -1426,3 +1426,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-079 — Draw open and muted string indicators
+
+Draw open string and muted string indicators above the chord diagram grid.
+
+The goal is to show which strings should be played open and which strings should not be played.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagram repository
+- B-078 — Draw fretted finger positions
+
+Status:
+
+- Done

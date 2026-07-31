@@ -41,6 +41,9 @@ import androidx.compose.ui.graphics.Color
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordDiagramRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
+import android.graphics.Paint
+import android.graphics.Typeface
+import androidx.compose.ui.graphics.nativeCanvas
 
 /**
  * Screen used during an active chord practice session.
@@ -78,6 +81,8 @@ private const val CHORD_DIAGRAM_PLACEHOLDER_TEXT = "diagram coming soon"
 
 private val ChordDiagramHeight = 160.dp
 
+private const val OPEN_STRING_LABEL = "O"
+private const val MUTED_STRING_LABEL = "X"
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -361,6 +366,37 @@ private fun ChordDiagramPlaceholder(
                         color = Color.Black,
                         radius = 10f,
                         center = Offset(x, y)
+                    )
+                }
+            chordDiagram?.stringPositions
+                ?.filter { stringPosition ->
+                    stringPosition.status == StringStatus.OPEN ||
+                            stringPosition.status == StringStatus.MUTED
+                }
+                ?.forEach { stringPosition ->
+                    val stringIndex = 6 - stringPosition.stringNumber
+
+                    val x = diagramLeft +
+                            (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
+
+                    val y = diagramTop - 6f
+
+                    val label = when (stringPosition.status) {
+                        StringStatus.OPEN -> OPEN_STRING_LABEL
+                        StringStatus.MUTED -> MUTED_STRING_LABEL
+                        StringStatus.FRETTED -> ""
+                    }
+
+                    drawContext.canvas.nativeCanvas.drawText(
+                        label,
+                        x,
+                        y,
+                        Paint().apply {
+                            color = android.graphics.Color.BLACK
+                            textAlign = Paint.Align.CENTER
+                            textSize = 28f
+                            typeface = Typeface.DEFAULT_BOLD
+                        }
                     )
                 }
         }
