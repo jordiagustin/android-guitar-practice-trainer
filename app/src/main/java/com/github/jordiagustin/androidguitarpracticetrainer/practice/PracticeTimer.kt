@@ -12,6 +12,7 @@ object PracticeTimer {
      * 60 BPM = 1000 ms
      * 120 BPM = 500 ms
      */
+
     fun calculateIntervalMillis(bpm: Int): Long {
         require(bpm > 0) {
             "BPM must be greater than 0"

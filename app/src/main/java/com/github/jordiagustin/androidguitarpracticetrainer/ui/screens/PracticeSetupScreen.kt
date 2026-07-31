@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Checkbox
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -59,11 +60,16 @@ private val MediumSpacing = 12.dp
 private val LargeSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
 
+private const val METRONOME_SOUND_LABEL = "Metronome sound"
+
 @Composable
 fun PracticeSetupScreen(
-    onStartPractice: (ChordGroup, Int) -> Unit
+    onStartPractice: (ChordGroup, Int, Boolean) -> Unit
 ) {
     var bpm by remember { mutableFloatStateOf(PracticeConfig.DEFAULT_BPM.toFloat()) }
+    var isSoundEnabled by remember {
+        mutableStateOf(true)
+    }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
 
@@ -166,11 +172,36 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(LargeSpacing))
 
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(
+                checked = isSoundEnabled,
+                onCheckedChange = { checked ->
+                    isSoundEnabled = checked
+                }
+            )
+
+            Text(
+                text = METRONOME_SOUND_LABEL,
+                fontSize = BodyFontSize
+            )
+        }
+
+        Spacer(modifier = Modifier.height(LargeSpacing))
+
+        Spacer(modifier = Modifier.height(LargeSpacing))
+
         Button(
             onClick = {
-                onStartPractice(selectedChordGroup, bpm.toInt())
+                onStartPractice(
+                    selectedChordGroup,
+                    bpm.toInt(),
+                    isSoundEnabled
+                )
             }
         ) {
+
             Text(
                 text = START_PRACTICE_LABEL,
                 fontSize = BodyFontSize
@@ -190,6 +221,6 @@ private fun formatSelectedSessionSummary(
 @Composable
 fun PracticeSetupScreenPreview() {
     PracticeSetupScreen(
-        onStartPractice = {_, _ ->}
+        onStartPractice = { _, _, _ -> }
     )
 }

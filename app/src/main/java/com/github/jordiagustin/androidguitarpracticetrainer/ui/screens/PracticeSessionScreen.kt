@@ -28,6 +28,11 @@ import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelect
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeTimer
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import android.media.AudioManager
+import android.media.ToneGenerator
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.width
 
 /**
  * Screen used during an active chord practice session.
@@ -57,12 +62,14 @@ private val BodyFontSize = 18.sp
 
 private val SmallSpacing = 8.dp
 private val MediumSpacing = 16.dp
+private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
 
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
     bpm: Int,
+    isSoundEnabled: Boolean,
     onStopPractice: () -> Unit
 ) {
     var currentChord by remember(chordGroup) {
@@ -90,6 +97,16 @@ fun PracticeSessionScreen(
         mutableStateOf(0)
     }
 
+    val toneGenerator = remember {
+        ToneGenerator(AudioManager.STREAM_MUSIC, 80)
+    }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            toneGenerator.release()
+        }
+    }
+
     LaunchedEffect(chordGroup, bpm) {
         val intervalMillis = PracticeTimer.calculateIntervalMillis(bpm)
 
@@ -98,6 +115,12 @@ fun PracticeSessionScreen(
 
             if (!isPaused) {
                 pulseActive = !pulseActive
+
+                toneGenerator.startTone(
+                    ToneGenerator.TONE_PROP_BEEP,
+                    80
+                )
+
                 currentChord = ChordSelector.getRandomChordExcludingCurrent(
                     chords = chordGroup.chords,
                     currentChord = currentChord
@@ -142,7 +165,7 @@ fun PracticeSessionScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(SmallSpacing))
+        Spacer(modifier = Modifier.width(ButtonSpacing))
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
@@ -193,7 +216,10 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
-        Row {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(ButtonSpacing),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Button(
                 onClick = {
                     isPaused = !isPaused
@@ -203,8 +229,6 @@ fun PracticeSessionScreen(
                     text = if (isPaused) RESUME_LABEL else PAUSE_LABEL
                 )
             }
-
-            Spacer(modifier = Modifier.height(SmallSpacing))
 
             Button(
                 onClick = onStopPractice
@@ -235,6 +259,7 @@ fun PracticeSessionScreenPreview() {
     PracticeSessionScreen(
         chordGroup = ChordRepository.chordGroups.first(),
         bpm = 60,
+        isSoundEnabled = true,
         onStopPractice = {}
     )
 }

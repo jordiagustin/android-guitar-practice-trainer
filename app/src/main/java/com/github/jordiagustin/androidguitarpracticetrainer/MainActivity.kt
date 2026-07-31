@@ -11,7 +11,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSessionScreen
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
-import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordGroup
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +18,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidGuitarPracticeTrainerTheme {
-                var isPracticeSessionActive by remember { mutableStateOf(false) }
+                var isPracticeSessionActive by remember {
+                    mutableStateOf(false)
+                }
 
                 var activeChordGroup by remember {
                     mutableStateOf(ChordRepository.chordGroups.first())
@@ -29,19 +30,25 @@ class MainActivity : ComponentActivity() {
                     mutableStateOf(PracticeConfig.DEFAULT_BPM)
                 }
 
+                var activeSoundEnabled by remember {
+                    mutableStateOf(true)
+                }
+
                 if (isPracticeSessionActive) {
                     PracticeSessionScreen(
                         chordGroup = activeChordGroup,
                         bpm = activeBpm,
+                        isSoundEnabled = activeSoundEnabled,
                         onStopPractice = {
                             isPracticeSessionActive = false
                         }
                     )
                 } else {
                     PracticeSetupScreen(
-                        onStartPractice = { selectedChordGroup, selectedBpm ->
+                        onStartPractice = { selectedChordGroup, selectedBpm, selectedSoundEnabled ->
                             activeChordGroup = selectedChordGroup
                             activeBpm = selectedBpm
+                            activeSoundEnabled = selectedSoundEnabled
                             isPracticeSessionActive = true
                         }
                     )
