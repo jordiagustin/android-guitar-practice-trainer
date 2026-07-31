@@ -26,6 +26,7 @@ The screen includes:
 - Minimum and maximum BPM labels.
 - Selected session summary.
 - Start Practice button.
+- Metronome sound toggle.
 
 ### Chord group selector
 
@@ -60,6 +61,14 @@ Example:
 Selected session
 Major chords · 60 BPM
 ```
+
+### Metronome sound toggle
+
+The user can enable or disable metronome sound before starting a practice session.
+
+When enabled, the Practice Session Screen plays a short beep on each pulse.
+
+When disabled, the visual pulse and chord changes continue without sound.
 
 ### Start Practice button
 

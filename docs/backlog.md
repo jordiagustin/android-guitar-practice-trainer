@@ -1241,6 +1241,23 @@ Status:
 
 ---
 
+### B-068 — Document metronome sound toggle
+
+Update documentation to mention that metronome sound can be enabled or disabled from the setup screen.
+
+The goal is to keep project documentation aligned with the current practice session configuration options.
+
+Related tasks:
+
+- B-066 — Add metronome sound
+- B-067 — Add metronome sound toggle
+
+Status:
+
+- Done
+
+---
+
 ### B-069 — Improve session control button spacing
 
 Increase the horizontal spacing between the Pause / Resume button and the End Session button.

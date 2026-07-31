@@ -45,6 +45,8 @@ The first version of the app focuses on one core feature:
 - Automatic chord changes based on BPM.
 - Pause / Resume control.
 - Stop session control.
+- Optional metronome sound.
+- Metronome sound can be enabled or disabled before starting a session.
 
 ## Tech stack
 
