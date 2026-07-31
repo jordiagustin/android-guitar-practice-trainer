@@ -1291,3 +1291,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-071 — Extract chord diagram placeholder into its own composable
+
+Extract the chord diagram placeholder UI from PracticeSessionScreen into a dedicated composable function.
+
+The goal is to keep PracticeSessionScreen easier to read and prepare the UI for future real chord diagrams.
+
+Related tasks:
+
+- B-070 — Add chord diagram placeholder
+
+Status:
+
+- Done

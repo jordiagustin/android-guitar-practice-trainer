@@ -177,29 +177,7 @@ fun PracticeSessionScreen(
 
         Spacer(modifier = Modifier.height(MediumSpacing))
 
-        Text(
-            text = CHORD_DIAGRAM_PLACEHOLDER_LABEL,
-            fontSize = BodyFontSize,
-            fontWeight = FontWeight.Bold
-        )
-
-        Spacer(modifier = Modifier.height(SmallSpacing))
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(ChordDiagramHeight)
-                .border(1.dp, androidx.compose.ui.graphics.Color.Gray),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = CHORD_DIAGRAM_PLACEHOLDER_TEXT,
-                fontSize = BodyFontSize,
-                textAlign = TextAlign.Center
-            )
-        }
-
-        Spacer(modifier = Modifier.height(MediumSpacing))
+        ChordDiagramPlaceholder()
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
@@ -285,6 +263,31 @@ private fun formatSessionProgressSummary(
     chordChangeCount: Int
 ): String {
     return "$TIME_LABEL: $formattedTime · $CHANGES_LABEL: $chordChangeCount"
+}
+
+@Composable
+private fun ChordDiagramPlaceholder() {
+    Text(
+        text = CHORD_DIAGRAM_PLACEHOLDER_LABEL,
+        fontSize = BodyFontSize,
+        fontWeight = FontWeight.Bold
+    )
+
+    Spacer(modifier = Modifier.height(SmallSpacing))
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(ChordDiagramHeight)
+            .border(1.dp, androidx.compose.ui.graphics.Color.Gray),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = CHORD_DIAGRAM_PLACEHOLDER_TEXT,
+            fontSize = BodyFontSize,
+            textAlign = TextAlign.Center
+        )
+    }
 }
 
 @Preview(showBackground = true)
