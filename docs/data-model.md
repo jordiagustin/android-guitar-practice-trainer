@@ -333,6 +333,20 @@ These tests are located under:
 app/src/test/java/com/github/jordiagustin/androidguitarpracticetrainer/practice/
 ```
 
+## Chord diagrams
+
+Chord diagrams are represented using structured data instead of image files.
+
+Each chord diagram contains:
+
+- The chord name.
+- String positions.
+- Optional barre positions.
+
+String positions define whether each string is open, muted or fretted.
+
+Barre positions define cases where one finger covers multiple strings on the same fret.
+
 ---
 
 ## 9. Out of scope

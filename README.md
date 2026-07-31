@@ -47,6 +47,8 @@ The first version of the app focuses on one core feature:
 - Stop session control.
 - Optional metronome sound.
 - Metronome sound can be enabled or disabled before starting a session.
+- Generated chord diagrams for supported major and minor chords.
+- Chord diagrams show fretted positions, open strings, muted strings and barre positions.
 
 ## Tech stack
 

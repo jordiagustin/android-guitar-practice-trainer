@@ -89,6 +89,7 @@ Its purpose is to guide the user through chord changes using random chord prompt
 The screen includes:
 
 - Current chord.
+- Generated chord diagram.
 - Visual pulse indicator.
 - Paused session feedback.
 - Active session summary.
@@ -149,6 +150,14 @@ MM:SS
 ```
 
 The timer pauses when the session is paused.
+
+### Chord diagrams
+
+The screen displays a generated chord diagram for the current chord when available.
+
+The diagram shows fret positions, open strings, muted strings and barre chords.
+
+If a diagram is not available for a chord, the screen displays a placeholder message.
 
 ### Chord change counter
 

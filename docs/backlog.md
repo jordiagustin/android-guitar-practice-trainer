@@ -1692,3 +1692,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-094 — Document chord diagram feature
+
+Update project documentation to mention that the Practice Session Screen displays generated chord diagrams for supported chords.
+
+The goal is to keep the documentation aligned with the current app features.
+
+Related tasks:
+
+- B-074 — Draw basic chord diagram grid
+- B-078 — Draw fretted finger positions
+- B-079 — Draw open and muted string indicators
+- B-093 — Add remaining minor chord diagrams
+
+Status:
+
+- Done
