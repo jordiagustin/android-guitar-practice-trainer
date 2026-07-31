@@ -1657,4 +1657,21 @@ Status:
 
 - Done
 
+---
+
+### B-092 — Add B major chord diagram
+
+Add chord diagram data for B major using barre chord support.
+
+The goal is to provide a real diagram for B major instead of showing the missing diagram placeholder.
+
+Related tasks:
+
+- B-087 — Add barre chord support to data model
+- B-088 — Draw barre chord positions
+- B-091 — Add tests for barre chord diagram data
+
+Status:
+
+- Done
 

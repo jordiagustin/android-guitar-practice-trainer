@@ -88,6 +88,24 @@ object ChordDiagramRepository {
             )
         ),
         ChordDiagram(
+            chordName = "B",
+            stringPositions = listOf(
+                StringPosition(6, null, StringStatus.MUTED),
+                StringPosition(5, 2, StringStatus.FRETTED),
+                StringPosition(4, 4, StringStatus.FRETTED),
+                StringPosition(3, 4, StringStatus.FRETTED),
+                StringPosition(2, 4, StringStatus.FRETTED),
+                StringPosition(1, 2, StringStatus.FRETTED)
+            ),
+            barrePositions = listOf(
+                BarrePosition(
+                    fret = 2,
+                    startString = 5,
+                    endString = 1
+                )
+            )
+        ),
+        ChordDiagram(
             chordName = "Am",
             stringPositions = listOf(
                 StringPosition(6, null, StringStatus.MUTED),
