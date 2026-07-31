@@ -1781,4 +1781,16 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-099 — Test app on physical Android device
+
+Install and run the app on a real Android device.
+
+The goal is to verify that the practice flow, metronome sound and chord diagrams work correctly outside the emulator.
+
+Status:
+
+- Done
