@@ -36,9 +36,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordDiagramRepository
+import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
+import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
 
 /**
  * Screen used during an active chord practice session.
@@ -156,6 +158,10 @@ fun PracticeSessionScreen(
 
     val formattedTime = PracticeTimer.formatElapsedTime(elapsedSeconds)
 
+    val currentChordDiagram = ChordDiagramRepository.findByChordName(
+        chordName = currentChord.name
+    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -181,7 +187,8 @@ fun PracticeSessionScreen(
         Spacer(modifier = Modifier.height(MediumSpacing))
 
         ChordDiagramPlaceholder(
-            chordName = currentChord.name
+            chordName = currentChord.name,
+            chordDiagram = currentChordDiagram
         )
 
         Text(
@@ -275,10 +282,15 @@ private fun formatSessionProgressSummary(
 
 @Composable
 private fun ChordDiagramPlaceholder(
-    chordName: String
+    chordName: String,
+    chordDiagram: ChordDiagram?
 ) {
     Text(
-        text = CHORD_DIAGRAM_PLACEHOLDER_LABEL,
+        text = if (chordDiagram != null) {
+            chordName
+        } else {
+            "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT"
+        },
         fontSize = BodyFontSize,
         fontWeight = FontWeight.Bold
     )
@@ -329,10 +341,36 @@ private fun ChordDiagramPlaceholder(
                     strokeWidth = 2f
                 )
             }
+            chordDiagram?.stringPositions
+                ?.filter { stringPosition ->
+                    stringPosition.status == StringStatus.FRETTED &&
+                            stringPosition.fret != null
+                }
+                ?.forEach { stringPosition ->
+                    val stringIndex = 6 - stringPosition.stringNumber
+
+                    val x = diagramLeft +
+                            (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
+
+                    val fret = stringPosition.fret ?: return@forEach
+
+                    val y = diagramTop +
+                            (diagramBottom - diagramTop) * (fret - 0.5f) / fretCount
+
+                    drawCircle(
+                        color = Color.Black,
+                        radius = 10f,
+                        center = Offset(x, y)
+                    )
+                }
         }
 
         Text(
-            text = "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT",
+            text = if (chordDiagram != null) {
+                chordName
+            } else {
+                "$chordName $CHORD_DIAGRAM_PLACEHOLDER_TEXT"
+            },
             fontSize = BodyFontSize,
             textAlign = TextAlign.Center
         )

@@ -1390,3 +1390,39 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-077 — Load chord diagram for current chord
+
+Load chord diagram data for the currently displayed chord.
+
+The goal is to connect the Practice Session Screen with the chord diagram repository before rendering real finger positions.
+
+Related tasks:
+
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagram repository
+
+Status:
+
+- Done
+
+---
+
+### B-078 — Draw fretted finger positions
+
+Draw finger position dots on the chord diagram grid for fretted strings.
+
+The goal is to render the basic visual position of each chord using the chord diagram data.
+
+Related tasks:
+
+- B-074 — Draw basic chord diagram grid
+- B-075 — Create chord diagram data model
+- B-076 — Add basic chord diagrams repository
+- B-077 — Load chord diagram for current chord
+
+Status:
+
+- Done
