@@ -65,6 +65,9 @@ private const val METRONOME_SOUND_LABEL = "Metronome sound"
 private const val SELECT_CHORDS_LABEL = "Select chords"
 
 private const val NO_CHORDS_SELECTED_MESSAGE = "Select at least one chord to start practice"
+
+private const val SELECTED_CHORD_COUNT_LABEL = "Selected chords"
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int, Boolean) -> Unit
@@ -162,6 +165,14 @@ fun PracticeSetupScreen(
             }
         }
 
+        Spacer(modifier = Modifier.height(SmallSpacing))
+
+        Text(
+            text = "$SELECTED_CHORD_COUNT_LABEL: ${selectedChords.size}",
+            fontSize = BodyFontSize,
+            fontWeight = FontWeight.Bold
+        )
+        
         Spacer(modifier = Modifier.height(LargeSpacing))
 
         Text(
