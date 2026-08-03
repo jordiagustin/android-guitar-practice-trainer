@@ -72,7 +72,9 @@ fun PracticeSetupScreen(
     }
     val chordGroups = ChordRepository.chordGroups
     var selectedChordGroup by remember { mutableStateOf(chordGroups.first())}
-
+    var selectedChords by remember {
+        mutableStateOf(selectedChordGroup.chords)
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -114,6 +116,7 @@ fun PracticeSetupScreen(
                     selected = chordGroup == selectedChordGroup,
                     onClick = {
                         selectedChordGroup = chordGroup
+                        selectedChords = chordGroup.chords
                     }
                 )
 
