@@ -1878,4 +1878,40 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-105 — Show selected chord count in setup screen
+
+Show the number of selected chords in the Practice Setup Screen.
+
+The goal is to give the user clear feedback when creating a custom chord selection.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-103 — Start session with selected chords
+- B-104 — Disable Start button when no chords are selected
+
+Status:
+
+- Done
+
+---
+
+### B-106 — Add Clear all and Select all chord actions
+
+Add actions to select or clear all chords in the current chord group.
+
+The goal is to make custom chord selection faster and easier for the user.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-103 — Start session with selected chords
+- B-105 — Show selected chord count in setup screen
+
+Status:
+
+- Done

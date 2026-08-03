@@ -68,6 +68,9 @@ private const val NO_CHORDS_SELECTED_MESSAGE = "Select at least one chord to sta
 
 private const val SELECTED_CHORD_COUNT_LABEL = "Selected chords"
 
+private const val SELECT_ALL_LABEL = "Select all"
+private const val CLEAR_ALL_LABEL = "Clear all"
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int, Boolean) -> Unit
@@ -141,6 +144,29 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(SmallSpacing),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Button(
+                onClick = {
+                    selectedChords = selectedChordGroup.chords
+                }
+            ) {
+                Text(text = SELECT_ALL_LABEL)
+            }
+
+            Button(
+                onClick = {
+                    selectedChords = emptyList()
+                }
+            ) {
+                Text(text = CLEAR_ALL_LABEL)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(SmallSpacing))
+
         selectedChordGroup.chords.forEach { chord ->
             val isSelected = selectedChords.contains(chord)
 
@@ -172,7 +198,7 @@ fun PracticeSetupScreen(
             fontSize = BodyFontSize,
             fontWeight = FontWeight.Bold
         )
-        
+
         Spacer(modifier = Modifier.height(LargeSpacing))
 
         Text(
