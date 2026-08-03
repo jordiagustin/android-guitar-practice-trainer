@@ -54,6 +54,9 @@ The first version of the app focuses on one core feature:
 - Metronome sound can be enabled or disabled before starting a session.
 - Generated chord diagrams for supported major and minor chords.
 - Chord diagrams show fretted positions, open strings, muted strings and barre positions.
+- Custom chord selection before starting a practice session.
+- Select all and Clear all actions for faster chord selection.
+- Setup and session summaries show the selected chord names.
 
 ## Tech stack
 

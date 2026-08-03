@@ -266,3 +266,5 @@ The app now includes additional post-MVP functionality, including generated chor
 Chord diagrams are generated from structured data instead of image files.
 
 The app has also been tested on a physical Android device to verify the practice flow, metronome sound and chord diagram display outside the emulator.
+
+The app also supports custom chord selection, allowing users to choose the exact chords used in a practice session.

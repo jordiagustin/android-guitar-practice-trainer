@@ -2004,3 +2004,23 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-112 — Document custom chord selection
+
+Update project documentation to describe custom chord selection in the Practice Setup Screen.
+
+The goal is to keep the documentation aligned with the new ability to select individual chords before starting practice.
+
+Related tasks:
+
+- B-101 — Add custom chord selection state
+- B-102 — Display selectable chords in setup screen
+- B-103 — Start session with selected chords
+- B-110 — Show selected chord names in setup summary
+- B-111 — Show selected chord names in active session summary
+
+Status:
+
+- Done

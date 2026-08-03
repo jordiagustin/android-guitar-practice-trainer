@@ -27,6 +27,9 @@ The screen includes:
 - Selected session summary.
 - Start Practice button.
 - Metronome sound toggle.
+- Individual chord selection.
+- Select all and Clear all chord actions.
+- Selected chord count.
 
 ### Chord group selector
 
@@ -76,6 +79,16 @@ The Start Practice button starts a new practice session using the selected chord
 
 When pressed, the app navigates to the Practice Session Screen.
 
+### Custom chord selection
+
+The user can customize which chords will be used during the practice session.
+
+Chord groups preselect a set of chords, but the user can manually select or unselect individual chords before starting.
+
+The screen also provides Select all and Clear all actions.
+
+The Start Practice button is disabled when no chords are selected.
+
 ---
 
 ## 2. Practice Session Screen
@@ -83,6 +96,8 @@ When pressed, the app navigates to the Practice Session Screen.
 The Practice Session Screen is shown during an active practice session.
 
 Its purpose is to guide the user through chord changes using random chord prompts and a visual pulse.
+
+When using custom chord selection, the active session summary shows the selected chord names.
 
 ### Content
 
@@ -97,6 +112,7 @@ The screen includes:
 - Chord change counter.
 - Pause / Resume button.
 - End Session button.
+- When using custom chord selection, the active session summary shows the selected chord names.
 
 ### Current chord
 
@@ -186,3 +202,13 @@ Resume
 ### End Session button
 
 The End Session button stops the current practice session and returns the user to the Practice Setup Screen.
+
+### Custom chord selection
+
+The user can customize which chords will be used during the practice session.
+
+Chord groups preselect a set of chords, but the user can manually select or unselect individual chords before starting.
+
+The screen also provides Select all and Clear all actions.
+
+The Start Practice button is disabled when no chords are selected.
