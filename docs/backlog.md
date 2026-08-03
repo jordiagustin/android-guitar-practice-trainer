@@ -1950,3 +1950,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-109 — Update setup session summary with selected chord count
+
+Update the Practice Setup Screen summary to show the number of selected chords.
+
+The goal is to make the session summary accurately reflect custom chord selections before starting practice.
+
+Related tasks:
+
+- B-103 — Start session with selected chords
+- B-105 — Show selected chord count in setup screen
+- B-107 — Improve custom selection session summary
+
+Status:
+
+- Done

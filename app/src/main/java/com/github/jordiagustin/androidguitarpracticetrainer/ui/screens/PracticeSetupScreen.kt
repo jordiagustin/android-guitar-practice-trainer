@@ -148,7 +148,7 @@ fun PracticeSetupScreen(
         )
 
         Spacer(modifier = Modifier.height(SmallSpacing))
-        
+
         Text(
             text = SELECT_CHORDS_HELPER_TEXT,
             fontSize = SmallFontSize,
@@ -255,7 +255,7 @@ fun PracticeSetupScreen(
 
         Text(
             text = formatSelectedSessionSummary(
-                chordGroupName = selectedChordGroup.name,
+                selectedChordCount = selectedChords.size,
                 bpm = bpm.toInt()
             ),
             fontSize = BodyFontSize
@@ -314,10 +314,10 @@ fun PracticeSetupScreen(
 }
 
 private fun formatSelectedSessionSummary(
-    chordGroupName: String,
+    selectedChordCount: Int,
     bpm: Int
 ): String {
-    return "$chordGroupName · $bpm BPM"
+    return "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
 }
 
 @Preview(showBackground = true)
