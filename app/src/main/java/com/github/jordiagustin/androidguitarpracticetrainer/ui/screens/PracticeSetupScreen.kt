@@ -64,6 +64,7 @@ private const val METRONOME_SOUND_LABEL = "Metronome sound"
 
 private const val SELECT_CHORDS_LABEL = "Select chords"
 
+private const val NO_CHORDS_SELECTED_MESSAGE = "Select at least one chord to start practice"
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int, Boolean) -> Unit
@@ -77,6 +78,7 @@ fun PracticeSetupScreen(
     var selectedChords by remember {
         mutableStateOf(selectedChordGroup.chords)
     }
+    val canStartPractice = selectedChords.isNotEmpty()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -231,7 +233,17 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(LargeSpacing))
 
+        if (!canStartPractice) {
+            Text(
+                text = NO_CHORDS_SELECTED_MESSAGE,
+                fontSize = SmallFontSize
+            )
+
+            Spacer(modifier = Modifier.height(SmallSpacing))
+        }
+
         Button(
+            enabled = canStartPractice,
             onClick = {
                 onStartPractice(
                     ChordGroup(

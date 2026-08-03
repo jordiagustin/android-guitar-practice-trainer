@@ -1861,3 +1861,21 @@ Related tasks:
 Status:
 
 - To do
+
+---
+
+### B-104 — Disable Start button when no chords are selected
+
+Disable the Start Practice button when no chords are selected.
+
+The goal is to prevent starting an invalid practice session with an empty chord list.
+
+Related tasks:
+
+- B-101 — Add custom chord selection state
+- B-102 — Display selectable chords in setup screen
+- B-103 — Start session with selected chords
+
+Status:
+
+- To do
