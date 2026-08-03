@@ -1843,4 +1843,21 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-103 — Start session with selected chords
+
+Start the practice session using the individually selected chords.
+
+The goal is to make custom chord selection affect the actual practice session.
+
+Related tasks:
+
+- B-101 — Add custom chord selection state
+- B-102 — Display selectable chords in setup screen
+
+Status:
+
 - To do

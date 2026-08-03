@@ -234,13 +234,15 @@ fun PracticeSetupScreen(
         Button(
             onClick = {
                 onStartPractice(
-                    selectedChordGroup,
+                    ChordGroup(
+                        name = "Custom selection",
+                        chords = selectedChords
+                    ),
                     bpm.toInt(),
                     isSoundEnabled
                 )
             }
         ) {
-
             Text(
                 text = START_PRACTICE_LABEL,
                 fontSize = BodyFontSize
