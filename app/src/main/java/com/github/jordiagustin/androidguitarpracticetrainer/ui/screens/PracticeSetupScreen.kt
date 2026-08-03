@@ -253,8 +253,13 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
+        val selectedChordNames = selectedChords.joinToString(", ") { chord ->
+            chord.name
+        }
+
         Text(
             text = formatSelectedSessionSummary(
+                selectedChordNames = selectedChordNames,
                 selectedChordCount = selectedChords.size,
                 bpm = bpm.toInt()
             ),
@@ -314,10 +319,11 @@ fun PracticeSetupScreen(
 }
 
 private fun formatSelectedSessionSummary(
+    selectedChordNames: String,
     selectedChordCount: Int,
     bpm: Int
 ): String {
-    return "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    return "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
 }
 
 @Preview(showBackground = true)

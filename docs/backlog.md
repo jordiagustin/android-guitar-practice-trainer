@@ -1968,3 +1968,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-110 — Show selected chord names in setup summary
+
+Update the Practice Setup Screen summary to show the names of the selected chords.
+
+The goal is to make the selected practice content clear before starting a session.
+
+Related tasks:
+
+- B-103 — Start session with selected chords
+- B-105 — Show selected chord count in setup screen
+- B-109 — Update setup session summary with selected chord count
+
+Status:
+
+- Done
