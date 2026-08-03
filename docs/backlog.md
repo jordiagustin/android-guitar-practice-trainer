@@ -1986,3 +1986,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-111 — Show selected chord names in active session summary
+
+Update the Practice Session Screen summary to show the selected chord names.
+
+The goal is to make the active session clearly show which chords are being practiced.
+
+Related tasks:
+
+- B-103 — Start session with selected chords
+- B-107 — Improve custom selection session summary
+- B-110 — Show selected chord names in setup summary
+
+Status:
+
+- Done

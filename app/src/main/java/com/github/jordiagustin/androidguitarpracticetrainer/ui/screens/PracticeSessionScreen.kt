@@ -83,6 +83,8 @@ private const val CHORD_DIAGRAM_FINGER_RADIUS = 10f
 private const val CHORD_DIAGRAM_INDICATOR_TEXT_SIZE = 28f
 private const val CHORD_DIAGRAM_INDICATOR_TOP_OFFSET = 6f
 
+private const val CUSTOM_SELECTION_LABEL = "Custom selection"
+
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -167,6 +169,10 @@ fun PracticeSessionScreen(
         chordName = currentChord.name
     )
 
+    val chordNames = chordGroup.chords.joinToString(", ") { chord ->
+        chord.name
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -223,7 +229,7 @@ fun PracticeSessionScreen(
 
         Text(
             text = formatSessionConfigurationSummary(
-                chordGroupName = chordGroup.name,
+                chordNames = chordNames,
                 bpm = bpm
             ),
             fontSize = BodyFontSize
@@ -272,10 +278,10 @@ fun PracticeSessionScreen(
 }
 
 private fun formatSessionConfigurationSummary(
-    chordGroupName: String,
+    chordNames: String,
     bpm: Int
 ): String {
-    return "$chordGroupName · $bpm BPM"
+    return "$CUSTOM_SELECTION_LABEL · $chordNames · $bpm BPM"
 }
 
 private fun formatSessionProgressSummary(
