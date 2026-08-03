@@ -1810,3 +1810,37 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-101 — Add custom chord selection state
+
+Add state to track which chords are selected for the practice session.
+
+The goal is to prepare the Practice Setup Screen for custom chord selection instead of only using predefined chord groups.
+
+Related tasks:
+
+- B-006 — Add predefined chord groups
+- B-009 — Add chord group selector
+- B-093 — Add remaining minor chord diagrams
+
+Status:
+
+- Done
+
+---
+
+### B-102 — Display selectable chords in setup screen
+
+Display individual chord checkboxes in the Practice Setup Screen.
+
+The goal is to allow the user to see and modify which chords will be used during the practice session.
+
+Related tasks:
+
+- B-101 — Add custom chord selection state
+
+Status:
+
+- To do

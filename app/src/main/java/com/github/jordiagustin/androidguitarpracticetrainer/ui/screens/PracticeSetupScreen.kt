@@ -62,6 +62,8 @@ private val ExtraLargeSpacing = 32.dp
 
 private const val METRONOME_SOUND_LABEL = "Metronome sound"
 
+private const val SELECT_CHORDS_LABEL = "Select chords"
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int, Boolean) -> Unit
@@ -121,6 +123,40 @@ fun PracticeSetupScreen(
                 )
 
                 Text(text = chordGroup.name)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(LargeSpacing))
+
+        Text(
+            text = SELECT_CHORDS_LABEL,
+            fontSize = SectionTitleFontSize,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(SmallSpacing))
+
+        selectedChordGroup.chords.forEach { chord ->
+            val isSelected = selectedChords.contains(chord)
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Checkbox(
+                    checked = isSelected,
+                    onCheckedChange = { checked ->
+                        selectedChords = if (checked) {
+                            selectedChords + chord
+                        } else {
+                            selectedChords - chord
+                        }
+                    }
+                )
+
+                Text(
+                    text = chord.name,
+                    fontSize = BodyFontSize
+                )
             }
         }
 
