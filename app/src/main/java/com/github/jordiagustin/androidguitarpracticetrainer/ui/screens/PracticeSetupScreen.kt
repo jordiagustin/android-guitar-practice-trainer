@@ -48,6 +48,9 @@ private const val CHORD_GROUP_LABEL = "Chord group"
 private const val BPM_LABEL = "BPM"
 private const val SELECTED_SESSION_LABEL = "Selected session"
 
+private const val CUSTOM_SELECTION_LABEL = "Custom selection"
+private const val CHORDS_LABEL = "chords"
+
 private val TitleFontSize = 28.sp
 private val SectionTitleFontSize = 20.sp
 private val DescriptionFontSize = 16.sp
@@ -284,7 +287,7 @@ fun PracticeSetupScreen(
             onClick = {
                 onStartPractice(
                     ChordGroup(
-                        name = "Custom selection",
+                        name = "$CUSTOM_SELECTION_LABEL · ${selectedChords.size} $CHORDS_LABEL",
                         chords = selectedChords
                     ),
                     bpm.toInt(),
