@@ -51,6 +51,8 @@ private const val SELECTED_SESSION_LABEL = "Selected session"
 private const val CUSTOM_SELECTION_LABEL = "Custom selection"
 private const val CHORDS_LABEL = "chords"
 
+private const val SELECT_CHORDS_HELPER_TEXT = "Chord groups preselect chords. You can customize the selection below."
+
 private val TitleFontSize = 28.sp
 private val SectionTitleFontSize = 20.sp
 private val DescriptionFontSize = 16.sp
@@ -143,6 +145,14 @@ fun PracticeSetupScreen(
             text = SELECT_CHORDS_LABEL,
             fontSize = SectionTitleFontSize,
             fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(SmallSpacing))
+        
+        Text(
+            text = SELECT_CHORDS_HELPER_TEXT,
+            fontSize = SmallFontSize,
+            textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(SmallSpacing))

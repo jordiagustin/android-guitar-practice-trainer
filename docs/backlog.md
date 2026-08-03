@@ -1915,3 +1915,38 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-107 — Improve custom selection session summary
+
+Improve the custom chord selection name shown in session summaries.
+
+The goal is to make the active practice session clearer when using individually selected chords.
+
+Related tasks:
+
+- B-103 — Start session with selected chords
+- B-105 — Show selected chord count in setup screen
+
+Status:
+
+- Done
+
+---
+
+### B-108 — Add chord selection helper text
+
+Add helper text explaining that chord groups preselect chords and that individual chords can be customized before starting practice.
+
+The goal is to make the custom chord selection behavior clearer to the user.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-103 — Start session with selected chords
+- B-106 — Add Clear all and Select all chord actions
+
+Status:
+
+- Done
