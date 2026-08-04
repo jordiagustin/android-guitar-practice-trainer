@@ -2093,3 +2093,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-117 — Extract chord checkbox section composable
+
+Extract the repeated chord checkbox section into a reusable composable.
+
+The goal is to reduce duplicated UI code in the Practice Setup Screen and make chord selection easier to maintain.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-116 — Split chord checkboxes by chord type
+
+Status:
+
+- Done

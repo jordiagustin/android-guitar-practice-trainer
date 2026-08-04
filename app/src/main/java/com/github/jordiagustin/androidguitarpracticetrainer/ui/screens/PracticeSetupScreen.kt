@@ -32,6 +32,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordType
+import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -191,71 +192,38 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
-        if (majorSelectedGroupChords.isNotEmpty()) {
-            Text(
-                text = "Major chords",
-                fontSize = BodyFontSize,
-                fontWeight = FontWeight.Bold
-            )
-
-            majorSelectedGroupChords.forEach { chord ->
-                val isSelected = selectedChords.contains(chord)
-
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Checkbox(
-                        checked = isSelected,
-                        onCheckedChange = { checked ->
-                            selectedChords = if (checked) {
-                                selectedChords + chord
-                            } else {
-                                selectedChords - chord
-                            }
-                        }
-                    )
-
-                    Text(
-                        text = chord.name,
-                        fontSize = BodyFontSize
-                    )
+        ChordCheckboxSection(
+            title = "Major chords",
+            chords = majorSelectedGroupChords,
+            selectedChords = selectedChords,
+            onChordSelectionChanged = { chord, checked ->
+                selectedChords = if (checked) {
+                    selectedChords + chord
+                } else {
+                    selectedChords - chord
                 }
             }
-        }
+        )
 
-        if (minorSelectedGroupChords.isNotEmpty()) {
+        if (
+            majorSelectedGroupChords.isNotEmpty() &&
+            minorSelectedGroupChords.isNotEmpty()
+        ) {
             Spacer(modifier = Modifier.height(SmallSpacing))
+        }
 
-            Text(
-                text = "Minor chords",
-                fontSize = BodyFontSize,
-                fontWeight = FontWeight.Bold
-            )
-
-            minorSelectedGroupChords.forEach { chord ->
-                val isSelected = selectedChords.contains(chord)
-
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Checkbox(
-                        checked = isSelected,
-                        onCheckedChange = { checked ->
-                            selectedChords = if (checked) {
-                                selectedChords + chord
-                            } else {
-                                selectedChords - chord
-                            }
-                        }
-                    )
-
-                    Text(
-                        text = chord.name,
-                        fontSize = BodyFontSize
-                    )
+        ChordCheckboxSection(
+            title = "Minor chords",
+            chords = minorSelectedGroupChords,
+            selectedChords = selectedChords,
+            onChordSelectionChanged = { chord, checked ->
+                selectedChords = if (checked) {
+                    selectedChords + chord
+                } else {
+                    selectedChords - chord
                 }
             }
-        }
+        )
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
@@ -381,6 +349,42 @@ private fun formatSelectedSessionSummary(
         "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
     } else {
         "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    }
+}
+
+@Composable
+private fun ChordCheckboxSection(
+    title: String,
+    chords: List<Chord>,
+    selectedChords: List<Chord>,
+    onChordSelectionChanged: (Chord, Boolean) -> Unit
+) {
+    if (chords.isNotEmpty()) {
+        Text(
+            text = title,
+            fontSize = BodyFontSize,
+            fontWeight = FontWeight.Bold
+        )
+
+        chords.forEach { chord ->
+            val isSelected = selectedChords.contains(chord)
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Checkbox(
+                    checked = isSelected,
+                    onCheckedChange = { checked ->
+                        onChordSelectionChanged(chord, checked)
+                    }
+                )
+
+                Text(
+                    text = chord.name,
+                    fontSize = BodyFontSize
+                )
+            }
+        }
     }
 }
 
