@@ -2414,3 +2414,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-135 — Improve practice summary screen layout
+
+Improve the visual layout of the Practice Summary Screen.
+
+The goal is to make the final session result easier to read and more polished on physical devices.
+
+Related tasks:
+
+- B-134 — Add session end summary screen
+
+Status:
+
+- To do

@@ -19,6 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.model.PracticeSessionSummary
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeTimer
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.graphics.Color
 
 private const val SUMMARY_TITLE = "Practice finished"
 private const val TIME_LABEL = "Time"
@@ -34,6 +37,10 @@ private val ExtraLargeSpacing = 32.dp
 
 private val TitleFontSize = 28.sp
 private val BodyFontSize = 18.sp
+
+private const val SESSION_RESULT_LABEL = "Session result"
+
+private val SectionTitleFontSize = 20.sp
 
 @Composable
 fun PracticeSummaryScreen(
@@ -54,41 +61,56 @@ fun PracticeSummaryScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = SUMMARY_TITLE,
-            fontSize = TitleFontSize,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, Color.Gray)
+                .padding(MediumSpacing),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = SESSION_RESULT_LABEL,
+                fontSize = SectionTitleFontSize,
+                fontWeight = FontWeight.Bold
+            )
 
-        Spacer(modifier = Modifier.height(ExtraLargeSpacing))
+            Spacer(modifier = Modifier.height(MediumSpacing))
 
-        Text(
-            text = "$TIME_LABEL: $formattedTime",
-            fontSize = BodyFontSize
-        )
+            Text(
+                text = "$TIME_LABEL: $formattedTime",
+                fontSize = BodyFontSize
+            )
 
-        Spacer(modifier = Modifier.height(SmallSpacing))
+            Spacer(modifier = Modifier.height(SmallSpacing))
 
-        Text(
-            text = "$CHANGES_LABEL: ${summary.chordChangeCount}",
-            fontSize = BodyFontSize
-        )
+            Text(
+                text = "$CHANGES_LABEL: ${summary.chordChangeCount}",
+                fontSize = BodyFontSize
+            )
 
-        Spacer(modifier = Modifier.height(SmallSpacing))
+            Spacer(modifier = Modifier.height(SmallSpacing))
 
-        Text(
-            text = "$BPM_LABEL: ${summary.bpm}",
-            fontSize = BodyFontSize
-        )
+            Text(
+                text = "$BPM_LABEL: ${summary.bpm}",
+                fontSize = BodyFontSize
+            )
 
-        Spacer(modifier = Modifier.height(MediumSpacing))
+            Spacer(modifier = Modifier.height(MediumSpacing))
 
-        Text(
-            text = "$CHORDS_LABEL: $chordNames",
-            fontSize = BodyFontSize,
-            textAlign = TextAlign.Center
-        )
+            Text(
+                text = "$CHORDS_LABEL:",
+                fontSize = BodyFontSize,
+                fontWeight = FontWeight.Bold
+            )
+
+            Spacer(modifier = Modifier.height(SmallSpacing))
+
+            Text(
+                text = chordNames,
+                fontSize = BodyFontSize,
+                textAlign = TextAlign.Center
+            )
+        }
 
         Spacer(modifier = Modifier.height(ExtraLargeSpacing))
 
