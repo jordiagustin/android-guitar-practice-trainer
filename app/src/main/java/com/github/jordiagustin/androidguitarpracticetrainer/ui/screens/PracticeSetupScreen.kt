@@ -117,6 +117,9 @@ fun PracticeSetupScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
+        Spacer(modifier = Modifier.height(MediumSpacing))
+
         Text(
             text = APP_TITLE,
             fontSize = TitleFontSize,
@@ -142,19 +145,28 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
-        chordGroups.forEach { chordGroup ->
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                RadioButton(
-                    selected = chordGroup == selectedChordGroup,
-                    onClick = {
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(SmallSpacing),
+            verticalArrangement = Arrangement.spacedBy(SmallSpacing)
+        ) {
+            chordGroups.forEach { chordGroup ->
+                Row(
+                    modifier = Modifier.clickable {
                         selectedChordGroup = chordGroup
                         selectedChords = chordGroup.chords
-                    }
-                )
+                    },
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = chordGroup == selectedChordGroup,
+                        onClick = {
+                            selectedChordGroup = chordGroup
+                            selectedChords = chordGroup.chords
+                        }
+                    )
 
-                Text(text = chordGroup.name)
+                    Text(text = chordGroup.name)
+                }
             }
         }
 

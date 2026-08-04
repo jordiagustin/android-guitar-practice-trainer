@@ -2517,4 +2517,90 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-141 — Review visual design improvement opportunities
+
+Review the current UI and identify small visual design improvements for the setup, session and summary screens.
+
+Findings:
+
+- Practice Setup Screen:
+  - Add more top spacing before the app title.
+  - Consider displaying chord group radio buttons horizontally.
+  - Keep the setup screen readable without making it much longer.
+
+- Practice Session Screen:
+  - Move the current chord name slightly lower.
+  - Increase the current chord name size slightly.
+  - Add more spacing between the chord diagram and the pulse indicator.
+  - Improve chord diagram readability if keeping generated diagrams.
+
+- Chord Diagram:
+  - Current generated diagram works functionally.
+  - It is not fully clear which side represents the guitar neck/string orientation.
+  - Possible improvement: draw strings with different thickness from thickest to thinnest.
+  - Since future versions may use image-based chord diagrams, avoid spending too much time polishing this for now.
+
+Conclusion:
+
+- Core functionality is working correctly.
+- The next phase should focus on small visual polish tasks rather than app behavior changes.
+
+Status:
+
+- Done
+
+---
+
+### B-142 — Improve setup screen top spacing
+
+Add more vertical spacing at the top of the Practice Setup Screen so the title does not feel too close to the top edge.
+
+The goal is to improve visual breathing room without changing the setup behavior.
+
+Related tasks:
+
+- B-141 — Review visual design improvement opportunities
+
+Status:
+
+- Done
+
+---
+
+### B-143 — Display chord group selector horizontally
+
+Display the chord group radio buttons in a horizontal or wrapping layout to reduce vertical space in the Practice Setup Screen.
+
+Status:
+
+- Done
+
+---
+
+### B-144 — Improve practice session chord spacing
+
+Move the current chord display slightly lower, increase its font size and add more spacing between the chord diagram and the pulse indicator.
+
+The goal is to improve readability during practice without changing session behavior.
+
+Related tasks:
+
+- B-141 — Review visual design improvement opportunities
+
+Status:
+
+- Done
+
+---
+
+### B-145 — Improve generated chord diagram string readability
+
+Draw guitar strings with different thicknesses from the thickest string to the thinnest string to improve diagram readability.
+
+Status:
+
 - To do

@@ -57,7 +57,7 @@ private const val SESSION_LABEL = "Session"
 private const val TIME_LABEL = "Time"
 private const val CHANGES_LABEL = "Changes"
 
-private val CurrentChordFontSize = 72.sp
+private val CurrentChordFontSize = 80.sp
 private val SectionTitleFontSize = 20.sp
 private val PulseFontSize = 24.sp
 private val BodyFontSize = 18.sp
@@ -67,6 +67,7 @@ private val MediumSpacing = 16.dp
 private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
 private val BottomSpacing = 50.dp
+private val LargeSpacing = 24.dp
 
 private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
 private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"
@@ -190,9 +191,11 @@ fun PracticeSessionScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
+        Spacer(modifier = Modifier.height(MediumSpacing))
+
         Text(
             text = CURRENT_CHORD_LABEL,
-            fontSize = 20.sp
+            fontSize = SectionTitleFontSize
         )
 
         Spacer(modifier = Modifier.height(MediumSpacing))
@@ -209,6 +212,8 @@ fun PracticeSessionScreen(
             chordName = currentChord.name,
             chordDiagram = currentChordDiagram
         )
+
+        Spacer(modifier = Modifier.height(LargeSpacing))
 
         Text(
             text = if (pulseActive) PULSE_ACTIVE_LABEL else PULSE_INACTIVE_LABEL,
