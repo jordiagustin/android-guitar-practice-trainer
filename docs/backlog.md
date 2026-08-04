@@ -2259,3 +2259,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-126 — Add navigation bar padding to setup screen
+
+Add navigation bar padding to the Practice Setup Screen.
+
+The goal is to prevent setup content from overlapping or getting too close to the Android system navigation area on physical devices.
+
+Related tasks:
+
+- B-125 — Add bottom spacing to setup screen
+
+Status:
+
+- Done

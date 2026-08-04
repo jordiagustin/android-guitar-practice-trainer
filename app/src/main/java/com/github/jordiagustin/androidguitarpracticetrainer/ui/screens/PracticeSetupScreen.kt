@@ -34,6 +34,7 @@ import androidx.compose.material3.Checkbox
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordType
 import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelection
+import androidx.compose.foundation.layout.navigationBarsPadding
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -108,6 +109,7 @@ fun PracticeSetupScreen(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .navigationBarsPadding()
             .padding(ScreenPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
