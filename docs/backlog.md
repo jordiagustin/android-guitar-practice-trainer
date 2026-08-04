@@ -2378,3 +2378,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-133 — Review compact chord selection on physical device
+
+Review the compact chord selection layout on a physical Android device.
+
+The goal is to verify that chord selection is readable, touch-friendly and comfortable after making rows clickable and adding spacing.
+
+Related tasks:
+
+- B-129 — Make chord selection more compact
+- B-131 — Make chord checkbox rows clickable
+- B-132 — Add spacing between checkbox and chord name
+
+Status:
+
+- Done
