@@ -2464,3 +2464,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-138 — Update user stories for summary screen
+
+Update user stories to include the final practice summary flow.
+
+The goal is to document the user value of reviewing elapsed time, chord changes, BPM and practiced chords after ending a session.
+
+Related tasks:
+
+- B-134 — Add session end summary screen
+- B-137 — Update navigation flow for summary screen
+
+Status:
+
+- To do

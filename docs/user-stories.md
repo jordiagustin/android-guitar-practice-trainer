@@ -163,3 +163,18 @@ Acceptance criteria:
 * The session screen shows the selected BPM.
 * The session screen shows the elapsed practice time.
 * The session screen shows the chord change counter.
+
+---
+
+### US-011 — Review completed practice session
+
+As a guitar learner, I want to see a summary after finishing a practice session, so that I can review how long I practiced and how many chord changes I completed.
+
+Acceptance criteria:
+
+- The summary is shown after pressing End Session.
+- The summary displays final elapsed time.
+- The summary displays final chord change count.
+- The summary displays the session BPM.
+- The summary displays the practiced chord names.
+- The user can start a new session from the summary screen.
