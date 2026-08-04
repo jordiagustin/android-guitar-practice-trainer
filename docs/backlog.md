@@ -2211,3 +2211,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-124 — Review custom chord selection on physical device
+
+Test the custom chord selection flow on a physical Android device.
+
+The goal is to verify that chord checkboxes, Select all, Clear all, disabled Start button, setup summary and active session summary work correctly on a real screen.
+
+Related tasks:
+
+- B-099 — Test app on physical Android device
+- B-101 — Add custom chord selection state
+- B-123 — Update README for custom chord selection
+
+Status:
+
+- To do
