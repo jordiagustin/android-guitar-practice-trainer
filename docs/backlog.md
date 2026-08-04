@@ -2311,3 +2311,20 @@ Status:
 
 - Done
 
+---
+
+### B-129 — Make chord selection more compact
+
+Display chord checkboxes in a compact wrapping layout instead of one chord per line.
+
+The goal is to reduce vertical scrolling in the Practice Setup Screen and make custom chord selection easier to use on physical devices.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-116 — Split chord checkboxes by chord type
+- B-128 — Review setup screen spacing on physical device
+
+Status:
+
+- Done

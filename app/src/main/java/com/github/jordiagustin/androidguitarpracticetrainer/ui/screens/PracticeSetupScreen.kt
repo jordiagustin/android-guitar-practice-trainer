@@ -35,6 +35,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordType
 import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelection
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.FlowRow
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -373,23 +374,28 @@ private fun ChordCheckboxSection(
             fontWeight = FontWeight.Bold
         )
 
-        chords.forEach { chord ->
-            val isSelected = selectedChords.contains(chord)
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(SmallSpacing),
+            verticalArrangement = Arrangement.spacedBy(SmallSpacing)
+        ) {
+            chords.forEach { chord ->
+                val isSelected = selectedChords.contains(chord)
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Checkbox(
-                    checked = isSelected,
-                    onCheckedChange = { checked ->
-                        onChordSelectionChanged(chord, checked)
-                    }
-                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Checkbox(
+                        checked = isSelected,
+                        onCheckedChange = { checked ->
+                            onChordSelectionChanged(chord, checked)
+                        }
+                    )
 
-                Text(
-                    text = chord.name,
-                    fontSize = BodyFontSize
-                )
+                    Text(
+                        text = chord.name,
+                        fontSize = BodyFontSize
+                    )
+                }
             }
         }
     }

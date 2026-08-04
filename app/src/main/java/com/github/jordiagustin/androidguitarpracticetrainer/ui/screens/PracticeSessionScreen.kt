@@ -284,7 +284,7 @@ fun PracticeSessionScreen(
         }
 
         Spacer(modifier = Modifier.height(BottomSpacing))
-        
+
     }
 }
 
