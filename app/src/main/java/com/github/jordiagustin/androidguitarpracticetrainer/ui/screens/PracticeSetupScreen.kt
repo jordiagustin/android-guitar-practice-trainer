@@ -67,6 +67,7 @@ private val SmallSpacing = 8.dp
 private val MediumSpacing = 12.dp
 private val LargeSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
+private val BottomSpacing = 50.dp
 
 private const val METRONOME_SOUND_LABEL = "Metronome sound"
 
@@ -338,6 +339,9 @@ fun PracticeSetupScreen(
                 fontSize = BodyFontSize
             )
         }
+
+        Spacer(modifier = Modifier.height(BottomSpacing))
+
     }
 }
 

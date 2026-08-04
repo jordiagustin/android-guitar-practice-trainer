@@ -2229,3 +2229,33 @@ Related tasks:
 Status:
 
 - Done
+
+### B-125 — Add bottom spacing to setup screen
+
+Add extra bottom spacing to the Practice Setup Screen.
+
+The goal is to prevent the Start Practice button from being too close to the bottom edge or system navigation area on physical devices.
+
+Related tasks:
+
+- B-124 — Review custom chord selection on physical device
+
+Status:
+
+- Done
+
+---
+
+### B-125 — Add bottom spacing to setup screen
+
+Add extra bottom spacing to the Practice Setup Screen.
+
+The goal is to prevent the Start Practice button from being too close to the bottom edge or system navigation area on physical devices.
+
+Related tasks:
+
+- B-124 — Review custom chord selection on physical device
+
+Status:
+
+- Done
