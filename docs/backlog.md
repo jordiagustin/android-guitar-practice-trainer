@@ -2611,3 +2611,15 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-146 — Avoid non-null assertion in summary navigation
+
+Replace the non-null assertion used when opening the Practice Summary Screen with a safer local summary value.
+
+The goal is to make the navigation state handling more idiomatic and avoid using `!!`.
+
+Status:
+
+- Done

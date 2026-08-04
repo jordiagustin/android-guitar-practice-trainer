@@ -40,19 +40,21 @@ class MainActivity : ComponentActivity() {
                     mutableStateOf<PracticeSessionSummary?>(null)
                 }
 
+                val summary = practiceSessionSummary
+
                 if (isPracticeSessionActive) {
                     PracticeSessionScreen(
                         chordGroup = activeChordGroup,
                         bpm = activeBpm,
                         isSoundEnabled = activeSoundEnabled,
-                        onEndSession = { summary ->
-                            practiceSessionSummary = summary
+                        onEndSession = { completedSummary ->
+                            practiceSessionSummary = completedSummary
                             isPracticeSessionActive = false
                         }
                     )
-                } else if (practiceSessionSummary != null) {
+                } else if (summary != null) {
                     PracticeSummaryScreen(
-                        summary = practiceSessionSummary!!,
+                        summary = summary,
                         onStartNewSession = {
                             practiceSessionSummary = null
                         }
