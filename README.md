@@ -1,6 +1,6 @@
 # Android Guitar Practice Trainer
 
-Android Guitar Practice Trainer is a personal Android project focused on helping guitar learners practice chord changes with a configurable tempo.
+Android Guitar Practice Trainer is a focused practice app for training guitar chord changes with custom chord selection, BPM-based prompts, optional metronome sound and generated chord diagrams.
 
 The goal of the app is to provide a simple practice tool where users can select groups of chords, set a BPM value, and practice chord changes while the app displays random chords on screen.
 
@@ -56,7 +56,7 @@ The first version of the app focuses on one core feature:
 - Chord diagrams show fretted positions, open strings, muted strings and barre positions.
 - Custom chord selection before starting a practice session.
 - Select all and Clear all actions for faster chord selection.
-- Setup and session summaries show the selected chord names.
+- Setup and session summaries show selected chord names or chord count.
 
 ## Tech stack
 

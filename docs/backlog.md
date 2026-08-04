@@ -2193,3 +2193,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-123 — Update README for custom chord selection
+
+Update the README to clearly describe custom chord selection as one of the main app features.
+
+The goal is to make the project description reflect the current app direction as a focused guitar chord change trainer.
+
+Related tasks:
+
+- B-101 — Add custom chord selection state
+- B-112 — Document custom chord selection
+- B-122 — Document custom chord selection tests
+
+Status:
+
+- Done
