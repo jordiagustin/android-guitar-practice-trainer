@@ -182,7 +182,9 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
-        selectedChordGroup.chords.forEach { chord ->
+        selectedChordGroup.chords
+            .sortedBy { chord -> chord.name }
+            .forEach { chord ->
             val isSelected = selectedChords.contains(chord)
 
             Row(

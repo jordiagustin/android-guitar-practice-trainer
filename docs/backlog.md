@@ -2041,3 +2041,39 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-114 — Sort selected chord names in summary
+
+Sort selected chord names before displaying them in setup and session summaries.
+
+The goal is to make custom chord summaries consistent and easier to read.
+
+Related tasks:
+
+- B-110 — Show selected chord names in setup summary
+- B-111 — Show selected chord names in active session summary
+- B-113 — Shorten selected chord names summary
+
+Status:
+
+- Done
+
+----
+
+### B-115 — Keep chord checkbox order consistent
+
+Sort chord checkboxes by chord name in the Practice Setup Screen.
+
+The goal is to make the custom chord selection list predictable and easier to scan.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-114 — Sort selected chord names in summary
+
+Status:
+
+- Done
+
