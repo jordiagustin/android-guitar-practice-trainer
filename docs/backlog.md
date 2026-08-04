@@ -2480,4 +2480,22 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-139 — Update README for practice summary screen
+
+Update the README to mention the Practice Summary Screen and the final session results shown after ending a practice session.
+
+The goal is to make the public project description reflect the current three-screen practice flow.
+
+Related tasks:
+
+- B-134 — Add session end summary screen
+- B-136 — Document practice summary screen
+- B-138 — Update user stories for summary screen
+
+Status:
+
+- Done

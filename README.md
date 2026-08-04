@@ -2,45 +2,55 @@
 
 Android Guitar Practice Trainer is a focused practice app for training guitar chord changes with custom chord selection, BPM-based prompts, optional metronome sound and generated chord diagrams.
 
-The goal of the app is to provide a simple practice tool where users can select groups of chords, set a BPM value, and practice chord changes while the app displays random chords on screen.
+The goal of the app is to provide a simple practice tool where users can choose the exact chords they want to practice, set a BPM value, and train chord changes while the app displays random chord prompts on screen.
 
 ## Project status
 
-Current status: **Core MVP completed**
+Current status: **Core MVP completed and expanded with post-MVP product improvements**
 
-The app includes a functional two-screen practice flow with:
+The app includes a functional three-screen practice flow:
 
-- Chord group selection.
+```text
+Practice Setup → Practice Session → Practice Summary
+```
+
+Current capabilities include:
+
+- Custom chord selection before starting a practice session.
+- Chord group presets.
+- Select all and Clear all chord actions.
 - BPM configuration.
 - Random chord changes.
-- Prevention of repeated chords twice in a row.
+- Prevention of repeated chords twice in a row when alternatives exist.
 - Visual pulse indicator.
 - Optional metronome sound.
 - Pause / Resume support.
 - Elapsed practice time.
 - Chord change counter.
-- Start and active session summaries.
 - Generated chord diagrams for supported major and minor chords.
 - Support for fretted positions, open strings, muted strings and barre chord diagrams.
-- Unit tests for practice logic and chord diagram data.
+- Final practice summary after ending a session.
+- Unit tests for practice logic, chord selection and chord diagram data.
 - Project documentation.
 
-The project has moved beyond the initial MVP and now includes post-MVP product improvements such as generated chord diagrams, optional metronome sound and improved session controls.
-
-Next development phase: visual design improvements, session configuration refinements and additional practice features.
+Next development phase: visual design improvements, practice history, saved practice presets and release preparation.
 
 ## Main goal
 
-The first version of the app focuses on one core feature:
+The app focuses on one core use case:
 
-- Practicing chord changes using random chord prompts and a configurable tempo.
+- Practicing guitar chord changes using custom chord selection, random chord prompts and a configurable tempo.
 
-## Current MVP features
+## Current features
 
 - Chord group selector:
   - Major chords
   - Minor chords
   - All chords
+- Custom chord selection before starting a practice session.
+- Compact chord checkbox layout grouped by chord type.
+- Select all and Clear all actions for faster chord selection.
+- Setup and session summaries show selected chord names or chord count.
 - BPM selector:
   - Minimum: 30 BPM
   - Maximum: 160 BPM
@@ -48,15 +58,16 @@ The first version of the app focuses on one core feature:
 - Practice session screen.
 - Random chord display.
 - Automatic chord changes based on BPM.
-- Pause / Resume control.
-- Stop session control.
+- Prevention of repeated chords twice in a row when alternatives exist.
+- Visual pulse indicator.
 - Optional metronome sound.
 - Metronome sound can be enabled or disabled before starting a session.
+- Pause / Resume control.
+- End Session control.
 - Generated chord diagrams for supported major and minor chords.
 - Chord diagrams show fretted positions, open strings, muted strings and barre positions.
-- Custom chord selection before starting a practice session.
-- Select all and Clear all actions for faster chord selection.
-- Setup and session summaries show selected chord names or chord count.
+- Final practice summary after ending a session.
+- Summary includes elapsed time, chord changes, BPM and practiced chords.
 
 ## Tech stack
 
@@ -72,25 +83,37 @@ Current technologies:
 
 The project separates basic responsibilities into packages:
 
-- `model`: core data models such as chords, chord groups and practice sessions.
-- `data`: predefined chord data used by the MVP.
-- `practice`: practice-related logic such as chord selection and timer calculations.
+- `model`: core data models such as chords, chord groups, chord diagrams and practice session summaries.
+- `data`: predefined chord and chord diagram data.
+- `practice`: practice-related logic such as chord selection, random chord selection and timer calculations.
 - `ui.screens`: Jetpack Compose screens.
+- `ui.components`: reusable UI components.
 - `ui.theme`: Compose theme configuration.
+- `app/src/test`: unit tests.
 
 ```text
 app/src/main/java/com/github/jordiagustin/androidguitarpracticetrainer/
 ├── data
+│   ├── ChordDiagramRepository.kt
 │   └── ChordRepository.kt
 ├── model
 │   ├── Chord.kt
+│   ├── ChordDiagram.kt
 │   ├── ChordGroup.kt
-│   └── PracticeSession.kt
+│   ├── PracticeSession.kt
+│   └── PracticeSessionSummary.kt
 ├── practice
+│   ├── ChordSelection.kt
+│   ├── ChordSelector.kt
+│   ├── PracticeConfig.kt
+│   └── PracticeTimer.kt
 ├── ui
+│   ├── components
+│   │   └── ChordDiagramView.kt
 │   ├── screens
 │   │   ├── PracticeSetupScreen.kt
-│   │   └── PracticeSessionScreen.kt
+│   │   ├── PracticeSessionScreen.kt
+│   │   └── PracticeSummaryScreen.kt
 │   └── theme
 └── MainActivity.kt
 ```
@@ -108,31 +131,17 @@ Current documents:
 - `screen-specification.md`
 - `data-model.md`
 - `backlog.md`
-- `docs/screen-specification.md`
-
-## Future improvements
-
-Possible future improvements include:
-
-- Avoid repeating the same chord twice in a row.
-- Improve the visual design of the practice screens.
-- Add a metronome sound.
-- Add a visual pulse indicator.
-- Add manual chord selection.
-- Add chord diagrams.
-- Add practice history.
-- Add basic music theory content.
-- Add an independent metronome tool.
-- Add a guitar tuner.
 
 ## Tests
 
-The project includes basic unit tests for practice logic components.
+The project includes unit tests for practice logic and chord diagram data.
 
 Current tested components:
 
 - `PracticeTimer`
 - `ChordSelector`
+- `ChordSelection`
+- `ChordDiagramRepository`
 
 The tests verify:
 
@@ -142,11 +151,23 @@ The tests verify:
 - Random chord selection from a chord list.
 - Prevention of repeated chords when alternatives exist.
 - Empty chord list validation.
+- Adding and removing selected chords.
+- Prevention of duplicate selected chords.
+- Chord diagram lookup by chord name.
+- Missing chord diagram behavior.
+- Barre chord diagram data.
+- Diagram availability for all currently supported chords.
 
-To run the tests:
+To run the unit tests on macOS or Linux:
 
 ```bash
 ./gradlew test
+```
+
+To run the unit tests on Windows:
+
+```bash
+.\gradlew test
 ```
 
 ## How to run the project
@@ -167,38 +188,6 @@ git clone https://github.com/jordiagustin/android-guitar-practice-trainer.git
 
 The project should open directly on the **Practice Setup Screen**.
 
----
-
-## Tests
-
-The project includes basic unit tests for practice logic components.
-
-Current tested components:
-
-- `PracticeTimer`
-- `ChordSelector`
-
-The tests verify:
-
-- BPM interval calculation.
-- Elapsed time formatting.
-- Invalid BPM validation.
-- Random chord selection from a chord list.
-- Prevention of repeated chords when alternatives exist.
-- Empty chord list validation.
-
-To run the unit tests on macOS or Linux:
-
-```bash
-./gradlew test
-```
-
-To run the unit tests on Windows:
-
-```bash
-.\gradlew test
-```
-
 ## Physical device testing
 
 The app has been installed and tested on a physical Android device.
@@ -207,9 +196,12 @@ Validated behavior:
 
 - App installation from Android Studio.
 - Practice setup flow.
+- Custom chord selection.
+- Select all and Clear all chord actions.
 - Practice session flow.
 - Pause / Resume controls.
 - End Session control.
+- Practice summary screen.
 - Optional metronome sound.
 - Chord diagram display on a real screen.
 
@@ -217,30 +209,26 @@ Validated behavior:
 
 The project is organized into small packages with clear responsibilities.
 
-- `model`: contains the core data models, such as `Chord`, `ChordGroup`, `ChordType` and `PracticeSession`.
-- `data`: contains predefined chord data used by the MVP.
+- `model`: contains the core data models, such as `Chord`, `ChordGroup`, `ChordType`, `ChordDiagram` and `PracticeSessionSummary`.
+- `data`: contains predefined chord data and chord diagram data.
 - `practice`: contains practice-related logic, such as chord selection, BPM configuration and timer calculations.
+- `ui.components`: contains reusable UI components, such as the generated chord diagram view.
 - `ui.screens`: contains the Jetpack Compose screens.
 - `ui.theme`: contains the Compose theme configuration.
-- `app/src/test`: contains unit tests for practice logic.
+- `app/src/test`: contains unit tests for practice logic and chord diagram data.
 
 This separation keeps UI code focused on presentation while practice logic remains easier to test and maintain.
-
----
 
 ## Roadmap
 
 Possible future improvements:
 
-- Add metronome sound.
-- Add chord diagrams.
-- Allow custom chord groups.
-- Allow changing chords every 2 or 4 beats.
-- Add practice history.
-- Add basic session statistics.
 - Improve visual design.
+- Add saved practice presets.
+- Add practice history.
+- Allow changing chords every 2 or 4 beats.
+- Add additional chord types.
+- Add additional practice modes.
 - Add dark mode support.
-- Add instrument-specific practice modes.
-
----
-
+- Prepare signed release build.
+- Prepare Google Play internal testing release.
