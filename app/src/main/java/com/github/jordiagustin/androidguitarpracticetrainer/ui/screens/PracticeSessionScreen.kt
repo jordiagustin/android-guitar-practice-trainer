@@ -172,9 +172,10 @@ fun PracticeSessionScreen(
         chordName = currentChord.name
     )
 
-    val chordNames = chordGroup.chords.joinToString(", ") { chord ->
-        chord.name
-    }
+    val chordNames = chordGroup.chords
+        .map { chord -> chord.name }
+        .sorted()
+        .joinToString(", ")
 
     Column(
         modifier = Modifier

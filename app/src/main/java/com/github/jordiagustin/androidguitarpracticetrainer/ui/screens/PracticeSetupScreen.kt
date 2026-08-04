@@ -255,9 +255,10 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
-        val selectedChordNames = selectedChords.joinToString(", ") { chord ->
-            chord.name
-        }
+        val selectedChordNames = selectedChords
+            .map { chord -> chord.name }
+            .sorted()
+            .joinToString(", ")
 
         Text(
             text = formatSelectedSessionSummary(
