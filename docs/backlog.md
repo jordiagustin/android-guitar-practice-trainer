@@ -2328,3 +2328,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-130 — Document compact chord selection layout
+
+Update documentation to mention that chord selection is displayed in a compact wrapping layout.
+
+The goal is to keep the screen specification aligned with the improved custom chord selection UI.
+
+Related tasks:
+
+- B-116 — Split chord checkboxes by chord type
+- B-129 — Make chord selection more compact
+
+Status:
+
+- Done

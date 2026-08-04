@@ -89,6 +89,8 @@ The screen also provides Select all and Clear all actions.
 
 The Start Practice button is disabled when no chords are selected.
 
+Chord checkboxes are grouped by chord type and displayed in a compact wrapping layout to reduce vertical scrolling on mobile screens.
+
 ---
 
 ## 2. Practice Session Screen
