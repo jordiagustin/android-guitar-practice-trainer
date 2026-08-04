@@ -2361,3 +2361,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-132 — Add spacing between checkbox and chord name
+
+Add horizontal spacing between chord checkboxes and chord names.
+
+The goal is to improve readability and touch comfort in the compact chord selection layout.
+
+Related tasks:
+
+- B-129 — Make chord selection more compact
+- B-131 — Make chord checkbox rows clickable
+
+Status:
+
+- Done

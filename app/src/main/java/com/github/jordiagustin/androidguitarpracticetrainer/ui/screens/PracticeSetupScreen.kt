@@ -37,6 +37,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelect
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.width
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -394,6 +395,8 @@ private fun ChordCheckboxSection(
                             onChordSelectionChanged(chord, checked)
                         }
                     )
+
+                    Spacer(modifier = Modifier.width(2.dp))
 
                     Text(
                         text = chord.name,
