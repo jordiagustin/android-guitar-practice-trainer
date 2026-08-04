@@ -2126,3 +2126,35 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-119 — Extract chord selection logic for testing
+
+Move chord selection update logic into a dedicated practice utility.
+
+The goal is to make chord selection behavior testable outside of the UI layer.
+
+Related tasks:
+
+- B-118 — Extract chord selection update logic
+
+Status:
+
+- Done
+
+---
+
+### B-120 — Add tests for chord selection logic
+
+Add unit tests for chord selection update behavior.
+
+The goal is to verify that chords are added or removed correctly when the user checks or unchecks chord selection boxes.
+
+Related tasks:
+
+- B-119 — Extract chord selection logic for testing
+
+Status:
+
+- Done

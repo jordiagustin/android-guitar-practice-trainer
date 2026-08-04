@@ -33,6 +33,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordType
 import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelection
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -197,7 +198,7 @@ fun PracticeSetupScreen(
             chords = majorSelectedGroupChords,
             selectedChords = selectedChords,
             onChordSelectionChanged = { chord, checked ->
-                selectedChords = updateSelectedChords(
+                selectedChords = ChordSelection.updateSelectedChords(
                     selectedChords = selectedChords,
                     chord = chord,
                     checked = checked
@@ -217,7 +218,7 @@ fun PracticeSetupScreen(
             chords = minorSelectedGroupChords,
             selectedChords = selectedChords,
             onChordSelectionChanged = { chord, checked ->
-                selectedChords = updateSelectedChords(
+                selectedChords = ChordSelection.updateSelectedChords(
                     selectedChords = selectedChords,
                     chord = chord,
                     checked = checked
@@ -349,18 +350,6 @@ private fun formatSelectedSessionSummary(
         "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
     } else {
         "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
-    }
-}
-
-private fun updateSelectedChords(
-    selectedChords: List<Chord>,
-    chord: Chord,
-    checked: Boolean
-): List<Chord> {
-    return if (checked) {
-        selectedChords + chord
-    } else {
-        selectedChords - chord
     }
 }
 
