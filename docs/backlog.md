@@ -2601,6 +2601,13 @@ Status:
 
 Draw guitar strings with different thicknesses from the thickest string to the thinnest string to improve diagram readability.
 
+The goal is to make the generated chord diagram orientation easier to understand without changing chord diagram behavior.
+
+Related tasks:
+
+- B-141 — Review visual design improvement opportunities
+- B-144 — Improve practice session chord spacing
+
 Status:
 
-- To do
+- Done

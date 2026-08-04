@@ -84,11 +84,14 @@ fun ChordDiagramView(
                 val x = diagramLeft +
                         (diagramRight - diagramLeft) * stringIndex / (stringCount - 1)
 
+                val stringStrokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH +
+                        (stringCount - 1 - stringIndex) * 1f
+
                 drawLine(
                     color = Color.Gray,
                     start = Offset(x, diagramTop),
                     end = Offset(x, diagramBottom),
-                    strokeWidth = CHORD_DIAGRAM_LINE_STROKE_WIDTH
+                    strokeWidth = stringStrokeWidth
                 )
             }
 
