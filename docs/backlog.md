@@ -2275,3 +2275,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-127 — Add navigation bar padding to session screen
+
+Add navigation bar padding to the Practice Session Screen.
+
+The goal is to prevent session controls from getting too close to the Android system navigation area on physical devices.
+
+Related tasks:
+
+- B-126 — Add navigation bar padding to setup screen
+
+Status:
+
+- Done
+
+---
+

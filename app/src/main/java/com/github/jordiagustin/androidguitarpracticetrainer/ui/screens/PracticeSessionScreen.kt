@@ -33,6 +33,7 @@ import android.media.ToneGenerator
 import androidx.compose.runtime.DisposableEffect
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordDiagramRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.components.ChordDiagramView
+import androidx.compose.foundation.layout.navigationBarsPadding
 
 /**
  * Screen used during an active chord practice session.
@@ -64,6 +65,7 @@ private val SmallSpacing = 8.dp
 private val MediumSpacing = 16.dp
 private val ButtonSpacing = 24.dp
 private val ExtraLargeSpacing = 32.dp
+private val BottomSpacing = 50.dp
 
 private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
 private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"
@@ -181,6 +183,7 @@ fun PracticeSessionScreen(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .navigationBarsPadding()
             .padding(ScreenPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -277,7 +280,11 @@ fun PracticeSessionScreen(
             ) {
                 Text(text = END_SESSION_LABEL)
             }
+
         }
+
+        Spacer(modifier = Modifier.height(BottomSpacing))
+        
     }
 }
 
