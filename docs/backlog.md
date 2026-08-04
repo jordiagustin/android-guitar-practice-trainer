@@ -2294,3 +2294,20 @@ Status:
 
 ---
 
+### B-128 — Review setup screen spacing on physical device
+
+Review the Practice Setup Screen spacing and scrolling behavior on a physical Android device.
+
+The goal is to verify that all setup controls are readable, reachable and comfortable to use after adding custom chord selection.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-106 — Add Clear all and Select all chord actions
+- B-125 — Add bottom spacing to setup screen
+- B-126 — Add navigation bar padding to setup screen
+
+Status:
+
+- Done
+
