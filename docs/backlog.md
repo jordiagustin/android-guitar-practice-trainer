@@ -2175,3 +2175,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-122 — Document custom chord selection tests
+
+Update documentation to mention that custom chord selection logic is covered by unit tests.
+
+The goal is to keep testing documentation aligned with the current custom chord selection behavior.
+
+Related tasks:
+
+- B-119 — Extract chord selection logic for testing
+- B-120 — Add tests for chord selection logic
+- B-121 — Prevent duplicate selected chords
+
+Status:
+
+- Done

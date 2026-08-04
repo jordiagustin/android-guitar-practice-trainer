@@ -308,38 +308,26 @@ Elapsed time formatting examples:
 
 The current practice logic is separated from the UI layer.
 
-The following components contain logic that can be unit tested in future iterations:
+The following components contain logic that can be unit tested:
 
 * PracticeConfig
 * ChordSelector
 * PracticeTimer
-
-Examples of future unit tests:
-
-* Verify that ChordSelector does not return the same chord twice in a row when alternatives exist.
-* Verify that ChordSelector rejects empty chord lists.
-* Verify that PracticeTimer calculates the correct interval for a given BPM.
-* Verify that PracticeTimer rejects invalid BPM values.
-* Verify that PracticeTimer formats elapsed time correctly.
+* ChordSelection
+* ChordDiagramRepository
 
 The project currently includes unit tests for:
 
 * PracticeTimer
 * ChordSelector
+* ChordSelection
+* ChordDiagramRepository
 
 These tests are located under:
 
 ```text
 app/src/test/java/com/github/jordiagustin/androidguitarpracticetrainer/practice/
-```
-
-Chord diagram repository tests verify that:
-
-- Existing chord diagrams can be found by chord name.
-- Missing chord diagrams return null.
-- Barre chord data is stored correctly.
-- Every chord currently used by the app has a corresponding chord diagram.
-
+app/src/test/java/com/github/jordiagustin/androidguitarpracticetrainer/data/
 ## Chord diagrams
 
 Chord diagrams are represented using structured data instead of image files.
