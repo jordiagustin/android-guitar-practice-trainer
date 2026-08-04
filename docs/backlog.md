@@ -2647,3 +2647,69 @@ The goal is to confirm that recent visual and code quality changes work correctl
 Status:
 
 - Done
+
+---
+
+### B-149 — Prepare portfolio release checklist
+
+Prepare a checklist of remaining tasks needed before presenting the project as a portfolio-ready Android app.
+
+The goal is to identify what is still missing before creating a release build or publishing the project publicly.
+
+Related tasks:
+
+- B-140 — Review project documentation consistency
+- B-148 — Review app on physical device after polish
+
+Status:
+
+- Done
+
+---
+
+### B-150 — Prepare README screenshots section
+
+Add a screenshots section to the README to prepare the project for portfolio presentation.
+
+The goal is to make the GitHub repository more visual and easier to understand before adding real screenshots.
+
+Related tasks:
+
+- B-149 — Prepare portfolio release checklist
+
+Status:
+
+- Done
+
+---
+
+### B-151 — Create screenshots folder
+
+Create a folder to store future README screenshots.
+
+The goal is to prepare the repository structure before adding real app screenshots.
+
+Related tasks:
+
+- B-150 — Prepare README screenshots section
+
+Status:
+
+- Done
+
+---
+
+### B-152 — Add screenshot placeholders to README
+
+Add placeholder image references to the README for the three main app screens.
+
+The goal is to prepare the README layout so real screenshots can be added later without restructuring the document.
+
+Related tasks:
+
+- B-150 — Prepare README screenshots section
+- B-151 — Create screenshots folder
+
+Status:
+
+- To do

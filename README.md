@@ -35,6 +35,20 @@ Current capabilities include:
 
 Next development phase: visual design improvements, practice history, saved practice presets and release preparation.
 
+## Screenshots
+
+Screenshots will be added to show the main app flow:
+
+- Practice Setup Screen
+- Practice Session Screen
+- Practice Summary Screen
+
+Planned screenshots:
+
+- Custom chord selection and BPM setup.
+- Active practice session with chord diagram.
+- Final practice summary after ending a session.
+
 ## Main goal
 
 The app focuses on one core use case:
