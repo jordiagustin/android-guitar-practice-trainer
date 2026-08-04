@@ -54,4 +54,19 @@ class ChordSelectionTest {
 
         assertEquals(selectedChords, result)
     }
+
+    @Test
+    fun updateSelectedChords_doesNotDuplicateChord_whenCheckedChordAlreadyExists() {
+        val selectedChords = listOf(chordA)
+
+        val result = ChordSelection.updateSelectedChords(
+            selectedChords = selectedChords,
+            chord = chordA,
+            checked = true
+        )
+
+        assertEquals(1, result.size)
+        assertEquals(chordA, result.first())
+    }
 }
+

@@ -10,7 +10,11 @@ object ChordSelection {
         checked: Boolean
     ): List<Chord> {
         return if (checked) {
-            selectedChords + chord
+            if (selectedChords.contains(chord)) {
+                selectedChords
+            } else {
+                selectedChords + chord
+            }
         } else {
             selectedChords - chord
         }

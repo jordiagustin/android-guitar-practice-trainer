@@ -2158,3 +2158,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-121 — Prevent duplicate selected chords
+
+Prevent duplicate chords from being added to the selected chord list.
+
+The goal is to make chord selection logic safer and more predictable.
+
+Related tasks:
+
+- B-119 — Extract chord selection logic for testing
+- B-120 — Add tests for chord selection logic
+
+Status:
+
+- Done
