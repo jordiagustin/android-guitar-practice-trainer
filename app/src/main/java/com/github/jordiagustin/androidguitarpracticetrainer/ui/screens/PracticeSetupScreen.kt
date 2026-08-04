@@ -36,6 +36,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.model.Chord
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.ChordSelection
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.clickable
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -382,6 +383,9 @@ private fun ChordCheckboxSection(
                 val isSelected = selectedChords.contains(chord)
 
                 Row(
+                    modifier = Modifier.clickable {
+                        onChordSelectionChanged(chord, !isSelected)
+                    },
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Checkbox(

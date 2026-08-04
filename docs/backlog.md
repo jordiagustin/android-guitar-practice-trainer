@@ -2345,3 +2345,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-131 — Make chord checkbox rows clickable
+
+Make each chord checkbox row clickable, including both the checkbox and chord name.
+
+The goal is to improve touch usability on physical devices when selecting chords.
+
+Related tasks:
+
+- B-129 — Make chord selection more compact
+
+Status:
+
+- Done
