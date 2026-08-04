@@ -2446,4 +2446,21 @@ Related tasks:
 
 Status:
 
-- To do
+- Done
+
+---
+
+### B-137 — Update navigation flow for summary screen
+
+Update the navigation flow documentation to include the Practice Summary Screen.
+
+The goal is to keep the documented app flow aligned with the current three-screen navigation.
+
+Related tasks:
+
+- B-134 — Add session end summary screen
+- B-136 — Document practice summary screen
+
+Status:
+
+- Done
