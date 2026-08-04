@@ -1,11 +1,10 @@
 # Screen Specification
 
-This document describes the MVP screens of the Android Guitar Practice Trainer app.
-
-The MVP contains two main screens:
+The app contains three main screens:
 
 1. Practice Setup Screen
 2. Practice Session Screen
+3. Practice Summary Screen
 
 ---
 
@@ -214,3 +213,40 @@ Chord groups preselect a set of chords, but the user can manually select or unse
 The screen also provides Select all and Clear all actions.
 
 The Start Practice button is disabled when no chords are selected.
+
+
+## 3. Practice Summary Screen
+
+The Practice Summary Screen is shown after the user ends an active practice session.
+
+Its purpose is to show the final result of the completed practice session before returning to setup.
+
+### Content
+
+The screen includes:
+
+- Practice finished title.
+- Session result card.
+- Final elapsed practice time.
+- Final chord change counter.
+- Session BPM.
+- Practiced chord names.
+- Start new session button.
+
+### Session result
+
+The session result card displays the final practice statistics.
+
+Example:
+
+```text
+Time: 02:35
+Changes: 47
+BPM: 80
+Chords:
+A, D, Em
+```
+
+### Start new session button
+
+The Start new session button returns the user to the Practice Setup Screen.

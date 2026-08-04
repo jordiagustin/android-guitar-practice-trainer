@@ -2429,4 +2429,21 @@ Related tasks:
 
 Status:
 
+- Done
+
+---
+
+### B-136 — Document practice summary screen
+
+Update project documentation to describe the Practice Summary Screen.
+
+The goal is to keep documentation aligned with the new session flow: setup, practice session and final summary.
+
+Related tasks:
+
+- B-134 — Add session end summary screen
+- B-135 — Improve practice summary screen layout
+
+Status:
+
 - To do
