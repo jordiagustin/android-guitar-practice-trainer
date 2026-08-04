@@ -7,14 +7,15 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -22,8 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordDiagram
 import com.github.jordiagustin.androidguitarpracticetrainer.model.StringStatus
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.foundation.layout.width
 
 private const val CHORD_DIAGRAM_LABEL = "Chord diagram"
 private const val CHORD_DIAGRAM_MISSING_TEXT = "diagram coming soon"

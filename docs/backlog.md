@@ -2623,3 +2623,15 @@ The goal is to make the navigation state handling more idiomatic and avoid using
 Status:
 
 - Done
+
+---
+
+### B-147 — Review unused imports after visual polish
+
+Review modified Kotlin files and remove any unused imports introduced or left behind after the recent visual polish changes.
+
+The goal is to keep the code clean and avoid warnings.
+
+Status:
+
+- Done

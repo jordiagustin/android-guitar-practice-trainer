@@ -3,17 +3,17 @@ package com.github.jordiagustin.androidguitarpracticetrainer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSetupScreen
-import com.github.jordiagustin.androidguitarpracticetrainer.ui.theme.AndroidGuitarPracticeTrainerTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSessionScreen
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
-import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
 import com.github.jordiagustin.androidguitarpracticetrainer.model.PracticeSessionSummary
+import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
+import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSessionScreen
+import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSetupScreen
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSummaryScreen
+import com.github.jordiagustin.androidguitarpracticetrainer.ui.theme.AndroidGuitarPracticeTrainerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
