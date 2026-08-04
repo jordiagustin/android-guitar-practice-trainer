@@ -31,6 +31,7 @@ import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeCon
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
+import com.github.jordiagustin.androidguitarpracticetrainer.model.ChordType
 
 /**
  * Initial screen used to configure a chord practice session.
@@ -92,6 +93,14 @@ fun PracticeSetupScreen(
         mutableStateOf(selectedChordGroup.chords)
     }
     val canStartPractice = selectedChords.isNotEmpty()
+    val majorSelectedGroupChords = selectedChordGroup.chords
+        .filter { chord -> chord.type == ChordType.MAJOR }
+        .sortedBy { chord -> chord.name }
+
+    val minorSelectedGroupChords = selectedChordGroup.chords
+        .filter { chord -> chord.type == ChordType.MINOR }
+        .sortedBy { chord -> chord.name }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -182,29 +191,69 @@ fun PracticeSetupScreen(
 
         Spacer(modifier = Modifier.height(SmallSpacing))
 
-        selectedChordGroup.chords
-            .sortedBy { chord -> chord.name }
-            .forEach { chord ->
-            val isSelected = selectedChords.contains(chord)
+        if (majorSelectedGroupChords.isNotEmpty()) {
+            Text(
+                text = "Major chords",
+                fontSize = BodyFontSize,
+                fontWeight = FontWeight.Bold
+            )
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Checkbox(
-                    checked = isSelected,
-                    onCheckedChange = { checked ->
-                        selectedChords = if (checked) {
-                            selectedChords + chord
-                        } else {
-                            selectedChords - chord
+            majorSelectedGroupChords.forEach { chord ->
+                val isSelected = selectedChords.contains(chord)
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Checkbox(
+                        checked = isSelected,
+                        onCheckedChange = { checked ->
+                            selectedChords = if (checked) {
+                                selectedChords + chord
+                            } else {
+                                selectedChords - chord
+                            }
                         }
-                    }
-                )
+                    )
 
-                Text(
-                    text = chord.name,
-                    fontSize = BodyFontSize
-                )
+                    Text(
+                        text = chord.name,
+                        fontSize = BodyFontSize
+                    )
+                }
+            }
+        }
+
+        if (minorSelectedGroupChords.isNotEmpty()) {
+            Spacer(modifier = Modifier.height(SmallSpacing))
+
+            Text(
+                text = "Minor chords",
+                fontSize = BodyFontSize,
+                fontWeight = FontWeight.Bold
+            )
+
+            minorSelectedGroupChords.forEach { chord ->
+                val isSelected = selectedChords.contains(chord)
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Checkbox(
+                        checked = isSelected,
+                        onCheckedChange = { checked ->
+                            selectedChords = if (checked) {
+                                selectedChords + chord
+                            } else {
+                                selectedChords - chord
+                            }
+                        }
+                    )
+
+                    Text(
+                        text = chord.name,
+                        fontSize = BodyFontSize
+                    )
+                }
             }
         }
 

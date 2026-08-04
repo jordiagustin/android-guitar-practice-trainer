@@ -2077,3 +2077,19 @@ Status:
 
 - Done
 
+---
+
+### B-116 — Split chord checkboxes by chord type
+
+Group chord checkboxes by chord type in the Practice Setup Screen.
+
+The goal is to make custom chord selection easier to scan when many chords are available.
+
+Related tasks:
+
+- B-102 — Display selectable chords in setup screen
+- B-115 — Keep chord checkbox order consistent
+
+Status:
+
+- Done
