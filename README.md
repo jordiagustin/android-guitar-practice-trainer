@@ -39,15 +39,23 @@ Next development phase: visual design improvements, practice history, saved prac
 
 Screenshots will be added to show the main app flow:
 
-- Practice Setup Screen
-- Practice Session Screen
-- Practice Summary Screen
+### Practice Setup Screen
 
-Planned screenshots:
+![Practice Setup Screen](docs/images/practice-setup-screen.png)
 
-- Custom chord selection and BPM setup.
-- Active practice session with chord diagram.
-- Final practice summary after ending a session.
+Custom chord selection, BPM setup and metronome sound configuration.
+
+### Practice Session Screen
+
+![Practice Session Screen](docs/images/practice-session-screen.png)
+
+Active practice session with current chord, generated chord diagram, pulse indicator and session progress.
+
+### Practice Summary Screen
+
+![Practice Summary Screen](docs/images/practice-summary-screen.png)
+
+Final summary after ending a practice session, including elapsed time, chord changes, BPM and practiced chords.
 
 ## Main goal
 
