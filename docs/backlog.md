@@ -2110,3 +2110,19 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-118 — Extract chord selection update logic
+
+Extract the chord selection update logic into a helper function.
+
+The goal is to reduce duplicated state update code in the Practice Setup Screen.
+
+Related tasks:
+
+- B-117 — Extract chord checkbox section composable
+
+Status:
+
+- Done

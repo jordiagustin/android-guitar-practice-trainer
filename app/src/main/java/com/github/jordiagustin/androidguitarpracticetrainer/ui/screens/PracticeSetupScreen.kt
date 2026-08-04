@@ -197,11 +197,11 @@ fun PracticeSetupScreen(
             chords = majorSelectedGroupChords,
             selectedChords = selectedChords,
             onChordSelectionChanged = { chord, checked ->
-                selectedChords = if (checked) {
-                    selectedChords + chord
-                } else {
-                    selectedChords - chord
-                }
+                selectedChords = updateSelectedChords(
+                    selectedChords = selectedChords,
+                    chord = chord,
+                    checked = checked
+                )
             }
         )
 
@@ -217,11 +217,11 @@ fun PracticeSetupScreen(
             chords = minorSelectedGroupChords,
             selectedChords = selectedChords,
             onChordSelectionChanged = { chord, checked ->
-                selectedChords = if (checked) {
-                    selectedChords + chord
-                } else {
-                    selectedChords - chord
-                }
+                selectedChords = updateSelectedChords(
+                    selectedChords = selectedChords,
+                    chord = chord,
+                    checked = checked
+                )
             }
         )
 
@@ -349,6 +349,18 @@ private fun formatSelectedSessionSummary(
         "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
     } else {
         "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    }
+}
+
+private fun updateSelectedChords(
+    selectedChords: List<Chord>,
+    chord: Chord,
+    checked: Boolean
+): List<Chord> {
+    return if (checked) {
+        selectedChords + chord
+    } else {
+        selectedChords - chord
     }
 }
 
