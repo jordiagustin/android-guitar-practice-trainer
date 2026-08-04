@@ -21,14 +21,14 @@ The screen includes:
 - App title.
 - Short description of the app.
 - Chord group selector.
-- BPM selector.
-- Minimum and maximum BPM labels.
-- Selected session summary.
-- Start Practice button.
-- Metronome sound toggle.
 - Individual chord selection.
 - Select all and Clear all chord actions.
 - Selected chord count.
+- BPM selector.
+- Minimum and maximum BPM labels.
+- Metronome sound toggle.
+- Selected session summary.
+- Start Practice button.
 
 ### Chord group selector
 
@@ -42,6 +42,22 @@ Current available groups:
 
 Only one chord group can be selected at a time.
 
+Chord groups preselect a set of chords, but the user can customize the final chord selection before starting the session.
+
+### Custom chord selection
+
+The user can customize which chords will be used during the practice session.
+
+The user can manually select or unselect individual chords before starting.
+
+The screen also provides Select all and Clear all actions.
+
+Chord checkboxes are grouped by chord type and displayed in a compact wrapping layout to reduce vertical scrolling on mobile screens.
+
+The screen displays the number of selected chords.
+
+The Start Practice button is disabled when no chords are selected.
+
 ### BPM selector
 
 The user can configure the practice tempo using a slider.
@@ -53,17 +69,6 @@ Current BPM range:
 
 The selected BPM is displayed on screen.
 
-### Selected session summary
-
-Before starting the session, the screen shows a short summary of the selected configuration.
-
-Example:
-
-```text
-Selected session
-Major chords · 60 BPM
-```
-
 ### Metronome sound toggle
 
 The user can enable or disable metronome sound before starting a practice session.
@@ -72,23 +77,33 @@ When enabled, the Practice Session Screen plays a short beep on each pulse.
 
 When disabled, the visual pulse and chord changes continue without sound.
 
+### Selected session summary
+
+Before starting the session, the screen shows a short summary of the selected configuration.
+
+When a small number of chords is selected, the summary shows the selected chord names.
+
+Example:
+
+```text
+Selected session
+Custom selection · A, D, Em · 3 chords · 60 BPM
+```
+
+When many chords are selected, the summary is shortened to keep it readable.
+
+Example:
+
+```text
+Selected session
+Custom selection · 14 chords · 60 BPM
+```
+
 ### Start Practice button
 
-The Start Practice button starts a new practice session using the selected chord group and BPM.
+The Start Practice button starts a new practice session using the selected chords, BPM and metronome sound setting.
 
 When pressed, the app navigates to the Practice Session Screen.
-
-### Custom chord selection
-
-The user can customize which chords will be used during the practice session.
-
-Chord groups preselect a set of chords, but the user can manually select or unselect individual chords before starting.
-
-The screen also provides Select all and Clear all actions.
-
-The Start Practice button is disabled when no chords are selected.
-
-Chord checkboxes are grouped by chord type and displayed in a compact wrapping layout to reduce vertical scrolling on mobile screens.
 
 ---
 
@@ -96,9 +111,7 @@ Chord checkboxes are grouped by chord type and displayed in a compact wrapping l
 
 The Practice Session Screen is shown during an active practice session.
 
-Its purpose is to guide the user through chord changes using random chord prompts and a visual pulse.
-
-When using custom chord selection, the active session summary shows the selected chord names.
+Its purpose is to guide the user through chord changes using random chord prompts, a visual pulse and optional metronome sound.
 
 ### Content
 
@@ -113,13 +126,20 @@ The screen includes:
 - Chord change counter.
 - Pause / Resume button.
 - End Session button.
-- When using custom chord selection, the active session summary shows the selected chord names.
 
 ### Current chord
 
 The current chord is displayed prominently in large text.
 
 This allows the user to read the chord while practicing guitar.
+
+### Chord diagrams
+
+The screen displays a generated chord diagram for the current chord when available.
+
+The diagram shows fret positions, open strings, muted strings and barre chords.
+
+If a diagram is not available for a chord, the screen displays a placeholder message.
 
 ### Visual pulse indicator
 
@@ -134,6 +154,8 @@ Pulse ○
 
 The pulse changes according to the selected BPM.
 
+When metronome sound is enabled, the app plays a short beep on each pulse.
+
 ### Paused feedback
 
 When the session is paused, the screen displays:
@@ -142,17 +164,31 @@ When the session is paused, the screen displays:
 Paused
 ```
 
-The chord, elapsed time and chord change counter stop updating while paused.
+While paused:
+
+- Chord changes stop.
+- The visual pulse stops updating.
+- Metronome sound stops.
+- Elapsed time stops increasing.
+- The chord change counter stops increasing.
 
 ### Active session summary
 
-The screen shows the selected chord group, BPM, elapsed time and chord change counter.
+The screen shows the selected chords or selected chord count, BPM, elapsed time and chord change counter.
 
-Example:
+Example with a small chord selection:
 
 ```text
 Session
-Major chords · 60 BPM
+Custom selection · A, D, Em · 60 BPM
+Time: 00:15 · Changes: 3
+```
+
+Example with many selected chords:
+
+```text
+Session
+Custom selection · 14 chords · 60 BPM
 Time: 00:15 · Changes: 3
 ```
 
@@ -167,14 +203,6 @@ MM:SS
 ```
 
 The timer pauses when the session is paused.
-
-### Chord diagrams
-
-The screen displays a generated chord diagram for the current chord when available.
-
-The diagram shows fret positions, open strings, muted strings and barre chords.
-
-If a diagram is not available for a chord, the screen displays a placeholder message.
 
 ### Chord change counter
 
@@ -202,18 +230,11 @@ Resume
 
 ### End Session button
 
-The End Session button stops the current practice session and returns the user to the Practice Setup Screen.
+The End Session button stops the current practice session.
 
-### Custom chord selection
+When pressed, the app creates a final session summary and navigates to the Practice Summary Screen.
 
-The user can customize which chords will be used during the practice session.
-
-Chord groups preselect a set of chords, but the user can manually select or unselect individual chords before starting.
-
-The screen also provides Select all and Clear all actions.
-
-The Start Practice button is disabled when no chords are selected.
-
+---
 
 ## 3. Practice Summary Screen
 
@@ -240,9 +261,14 @@ The session result card displays the final practice statistics.
 Example:
 
 ```text
+Practice finished
+
+Session result
+
 Time: 02:35
 Changes: 47
 BPM: 80
+
 Chords:
 A, D, Em
 ```

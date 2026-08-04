@@ -2499,3 +2499,22 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-140 — Review project documentation consistency
+
+Review the main project documentation files to ensure they all describe the current three-screen flow, custom chord selection, generated chord diagrams and practice summary screen consistently.
+
+The goal is to remove outdated references to the old two-screen MVP and keep the documentation aligned before moving to visual polish or release preparation.
+
+Related tasks:
+
+- B-136 — Document practice summary screen
+- B-137 — Update navigation flow for summary screen
+- B-138 — Update user stories for summary screen
+- B-139 — Update README for practice summary screen
+
+Status:
+
+- To do
