@@ -85,6 +85,9 @@ private const val CHORD_DIAGRAM_INDICATOR_TOP_OFFSET = 6f
 
 private const val CUSTOM_SELECTION_LABEL = "Custom selection"
 
+private const val MAX_VISIBLE_CHORD_NAMES_IN_SUMMARY = 5
+private const val CHORDS_LABEL = "chords"
+
 @Composable
 fun PracticeSessionScreen(
     chordGroup: ChordGroup,
@@ -230,11 +233,11 @@ fun PracticeSessionScreen(
         Text(
             text = formatSessionConfigurationSummary(
                 chordNames = chordNames,
+                chordCount = chordGroup.chords.size,
                 bpm = bpm
             ),
             fontSize = BodyFontSize
         )
-
 
         Text(
             text = formatSessionProgressSummary(
@@ -279,9 +282,14 @@ fun PracticeSessionScreen(
 
 private fun formatSessionConfigurationSummary(
     chordNames: String,
+    chordCount: Int,
     bpm: Int
 ): String {
-    return "$CUSTOM_SELECTION_LABEL · $chordNames · $bpm BPM"
+    return if (chordCount <= MAX_VISIBLE_CHORD_NAMES_IN_SUMMARY) {
+        "$CUSTOM_SELECTION_LABEL · $chordNames · $bpm BPM"
+    } else {
+        "$CUSTOM_SELECTION_LABEL · $chordCount $CHORDS_LABEL · $bpm BPM"
+    }
 }
 
 private fun formatSessionProgressSummary(

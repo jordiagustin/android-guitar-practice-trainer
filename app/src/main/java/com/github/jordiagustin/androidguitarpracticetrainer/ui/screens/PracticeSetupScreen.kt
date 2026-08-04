@@ -76,6 +76,8 @@ private const val SELECTED_CHORD_COUNT_LABEL = "Selected chords"
 private const val SELECT_ALL_LABEL = "Select all"
 private const val CLEAR_ALL_LABEL = "Clear all"
 
+private const val MAX_VISIBLE_CHORD_NAMES_IN_SUMMARY = 5
+
 @Composable
 fun PracticeSetupScreen(
     onStartPractice: (ChordGroup, Int, Boolean) -> Unit
@@ -323,7 +325,11 @@ private fun formatSelectedSessionSummary(
     selectedChordCount: Int,
     bpm: Int
 ): String {
-    return "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    return if (selectedChordCount <= MAX_VISIBLE_CHORD_NAMES_IN_SUMMARY) {
+        "$CUSTOM_SELECTION_LABEL · $selectedChordNames · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    } else {
+        "$CUSTOM_SELECTION_LABEL · $selectedChordCount $CHORDS_LABEL · $bpm BPM"
+    }
 }
 
 @Preview(showBackground = true)

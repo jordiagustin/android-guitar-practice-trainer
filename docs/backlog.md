@@ -2024,3 +2024,20 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-113 — Shorten selected chord names summary
+
+Shorten the selected chord summary when many chords are selected.
+
+The goal is to keep setup and session summaries readable on mobile screens.
+
+Related tasks:
+
+- B-110 — Show selected chord names in setup summary
+- B-111 — Show selected chord names in active session summary
+
+Status:
+
+- Done
