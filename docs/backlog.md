@@ -2635,3 +2635,15 @@ The goal is to keep the code clean and avoid warnings.
 Status:
 
 - Done
+
+---
+
+### B-148 — Review app on physical device after polish
+
+Run the app on a physical Android device and verify the updated spacing, horizontal chord group selector, chord diagram string readability and summary navigation.
+
+The goal is to confirm that recent visual and code quality changes work correctly on a real device.
+
+Status:
+
+- Done
