@@ -34,6 +34,7 @@ import androidx.compose.runtime.DisposableEffect
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordDiagramRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.components.ChordDiagramView
 import androidx.compose.foundation.layout.navigationBarsPadding
+import com.github.jordiagustin.androidguitarpracticetrainer.model.PracticeSessionSummary
 
 /**
  * Screen used during an active chord practice session.
@@ -95,7 +96,7 @@ fun PracticeSessionScreen(
     chordGroup: ChordGroup,
     bpm: Int,
     isSoundEnabled: Boolean,
-    onStopPractice: () -> Unit
+    onEndSession: (PracticeSessionSummary) -> Unit
 ) {
     var currentChord by remember(chordGroup) {
         mutableStateOf(
@@ -276,7 +277,18 @@ fun PracticeSessionScreen(
             }
 
             Button(
-                onClick = onStopPractice
+                onClick = {
+                    onEndSession(
+                        PracticeSessionSummary(
+                            chordNames = chordGroup.chords.map { chord ->
+                                chord.name
+                            },
+                            bpm = bpm,
+                            elapsedSeconds = elapsedSeconds,
+                            chordChangeCount = chordChangeCount
+                        )
+                    )
+                }
             ) {
                 Text(text = END_SESSION_LABEL)
             }
@@ -316,6 +328,6 @@ fun PracticeSessionScreenPreview() {
         chordGroup = ChordRepository.chordGroups.first(),
         bpm = 60,
         isSoundEnabled = true,
-        onStopPractice = {}
+        onEndSession = {}
     )
 }

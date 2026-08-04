@@ -12,6 +12,8 @@ import androidx.compose.runtime.setValue
 import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSessionScreen
 import com.github.jordiagustin.androidguitarpracticetrainer.data.ChordRepository
 import com.github.jordiagustin.androidguitarpracticetrainer.practice.PracticeConfig
+import com.github.jordiagustin.androidguitarpracticetrainer.model.PracticeSessionSummary
+import com.github.jordiagustin.androidguitarpracticetrainer.ui.screens.PracticeSummaryScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,13 +36,25 @@ class MainActivity : ComponentActivity() {
                     mutableStateOf(true)
                 }
 
+                var practiceSessionSummary by remember {
+                    mutableStateOf<PracticeSessionSummary?>(null)
+                }
+
                 if (isPracticeSessionActive) {
                     PracticeSessionScreen(
                         chordGroup = activeChordGroup,
                         bpm = activeBpm,
                         isSoundEnabled = activeSoundEnabled,
-                        onStopPractice = {
+                        onEndSession = { summary ->
+                            practiceSessionSummary = summary
                             isPracticeSessionActive = false
+                        }
+                    )
+                } else if (practiceSessionSummary != null) {
+                    PracticeSummaryScreen(
+                        summary = practiceSessionSummary!!,
+                        onStartNewSession = {
+                            practiceSessionSummary = null
                         }
                     )
                 } else {
@@ -49,6 +63,7 @@ class MainActivity : ComponentActivity() {
                             activeChordGroup = selectedChordGroup
                             activeBpm = selectedBpm
                             activeSoundEnabled = selectedSoundEnabled
+                            practiceSessionSummary = null
                             isPracticeSessionActive = true
                         }
                     )

@@ -2396,3 +2396,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-134 — Add session end summary screen
+
+Add a summary screen shown after ending a practice session.
+
+The goal is to show the user the final elapsed time, chord change count, BPM and practiced chords before returning to setup.
+
+Related tasks:
+
+- B-022 — Add elapsed practice time
+- B-024 — Add chord change counter
+- B-111 — Show selected chord names in active session summary
+
+Status:
+
+- Done
