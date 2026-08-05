@@ -2778,3 +2778,21 @@ B-154 — Review README presentation on GitHub
 Status:
 
 Done
+
+---
+
+### B-156 — Review portfolio repository final state
+
+Review the GitHub repository as if it were being shown in an interview or portfolio.
+
+The goal is to identify any final presentation issues before considering the project portfolio-ready.
+
+Related tasks:
+
+- B-149 — Prepare portfolio release checklist
+- B-154 — Review README presentation on GitHub
+- B-155 — Add project learning summary
+
+Status:
+
+- Done
