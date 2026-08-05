@@ -2796,3 +2796,24 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+## Release preparation phase
+
+The goal of this phase is to move the app from a portfolio-ready candidate to a functional app that can be tested, distributed and potentially published.
+
+### B-157 — Define functional release scope
+
+Define what the first functional release of the app should include before preparing a release build.
+
+The goal is to decide which features are required for a first usable version and which features can wait for future updates.
+
+Related tasks:
+
+- B-149 — Prepare portfolio release checklist
+- B-156 — Review portfolio repository final state
+
+Status:
+
+- Done

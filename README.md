@@ -6,7 +6,9 @@ The goal of the app is to provide a simple practice tool where users can choose 
 
 ## Project status
 
-Current status: **Core MVP completed and expanded with post-MVP product improvements**
+Current status: **Functional release candidate**
+
+The app includes a complete practice flow and is currently being prepared for a first functional release.
 
 The app includes a functional three-screen practice flow:
 
@@ -153,6 +155,7 @@ Current documents:
 - `screen-specification.md`
 - `data-model.md`
 - `backlog.md`
+- `functional-release-scope.md`
 
 ## Tests
 
