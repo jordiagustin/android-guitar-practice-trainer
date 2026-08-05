@@ -2713,3 +2713,21 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-153 — Capture app screenshots for README
+
+Capture screenshots of the three main app screens and save them in the documentation images folder.
+
+The goal is to replace the README screenshot placeholders with real app screenshots.
+
+Related tasks:
+
+- B-150 — Prepare README screenshots section
+- B-151 — Create screenshots folder
+- B-152 — Add screenshot placeholders to README
+
+Status:
+
+- Done
