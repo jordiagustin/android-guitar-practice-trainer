@@ -2731,3 +2731,50 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-154 — Review README presentation on GitHub
+
+Review the README directly on GitHub after adding screenshots.
+
+The goal is to confirm that the screenshots, descriptions, feature list and project structure are displayed correctly in the public repository view.
+
+Related tasks:
+
+- B-150 — Prepare README screenshots section
+- B-152 — Add screenshot placeholders to README
+- B-153 — Capture app screenshots for README
+
+Status:
+
+- Done
+
+---
+
+### B-155 — Add project learning summary
+
+Add a short learning summary to the README or documentation explaining what was practiced while building the app.
+
+The goal is to make the project more useful as portfolio evidence for Android development skills.
+
+Status:
+
+- Done
+
+---
+
+B-155 — Add project learning summary
+
+Add a short learning summary to the README or documentation explaining what was practiced while building the app.
+
+The goal is to make the project more useful as portfolio evidence for Android development skills.
+
+Related tasks:
+
+B-149 — Prepare portfolio release checklist
+B-154 — Review README presentation on GitHub
+
+Status:
+
+Done
