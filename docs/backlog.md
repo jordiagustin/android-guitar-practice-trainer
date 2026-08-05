@@ -2817,3 +2817,24 @@ Related tasks:
 Status:
 
 - Done
+
+---
+
+### B-158 — Review app name and launcher label
+
+Make sure the app name displayed on Android is correct and user-friendly.
+
+The goal is to verify that the installed app shows the intended name in the launcher before preparing release builds.
+
+Decision:
+
+- Launcher app name: Chord Trainer
+- Full project name: Android Guitar Practice Trainer
+
+Related tasks:
+
+- B-157 — Define functional release scope
+
+Status:
+
+- Done
